@@ -1,0 +1,171 @@
+// ─── User & Auth ─────────────────────────────────────────────
+export type UserRole = 'DEO' | 'MEO' | 'HM' | 'TEACHER' | 'STUDENT' | 'PARENT';
+
+export interface AuthUser {
+  id: number;
+  email: string;
+  full_name: string;
+  role: UserRole;
+  school_id: number | null;
+  district_id: number | null;
+  mandal_id: number | null;
+}
+
+export interface AuthTokens {
+  access_token: string;
+  refresh_token: string;
+  token_type: string;
+  expires_in: number;
+  user: AuthUser;
+}
+
+// ─── Student ──────────────────────────────────────────────────
+export type RiskLevel = 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
+export type Gender = 'MALE' | 'FEMALE' | 'OTHER';
+
+export interface Student {
+  id: number;
+  admission_no: string;
+  first_name: string;
+  last_name: string;
+  full_name: string;
+  date_of_birth: string | null;
+  gender: Gender;
+  category: string | null;
+  parent_name: string | null;
+  parent_phone: string | null;
+  current_class: number;
+  section: string | null;
+  academic_year: string;
+  school_id: number;
+  dropout_risk_score: number | null;
+  risk_level: RiskLevel;
+  is_active: boolean;
+  enrollment_date: string | null;
+}
+
+// ─── Attendance ───────────────────────────────────────────────
+export type AttendanceStatus = 'PRESENT' | 'ABSENT' | 'LATE' | 'HALF_DAY' | 'HOLIDAY' | 'LEAVE';
+
+export interface AttendanceRecord {
+  id: number;
+  reference_type: 'STUDENT' | 'TEACHER';
+  reference_id: number;
+  date: string;
+  status: AttendanceStatus;
+  session: string;
+  is_geo_verified: boolean;
+  remarks: string | null;
+}
+
+export interface AttendanceSummary {
+  total_days: number;
+  present_days: number;
+  absent_days: number;
+  late_days: number;
+  half_days: number;
+  attendance_percentage: number;
+  consecutive_absences: number;
+  last_absent_date: string | null;
+}
+
+// ─── Assessment ───────────────────────────────────────────────
+export interface Assessment {
+  id: number;
+  title: string;
+  assessment_type: string;
+  subject: string;
+  class_grade: number;
+  max_marks: number;
+  is_published: boolean;
+}
+
+export interface AssessmentResult {
+  id: number;
+  assessment_id: number;
+  student_id: number;
+  marks_obtained: number | null;
+  grade: string | null;
+  percentage: number | null;
+  is_absent: boolean;
+}
+
+// ─── AI Insights ──────────────────────────────────────────────
+export interface AIInsight {
+  id: number;
+  type: string;
+  risk_score: number | null;
+  confidence: number | null;
+  summary: string;
+  recommendations: string | null;
+  is_actioned: boolean;
+  created_at: string;
+}
+
+export interface DropoutRiskResult {
+  student_id: number;
+  student_name: string;
+  risk_score: number;
+  risk_level: RiskLevel;
+  risk_factors: string[];
+  recommendations: string[];
+}
+
+// ─── School ───────────────────────────────────────────────────
+export interface School {
+  id: number;
+  dise_code: string;
+  name: string;
+  school_type: string;
+  address: string | null;
+  total_students: number;
+  total_teachers: number;
+  health_score: number | null;
+  mandal_id: number;
+  district_id: number;
+}
+
+// ─── Analytics ───────────────────────────────────────────────
+export interface DistrictOverview {
+  district_id: number;
+  total_schools: number;
+  total_students: number;
+  high_risk_students: number;
+  attendance_rate_this_month: number;
+  dropout_risk_rate: number;
+}
+
+export interface SchoolHealthSummary {
+  school_id: number;
+  school_name: string;
+  health_score: number;
+  breakdown: Record<string, { value: string; weight: number; weighted_score: number }>;
+  grade: string;
+}
+
+// ─── Notifications ────────────────────────────────────────────
+export interface AppNotification {
+  id: number;
+  title: string;
+  body: string;
+  channel: string;
+  status: string;
+  is_read: boolean;
+  notification_type: string | null;
+  created_at: string;
+}
+
+// ─── Pagination ───────────────────────────────────────────────
+export interface PaginatedResponse<T> {
+  items: T[];
+  total: number;
+  page: number;
+  page_size: number;
+  pages: number;
+}
+
+// ─── API Response ────────────────────────────────────────────
+export interface ApiError {
+  detail: string;
+  status_code?: number;
+}
