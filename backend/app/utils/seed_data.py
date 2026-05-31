@@ -14,7 +14,9 @@ Creates (idempotent — safe to run again):
 from core.security import hash_password
 from core.roles import Role
 from database.db import SessionLocal, create_tables
-from database.models import User, School, Student
+from database.models import (
+    User, School, Student, District, Mandal, Teacher,
+)
 
 
 def _get_or_create_user(db, email, **fields):
@@ -32,14 +34,30 @@ def seed():
     create_tables()
     db = SessionLocal()
     try:
+        # ── District → Mandal hierarchy ───────────────────────────────────────
+        district = db.query(District).filter(District.name == "Demo District").first()
+        if not district:
+            district = District(name="Demo District", state="Andhra Pradesh")
+            db.add(district)
+            db.commit()
+            db.refresh(district)
+
+        mandal = db.query(Mandal).filter(Mandal.name == "Demo Mandal").first()
+        if not mandal:
+            mandal = Mandal(name="Demo Mandal", district_id=district.id)
+            db.add(mandal)
+            db.commit()
+            db.refresh(mandal)
+
         # ── School ────────────────────────────────────────────────────────────
         school = db.query(School).filter(School.name == "Govt High School, Demo").first()
         if not school:
             school = School(
                 name="Govt High School, Demo",
-                udise_code="DEMO0001",
-                district="Demo District",
-                mandal="Demo Mandal",
+                dise_code="DEMO0001", udise_code="DEMO0001",
+                district="Demo District", mandal="Demo Mandal",
+                district_id=district.id, mandal_id=mandal.id,
+                health_score=72.0,
             )
             db.add(school)
             db.commit()
@@ -50,11 +68,21 @@ def seed():
         if not student:
             student = Student(
                 name="Demo Student", age=15, grade="10",
-                school=school.name, language_preference="both",
+                school=school.name, school_id=school.id,
+                admission_no="ADM001", risk_level="LOW",
+                language_preference="both",
             )
             db.add(student)
             db.commit()
             db.refresh(student)
+
+        # ── Teacher record ────────────────────────────────────────────────────
+        if not db.query(Teacher).filter(Teacher.employee_id == "EMP001").first():
+            db.add(Teacher(
+                employee_id="EMP001", school_id=school.id, name="Demo Teacher",
+                subject_area="Science", teacher_type="regular",
+            ))
+            db.commit()
 
         # ── Users ─────────────────────────────────────────────────────────────
         _get_or_create_user(

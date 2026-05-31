@@ -22,6 +22,7 @@ env/
 chroma_db/
 uploads/
 knowledge_base/*.pdf
+prototype/pdfs/*.pdf
 
 # ── IDE / OS ──────────────────────────────────────────────────────────────────
 .vscode/
