@@ -1,0 +1,28 @@
+Feature,Importance
+remainder__previous_failures,0.16289712
+remainder__sibling_dropout,0.061156683
+remainder__avg_marks,0.047994036
+cat__guardian_education_No Schooling,0.044772796
+remainder__attendance_pct,0.038845308
+remainder__study_hours_per_day,0.03508725
+remainder__single_parent,0.03248313
+remainder__school_engagement_score,0.03239446
+cat__health_risk_Low,0.030997248
+cat__guardian_education_Graduate,0.030923078
+remainder__distance_to_school_km,0.030809622
+remainder__family_income_monthly,0.030651616
+cat__gender_Male,0.030495584
+cat__gender_Female,0.029937653
+remainder__teacher_feedback_score,0.029792221
+remainder__class_level,0.029283281
+remainder__scholarship,0.029161168
+cat__guardian_education_Primary,0.028864928
+cat__guardian_education_Higher Secondary,0.028810991
+remainder__age,0.028579922
+cat__health_risk_High,0.028326852
+remainder__midday_meal,0.027491886
+cat__guardian_education_Secondary,0.02745854
+remainder__disciplinary_incidents,0.027378587
+remainder__mobile_available,0.026161866
+cat__health_risk_Medium,0.02504206
+remainder__internet_access,0.024202129
