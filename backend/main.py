@@ -1,4 +1,4 @@
-from contextlib import asynccontextmanager
+'''from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
@@ -52,4 +52,22 @@ app.include_router(api_router, prefix="/api/v1")
 
 @app.get("/health", tags=["Health"])
 async def health_check():
-    return JSONResponse({"status": "healthy", "version": settings.APP_VERSION})
+    return JSONResponse({"status": "healthy", "version": settings.APP_VERSION})'''
+from fastapi import FastAPI
+
+from app.api.v1.dropout import router as train_router
+from app.api.v1.dropout_batch_predict import router as predict_router
+
+app = FastAPI()
+
+app.include_router(
+    train_router,
+    prefix="/api/v1/dropout",
+    tags=["Dropout Training"]
+)
+
+app.include_router(
+    predict_router,
+    prefix="/api/v1/dropout",
+    tags=["Dropout Prediction"]
+)
