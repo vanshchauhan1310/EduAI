@@ -1,12 +1,13 @@
-import pandas as pd
+import os
 import tempfile
+import pandas as pd
 
 from pathlib import Path
-from fastapi.responses import FileResponse
 
-from app.ai.dropout.predict import (
-    predict_dropout
-)
+from fastapi.responses import FileResponse
+from fastapi.background import BackgroundTask
+
+from app.ai.dropout.predict import predict_dropout
 
 from app.ai.dropout.risk_detector import (
     get_risk_level
@@ -29,7 +30,6 @@ async def process_excel(file):
     contents = await file.read()
 
     temp_input.write(contents)
-
     temp_input.close()
 
     df = pd.read_excel(
@@ -39,6 +39,7 @@ async def process_excel(file):
     probabilities = []
     risk_levels = []
     recommendations = []
+    predictions = []
 
     for _, row in df.iterrows():
 
@@ -56,35 +57,53 @@ async def process_excel(file):
             level
         )
 
+        predicted_dropout = (
+            "Yes"
+            if level == "High"
+            else "No"
+        )
+
         probabilities.append(score)
         risk_levels.append(level)
         recommendations.append(
             recommendation
         )
+        predictions.append(
+            predicted_dropout
+        )
 
     df["dropout_probability"] = probabilities
     df["risk_level"] = risk_levels
+    df["predicted_dropout"] = predictions
     df["recommendation"] = recommendations
 
-    output_dir = BASE_DIR / "outputs"
-
-    output_dir.mkdir(
-        parents=True,
-        exist_ok=True
+    temp_output = tempfile.NamedTemporaryFile(
+        delete=False,
+        suffix=".xlsx"
     )
 
-    output_file = (
-        output_dir /
-        "dropout_predictions.xlsx"
-    )
+    output_file = temp_output.name
+
+    temp_output.close()
 
     df.to_excel(
         output_file,
         index=False
     )
 
+    if os.path.exists(
+        temp_input.name
+    ):
+        os.remove(
+            temp_input.name
+        )
+
     return FileResponse(
-        path=str(output_file),
+        path=output_file,
         filename="dropout_predictions.xlsx",
-        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        background=BackgroundTask(
+            os.remove,
+            output_file
+        )
     )
