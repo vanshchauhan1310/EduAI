@@ -43,9 +43,7 @@ async def district_overview(
     attendance_data = await db.execute(
         select(
             func.count(Attendance.id).label("total"),
-            func.sum(
-                (Attendance.status == AttendanceStatus.PRESENT).cast(int)
-            ).label("present"),
+    func.sum(func.IF(Attendance.status == AttendanceStatus.PRESENT, 1, 0)).label("present"),
         ).join(School, Attendance.school_id == School.id).where(
             and_(
                 School.district_id == district_id,

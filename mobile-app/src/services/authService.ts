@@ -3,7 +3,8 @@ import { AuthTokens } from '../types';
 
 export const authService = {
   login: async (email: string, password: string): Promise<AuthTokens> => {
-    const { data } = await api.post<AuthTokens>('/auth/login', { email, password });
+    const normalizedEmail = email.trim().toLowerCase();
+    const { data } = await api.post<AuthTokens>('/auth/login', { email: normalizedEmail, password });
     return data;
   },
 

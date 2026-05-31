@@ -44,7 +44,9 @@ class SchoolHealthScorer:
         att_result = await self.db.execute(
             select(
                 func.count(Attendance.id).label("total"),
-                func.sum((Attendance.status == AttendanceStatus.PRESENT).cast(int)).label("present"),
+                func.sum(
+                    func.IF(Attendance.status == AttendanceStatus.PRESENT, 1, 0)
+                ).label("present"),
             ).where(
                 and_(
                     Attendance.school_id == school_id,

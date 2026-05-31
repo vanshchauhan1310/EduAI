@@ -10,9 +10,16 @@ const api: AxiosInstance = axios.create({
 
 // Attach JWT to every request
 api.interceptors.request.use(async (config: InternalAxiosRequestConfig) => {
-  const token = await SecureStore.getItemAsync(TOKEN_KEY);
-  if (token && config.headers) {
-    config.headers.Authorization = `Bearer ${token}`;
+  try {
+    const token = await SecureStore.getItemAsync(TOKEN_KEY);
+    if (token && config.headers) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+  } catch (error) {
+    // If SecureStore is corrupted or the keychain entry is invalid,
+    // clear stale tokens so login and other requests can proceed.
+    await SecureStore.deleteItemAsync(TOKEN_KEY);
+    await SecureStore.deleteItemAsync(REFRESH_TOKEN_KEY);
   }
   return config;
 });

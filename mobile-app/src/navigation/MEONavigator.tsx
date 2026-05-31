@@ -5,6 +5,8 @@ import ClusterMonitor from '../screens/meo/ClusterMonitor';
 import AttendanceIntelligence from '../screens/meo/AttendanceIntelligence';
 import SchoolPerformance from '../screens/meo/SchoolPerformance';
 import TeacherMonitor from '../screens/meo/TeacherMonitor';
+import { CopilotNavigator } from './CopilotNavigator';
+import ProfileScreen from '../screens/common/ProfileScreen';
 import { Colors } from '../theme';
 
 const Tab = createBottomTabNavigator();
@@ -23,6 +25,8 @@ export function MEONavigator() {
             Attendance:  focused ? 'calendar' : 'calendar-outline',
             Performance: focused ? 'stats-chart' : 'stats-chart-outline',
             Teachers:    focused ? 'people' : 'people-outline',
+            Copilot:     focused ? 'sparkles' : 'sparkles-outline',
+            Profile:     focused ? 'person-circle' : 'person-circle-outline',
           };
           return <Ionicons name={icons[route.name] ?? 'apps'} size={size} color={color} />;
         },
@@ -32,6 +36,8 @@ export function MEONavigator() {
       <Tab.Screen name="Attendance" component={AttendanceIntelligence} />
       <Tab.Screen name="Performance" component={SchoolPerformance} />
       <Tab.Screen name="Teachers" component={TeacherMonitor} />
+      <Tab.Screen name="Copilot" component={CopilotNavigator} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 }

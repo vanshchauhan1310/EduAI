@@ -1,6 +1,23 @@
 import { UserRole } from '../types';
+import Constants from 'expo-constants';
+import { Platform } from 'react-native';
 
-export const API_BASE_URL = process.env.EXPO_PUBLIC_API_BASE_URL ?? 'http://localhost:8000/api/v1';
+function getDevApiBaseUrl() {
+  const configured = process.env.EXPO_PUBLIC_API_BASE_URL || Constants.expoConfig?.extra?.API_BASE_URL;
+  if (configured) return configured;
+
+  const hostUri =
+    Constants.expoConfig?.hostUri ??
+    Constants.manifest2?.extra?.expoGo?.debuggerHost ??
+    Constants.manifest?.debuggerHost;
+  const host = hostUri?.split(':')[0];
+  if (host) return `http://${host}:8000/api/v1`;
+
+  if (Platform.OS === 'android') return 'http://10.0.2.2:8000/api/v1';
+  return 'http://localhost:8000/api/v1';
+}
+
+export const API_BASE_URL = getDevApiBaseUrl();
 
 export const ROLE_LABELS: Record<UserRole, string> = {
   DEO: 'District Education Officer',
