@@ -1,0 +1,10 @@
+# LangChain personalized-learning prototype
+langchain
+langchain-core
+langchain-community
+langchain-huggingface
+huggingface_hub
+sqlalchemy>=2.0
+pydantic>=2.11
+python-dotenv
+streamlit
