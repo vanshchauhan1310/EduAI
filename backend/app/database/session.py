@@ -8,12 +8,30 @@ class Base(DeclarativeBase):
     pass
 
 
-engine = create_async_engine(
-    settings.DATABASE_URL,
-    pool_size=settings.DATABASE_POOL_SIZE,
-    max_overflow=settings.DATABASE_MAX_OVERFLOW,
-    echo=settings.DEBUG,
-)
+def _build_engine():
+    url = settings.DATABASE_URL
+    is_mysql = url.startswith("mysql")
+
+    if is_mysql:
+        # MySQL (local dev with aiomysql)
+        return create_async_engine(
+            url,
+            echo=settings.DEBUG,
+            pool_recycle=3600,   # prevent MySQL "gone away" error on idle connections
+            pool_pre_ping=True,
+        )
+    else:
+        # PostgreSQL (Supabase production with asyncpg)
+        return create_async_engine(
+            url,
+            echo=settings.DEBUG,
+            pool_size=settings.DATABASE_POOL_SIZE,
+            max_overflow=settings.DATABASE_MAX_OVERFLOW,
+            pool_pre_ping=True,
+        )
+
+
+engine = _build_engine()
 
 AsyncSessionLocal = async_sessionmaker(
     bind=engine,

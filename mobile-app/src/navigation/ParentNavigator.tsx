@@ -5,6 +5,7 @@ import AttendanceTracking from '../screens/parent/AttendanceTracking';
 import ChildPerformance from '../screens/parent/ChildPerformance';
 import NotificationsScreen from '../screens/parent/NotificationsScreen';
 import ComplaintsScreen from '../screens/parent/ComplaintsScreen';
+import ProfileScreen from '../screens/common/ProfileScreen';
 import { Colors } from '../theme';
 
 const Tab = createBottomTabNavigator();
@@ -23,6 +24,7 @@ export function ParentNavigator() {
             Performance:  focused ? 'stats-chart' : 'stats-chart-outline',
             Alerts:       focused ? 'notifications' : 'notifications-outline',
             Complaints:   focused ? 'chatbubbles' : 'chatbubbles-outline',
+            Profile:      focused ? 'person-circle' : 'person-circle-outline',
           };
           return <Ionicons name={icons[route.name] ?? 'apps'} size={size} color={color} />;
         },
@@ -32,6 +34,7 @@ export function ParentNavigator() {
       <Tab.Screen name="Performance" component={ChildPerformance} />
       <Tab.Screen name="Alerts" component={NotificationsScreen} />
       <Tab.Screen name="Complaints" component={ComplaintsScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 }

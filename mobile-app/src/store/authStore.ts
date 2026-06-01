@@ -52,7 +52,11 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         set({ user, accessToken: token, refreshToken: refresh, isAuthenticated: true });
       }
     } catch {
-      // Stored auth is invalid, start fresh
+      // Stored auth is invalid or SecureStore entries are corrupted.
+      await SecureStore.deleteItemAsync(TOKEN_KEY);
+      await SecureStore.deleteItemAsync(REFRESH_TOKEN_KEY);
+      await SecureStore.deleteItemAsync(USER_KEY);
+      set({ user: null, accessToken: null, refreshToken: null, isAuthenticated: false });
     } finally {
       set({ isLoading: false });
     }

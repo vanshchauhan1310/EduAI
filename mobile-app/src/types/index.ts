@@ -143,6 +143,34 @@ export interface SchoolHealthSummary {
   grade: string;
 }
 
+export interface SchoolHealthAnalyzerBreakdown {
+  school_id: number;
+  school_name: string;
+  dise_code: string;
+  health_score: number;
+  attendance_rate: number;
+  dropout_risk_count: number;
+  total_students: number;
+  total_teachers: number;
+  teacher_student_ratio: number;
+  infrastructure_score: number;
+  mandal_name: string;
+}
+
+export interface SchoolHealthAnalyzerResponse {
+  mandal_id: number;
+  mandal_name: string;
+  selected_school_count: number;
+  cluster_insights: string;
+  strengths: string[];
+  concerns: string[];
+  recommendations: string[];
+  action_plan: string[];
+  top_school: string;
+  most_at_risk_school: string;
+  school_breakdown: SchoolHealthAnalyzerBreakdown[];
+}
+
 // ─── Notifications ────────────────────────────────────────────
 export interface AppNotification {
   id: number;

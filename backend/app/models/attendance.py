@@ -49,9 +49,4 @@ class Attendance(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), onupdate=func.now(), server_default=func.now())
 
-    student: Mapped["Student"] = relationship(
-        "Student",
-        primaryjoin="and_(Attendance.reference_id == Student.id, Attendance.reference_type == 'STUDENT')",
-        foreign_keys="[Attendance.reference_id]",
-        uselist=False,
-    )
+    # Polymorphic reference_id has no direct FK — query attendance in service layer directly.

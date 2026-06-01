@@ -57,9 +57,4 @@ class Teacher(Base):
 
     user: Mapped["User"] = relationship("User", back_populates="teacher_profile")
     school: Mapped["School"] = relationship("School", back_populates="teachers")
-    attendance_records: Mapped[list["Attendance"]] = relationship(
-        "Attendance",
-        primaryjoin="and_(Attendance.reference_id == Teacher.id, Attendance.reference_type == 'TEACHER')",
-        foreign_keys="[Attendance.reference_id]",
-        uselist=True,
-    )
+    # attendance_records removed — polymorphic reference_id has no direct FK.
