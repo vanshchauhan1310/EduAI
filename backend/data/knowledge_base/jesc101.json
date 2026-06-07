@@ -1,0 +1,267 @@
+{
+  "chapter": "jesc101",
+  "subject": "Chemistry",
+  "source_pdf": "jesc101.pdf",
+  "processed_at": "2026-05-31T09:06:05.891775",
+  "topics": [
+    "Chemical Reactions",
+    "Equations",
+    "Physical and Chemical Changes of Matter",
+    "Law of Conservation of Mass",
+    "Balancing Chemical Equations",
+    "Physical States of Matter",
+    "Balanced Equations",
+    "Combination Reactions",
+    "Exothermic Reactions",
+    "Respiration",
+    "Decomposition of Vegetable Matter",
+    "Thermal Decomposition",
+    "Decomposition Reactions",
+    "Electrolysis",
+    "Displacement Reaction",
+    "Photography",
+    "Endothermic reactions",
+    "Displacement reactions",
+    "Double displacement reactions",
+    "Oxidation and reduction",
+    "Redox reactions",
+    "Corrosion",
+    "Rancidity",
+    "Chemical Equations and Balancing",
+    "Types of Chemical Reactions",
+    "Balanced Chemical Equations",
+    "Exothermic and endothermic reactions",
+    "Respiration as an exothermic reaction",
+    "Combination vs decomposition reactions",
+    "Precipitation reactions",
+    "Corrosion and rancidity"
+  ],
+  "definitions": [
+    {
+      "term": "Chemical Reaction",
+      "definition": "A process in which the nature and identity of the initial substance change"
+    },
+    {
+      "term": "Reactants",
+      "definition": "The substances that undergo chemical change in a reaction"
+    },
+    {
+      "term": "Product",
+      "definition": "The new substance formed during a chemical reaction"
+    },
+    {
+      "term": "Word-Equation",
+      "definition": "A representation of a chemical reaction using words, with reactants on the LHS and products on the RHS"
+    },
+    {
+      "term": "Chemical Formula",
+      "definition": "A concise representation of a chemical equation using symbols for elements"
+    },
+    {
+      "term": "Balanced Chemical Equation",
+      "definition": "A chemical equation where the number of atoms of each element is the same on both sides of the arrow"
+    },
+    {
+      "term": "Hit-and-trial method",
+      "definition": "A method of balancing chemical equations by making trials to balance the equation using the smallest whole number coefficient"
+    },
+    {
+      "term": "Physical state notation",
+      "definition": "Notations (g), (l), (aq), and (s) used to represent gaseous, liquid, aqueous, and solid states of reactants and products in a chemical equation"
+    },
+    {
+      "term": "Combination Reaction",
+      "definition": "A reaction in which two or more substances (elements or compounds) combine to form a single product."
+    },
+    {
+      "term": "Exothermic Chemical Reaction",
+      "definition": "A reaction that releases heat along with the formation of products."
+    },
+    {
+      "term": "Decomposition Reaction",
+      "definition": "A chemical reaction in which a single reactant breaks down into simpler products."
+    },
+    {
+      "term": "Thermal Decomposition",
+      "definition": "A type of decomposition reaction that occurs when a substance is heated, resulting in the breakdown of the substance into simpler products."
+    },
+    {
+      "term": "Displacement Reaction",
+      "definition": "A chemical reaction in which one element displaces another element from a compound."
+    },
+    {
+      "term": "Electrolysis",
+      "definition": "The process of using an electric current to drive a chemical reaction, often used to split a molecule into its constituent elements."
+    },
+    {
+      "term": "Endothermic reaction",
+      "definition": "A chemical reaction that absorbs energy in the form of heat, light, or electricity"
+    },
+    {
+      "term": "Precipitation reaction",
+      "definition": "A chemical reaction that produces a precipitate, an insoluble solid formed in the reaction"
+    },
+    {
+      "term": "Oxidation",
+      "definition": "The process of gaining oxygen during a chemical reaction"
+    },
+    {
+      "term": "Reduction",
+      "definition": "The process of losing oxygen during a chemical reaction"
+    },
+    {
+      "term": "Double displacement reaction",
+      "definition": "A type of redox reaction where there is an exchange of ions between the reactants, resulting in the formation of two new compounds"
+    },
+    {
+      "term": "Corrosion",
+      "definition": "The process of a metal being attacked by substances around it, such as moisture, acids, etc., resulting in the formation of a coating on its surface."
+    },
+    {
+      "term": "Rancidity",
+      "definition": "The process of fats and oils becoming oxidised, leading to a change in their smell and taste."
+    },
+    {
+      "term": "Exothermic reaction",
+      "definition": "A chemical reaction that releases heat energy."
+    }
+  ],
+  "formulae": [
+    {
+      "name": "",
+      "formula": "CaO(s) + H2O(l) → Ca(OH)2(aq) + Heat",
+      "used_for": ""
+    },
+    {
+      "name": "",
+      "formula": "C(s) + O2(g) → CO2(g)",
+      "used_for": ""
+    },
+    {
+      "name": "",
+      "formula": "2H2(g) + O2(g) → 2H2O(l)",
+      "used_for": ""
+    },
+    {
+      "name": "",
+      "formula": "CH4(g) + 2O2(g) → CO2(g) + 2H2O(g)",
+      "used_for": ""
+    },
+    {
+      "name": "",
+      "formula": "C6H12O6(aq) + 6O2(aq) → 6CO2(aq) + 6H2O(l) + energy",
+      "used_for": ""
+    },
+    {
+      "name": "",
+      "formula": "Ca(OH)2(aq) + CO2(g) → CaCO3(s) + H2O(l)",
+      "used_for": ""
+    },
+    {
+      "name": "Ferrous sulphate",
+      "formula": "FeSO4.7H2O",
+      "used_for": ""
+    },
+    {
+      "name": "Ferric oxide",
+      "formula": "Fe2O3",
+      "used_for": ""
+    },
+    {
+      "name": "Sulphur dioxide",
+      "formula": "SO2",
+      "used_for": ""
+    },
+    {
+      "name": "Sulphur trioxide",
+      "formula": "SO3",
+      "used_for": ""
+    },
+    {
+      "name": "Calcium carbonate",
+      "formula": "CaCO3",
+      "used_for": ""
+    },
+    {
+      "name": "Quick lime",
+      "formula": "CaO",
+      "used_for": ""
+    },
+    {
+      "name": "Silver chloride",
+      "formula": "AgCl",
+      "used_for": ""
+    },
+    {
+      "name": "Lead nitrate",
+      "formula": "Pb(NO3)2",
+      "used_for": ""
+    },
+    {
+      "name": "Ammonium chloride",
+      "formula": "(NH4)Cl",
+      "used_for": ""
+    }
+  ],
+  "important_concepts": [
+    "Chemical Reactions",
+    "Word-Equation",
+    "Balanced Chemical Equation",
+    "Law of Conservation of Mass",
+    "Balancing Chemical Equations",
+    "Hit-and-Trial Method",
+    "Combination Reaction",
+    "Exothermic Reactions",
+    "Balanced Chemical Equations",
+    "Chemical Bonding",
+    "Decomposition reaction",
+    "Thermal decomposition",
+    "Electrolysis",
+    "Displacement reaction",
+    "Endothermic reactions",
+    "Displacement reactions",
+    "Precipitation reactions",
+    "Oxidation and reduction",
+    "Redox reactions",
+    "Corrosion",
+    "Rancidity",
+    "Oxidation",
+    "Reduction",
+    "Combination reactions",
+    "Decomposition reactions",
+    "Double displacement reactions",
+    "Respiration as an exothermic reaction",
+    "Combination and decomposition reactions",
+    "Corrosion and rancidity"
+  ],
+  "common_mistakes": [
+    "Not wearing suitable eyeglasses during experiments",
+    "Handling acids with care and following safety precautions",
+    "Not observing changes in state, colour, evolution of gas or temperature during chemical reactions",
+    "Not drawing boxes around each formula",
+    "Incorrectly balancing elements",
+    "Changing the formulae of compounds or elements involved in the reactions",
+    "Not considering physical states of reactants and products",
+    "Not balancing the equation",
+    "Incorrectly identifying the type of reaction (combination, decomposition, etc.)",
+    "Failing to include state symbols in the balanced equation",
+    "Not accounting for heat transfer in the reaction",
+    "Do not heat the boiling tube over an open flame or without proper supervision.",
+    "Do not touch the electrodes to each other or to any other metal object.",
+    "Do not leave the apparatus undisturbed for a long time as it may cause accidents.",
+    "Do not use a 6-volt battery that is not suitable for this experiment.",
+    "Do not fill the mug with water until the electrodes are fully immersed.",
+    "Do not add too much dilute sulphuric acid to the water.",
+    "Do not switch on the current without proper supervision.",
+    "Do not remove the test tubes from the apparatus quickly as it may cause accidents.",
+    "Do not mix the solutions of barium chloride and sodium sulphate without a test tube",
+    "Do not heat the china dish containing copper powder without proper supervision",
+    "Not balancing chemical equations",
+    "Incorrectly identifying the type of reaction",
+    "Failing to identify oxidation and reduction processes",
+    "Misinterpreting the meaning of exothermic and endothermic reactions",
+    "No common mistakes listed in the chapter"
+  ],
+  "difficulty_level": "hard",
+  "estimated_study_minutes": 90
+}

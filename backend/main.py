@@ -73,13 +73,46 @@ app.include_router(api_router, prefix="/api/v1")
 
 @app.get("/health", tags=["Health"])
 async def health_check():
+    return JSONResponse({"status": "healthy", "version": settings.APP_VERSION})'''
+from fastapi import FastAPI
+
+from app.api.v1.dropout import (
+    router as train_router
+)
+
+from app.api.v1.dropout_batch_predict import (
+    router as predict_router
+)
     return JSONResponse({
         "status": "healthy",
         "version": settings.APP_VERSION,
         "environment": settings.APP_ENV,
     })
 
+from app.api.v1.ai_assessment import (
+    router as ai_assessment_router
+)
 
+app = FastAPI(
+    title="EduAI Backend"
+)
+
+app.include_router(
+    train_router,
+    prefix="/api/v1/dropout",
+    tags=["Dropout Training"]
+)
+
+app.include_router(
+    predict_router,
+    prefix="/api/v1/dropout",
+    tags=["Dropout Prediction"]
+)
+
+app.include_router(
+    ai_assessment_router,
+    prefix="/api/v1"
+)
 @app.get("/", tags=["Root"])
 async def root():
     return {

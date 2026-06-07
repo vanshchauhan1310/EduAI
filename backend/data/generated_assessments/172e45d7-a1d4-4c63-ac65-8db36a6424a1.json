@@ -1,0 +1,33 @@
+{
+    "assessment_id": "172e45d7-a1d4-4c63-ac65-8db36a6424a1",
+    "chapter_id": "jesc101",
+    "difficulty": "medium",
+    "total_questions": 2,
+    "total_marks": 8,
+    "questions": [
+        {
+            "question_id": "2ad7b669-4d53-4071-bb43-2aa2f23d2dc2",
+            "question_text": "What is the driving force behind a combination reaction?",
+            "sample_answer": "The driving force behind a combination reaction is the release of energy.",
+            "expected_points": [
+                "Driving force",
+                "Energy release",
+                "Laws of Thermodynamics"
+            ],
+            "pattern": "explanation",
+            "difficulty": "medium",
+            "marks": 5
+        },
+        {
+            "question_id": "b92e9f84-2418-4a0c-8781-0acd19720b65",
+            "question_text": "What is the byproduct of an exothermic reaction?",
+            "sample_answer": "Heat",
+            "expected_points": [
+                "Byproduct of exothermic reaction"
+            ],
+            "pattern": "reasoning",
+            "difficulty": "medium",
+            "marks": 3
+        }
+    ]
+}

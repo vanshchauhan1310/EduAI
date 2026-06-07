@@ -1,0 +1,33 @@
+{
+    "assessment_id": "88ef7192-b4f9-4f03-b55a-e56662dcf926",
+    "chapter_id": "jesc101",
+    "difficulty": "easy",
+    "total_questions": 2,
+    "total_marks": 5,
+    "questions": [
+        {
+            "question_id": "30b9c36e-6ead-4632-9e70-8700b4a09cd3",
+            "question_text": "What is tinfoil used for in photography?",
+            "sample_answer": "To reduce glare from camera lens",
+            "expected_points": [
+                "Use of tinfoil"
+            ],
+            "pattern": "explanation",
+            "difficulty": "easy",
+            "marks": 3
+        },
+        {
+            "question_id": "4010ac13-4773-4435-948e-0d1c55203460",
+            "question_text": "Explain the concept of electrolysis in terms of its relation to electrochemical cells.",
+            "sample_answer": "Electrolysis is the process of using an electric current to drive a chemical reaction, often used to split a molecule into its constituent elements. This occurs due to the difference in potential between the electrodes, which causes the transfer of electrons and drives the reaction forward.",
+            "expected_points": [
+                "Concept of electrolysis",
+                "Relation to electrochemical cells",
+                "Electric current driving a chemical reaction"
+            ],
+            "pattern": "reasoning",
+            "difficulty": "easy",
+            "marks": 2
+        }
+    ]
+}

@@ -17,3 +17,4 @@ mobile-app/node_modules/
 # Build
 dist/
 build/
+.idea/

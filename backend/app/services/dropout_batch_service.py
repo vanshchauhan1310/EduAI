@@ -53,7 +53,8 @@ async def process_excel(file):
             probability
         )
 
-        recommendation = get_recommendation(
+        recommendation_list = get_recommendation(
+            student,
             level
         )
 
@@ -64,10 +65,13 @@ async def process_excel(file):
         )
 
         probabilities.append(score)
+
         risk_levels.append(level)
+
         recommendations.append(
-            recommendation
+            " | ".join(recommendation_list)
         )
+
         predictions.append(
             predicted_dropout
         )

@@ -1,0 +1,29 @@
+{
+  "chapter": "Chemical Reactions and Equations",
+  "subject": "Chemistry",
+  "topics": [
+    "topic1",
+    "topic2"
+  ],
+  "definitions": [
+    {
+      "term": "term",
+      "definition": "definition"
+    }
+  ],
+  "formulae": [
+    {
+      "name": "formula name",
+      "formula": "formula",
+      "used_for": "usage"
+    }
+  ],
+  "important_concepts": [
+    "concept1"
+  ],
+  "common_mistakes": [
+    "mistake1"
+  ],
+  "difficulty_level": "easy",
+  "estimated_study_minutes": 30
+}

@@ -1,0 +1,1232 @@
+{
+    "chapter_id": "jesc101",
+    "total_questions": 42,
+    "questions": [
+        {
+            "question_id": "0afe9c5a-04d8-4ce6-8d3b-87eb5249167e",
+            "chapter_id": "jesc101",
+            "question_number": "Q1",
+            "question_text": "Define a chemical reaction.",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "A chemical reaction is a process in which one or more substances (reactants) are converted into one or more different substances (products) with a change in chemical composition. Indicators include: change in colour, evolution of gas, change in temperature, formation of precipitate.",
+            "expected_points": [
+                "A chemical reaction is a process in which one or more substances (reactants) are converted into one or more different substances (products) with a change in chemical composition",
+                "Indicators include: change in colour, evolution of gas, change in temperature, formation of precipitate"
+            ],
+            "keywords": [
+                "define",
+                "chemical",
+                "reaction"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "7a27c3be-87e0-46f0-8ab2-e2ac049c3163",
+            "chapter_id": "jesc101",
+            "question_number": "Q2",
+            "question_text": "What happens to the mass of reactants and products in a chemical reaction?",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "According to the Law of Conservation of Mass: Mass of reactants = Mass of products. The total mass remains unchanged during a chemical reaction.",
+            "expected_points": [
+                "According to the Law of Conservation of Mass: Mass of reactants = Mass of products",
+                "The total mass remains unchanged during a chemical reaction"
+            ],
+            "keywords": [
+                "reactants",
+                "reaction",
+                "chemical",
+                "happens",
+                "mass",
+                "products"
+            ],
+            "pattern": "general",
+            "answer_structure": [
+                "answer"
+            ]
+        },
+        {
+            "question_id": "6a2b1cff-dec5-4401-84b4-444eaa27cddf",
+            "chapter_id": "jesc101",
+            "question_number": "Q3",
+            "question_text": "Name the type of reaction that takes place when magnesium ribbon burns in air.",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "Combination reaction (also called oxidation reaction). Magnesium combines with oxygen in air to form magnesium oxide.",
+            "expected_points": [
+                "Combination reaction (also called oxidation reaction)",
+                "Magnesium combines with oxygen in air to form magnesium oxide"
+            ],
+            "keywords": [
+                "burns",
+                "takes",
+                "that",
+                "ribbon",
+                "name",
+                "magnesium",
+                "type",
+                "reaction",
+                "place"
+            ],
+            "pattern": "identification",
+            "answer_structure": [
+                "identify",
+                "reason"
+            ]
+        },
+        {
+            "question_id": "85ce17fb-8db6-4de4-b177-2c1f97cbb3b6",
+            "chapter_id": "jesc101",
+            "question_number": "Q4",
+            "question_text": "What is a balanced chemical equation? Why should a chemical equation be balanced?",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "A balanced chemical equation has equal numbers of atoms of each element on both sides of the equation. It must be balanced to satisfy the Law of Conservation of Mass.",
+            "expected_points": [
+                "A balanced chemical equation has equal numbers of atoms of each element on both sides of the equation",
+                "It must be balanced to satisfy the Law of Conservation of Mass"
+            ],
+            "keywords": [
+                "equation",
+                "balanced",
+                "chemical",
+                "should"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "2b8f49ea-7d32-4e09-b4cb-5deb7b02c76d",
+            "chapter_id": "jesc101",
+            "question_number": "Q5",
+            "question_text": "What are the physical states of reactants and products represented by the symbols (s), (l (g) and (aq) in a chemical equation?",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "(s) = solid, (l) = liquid, (g) = gas, (aq) = aqueous solution (dissolved in water).",
+            "expected_points": [
+                "(s) = solid, (l) = liquid, (g) = gas, (aq) = aqueous solution (dissolved in water)"
+            ],
+            "keywords": [
+                "reactants",
+                "(aq)",
+                "symbols",
+                "represented",
+                "physical",
+                "chemical",
+                "equation",
+                "states",
+                "products"
+            ],
+            "pattern": "general",
+            "answer_structure": [
+                "answer"
+            ]
+        },
+        {
+            "question_id": "4b801e01-9214-445a-b4e5-1016ebfecddc",
+            "chapter_id": "jesc101",
+            "question_number": "Q6",
+            "question_text": "What is a combination reaction? Give one example.",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "A reaction in which two or more substances combine to form a single new substance is called a combination reaction.",
+            "expected_points": [
+                "A reaction in which two or more substances combine to form a single new substance is called a combination reaction"
+            ],
+            "keywords": [
+                "reaction",
+                "example",
+                "combination"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "7dd334dc-7116-4bbc-9cb4-a2919c73f06e",
+            "chapter_id": "jesc101",
+            "question_number": "Q7",
+            "question_text": "What is a decomposition reaction? Give one example with a balanced equation.",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "A reaction in which a single compound breaks down to give two or more simpler substances is a decomposition reaction.",
+            "expected_points": [
+                "A reaction in which a single compound breaks down to give two or more simpler substances is a decomposition reaction"
+            ],
+            "keywords": [
+                "decomposition",
+                "reaction",
+                "balanced",
+                "equation",
+                "example"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "b74f0015-17d8-440a-8058-66f197239918",
+            "chapter_id": "jesc101",
+            "question_number": "Q8",
+            "question_text": "What is an exothermic reaction? Give one example.",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "A reaction in which heat is released to the surroundings along with product formation is called an exothermic reaction.",
+            "expected_points": [
+                "A reaction in which heat is released to the surroundings along with product formation is called an exothermic reaction"
+            ],
+            "keywords": [
+                "reaction",
+                "exothermic",
+                "example"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "93347d51-b6b7-4320-a413-3f9cc15b6fe0",
+            "chapter_id": "jesc101",
+            "question_number": "Q9",
+            "question_text": "What is an endothermic reaction? Give one example.",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "A reaction in which heat is absorbed from the surroundings is called an endothermic reaction.",
+            "expected_points": [
+                "A reaction in which heat is absorbed from the surroundings is called an endothermic reaction"
+            ],
+            "keywords": [
+                "reaction",
+                "example",
+                "endothermic"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "8a8dc8c7-9bc7-438c-8fd9-ee8644dfb535",
+            "chapter_id": "jesc101",
+            "question_number": "Q10",
+            "question_text": "Define oxidation and reduction in terms of gain or loss of oxygen.",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "Oxidation: Gain of oxygen OR loss of hydrogen. Reduction: Loss of oxygen OR gain of hydrogen.",
+            "expected_points": [
+                "Oxidation: Gain of oxygen OR loss of hydrogen",
+                "Reduction: Loss of oxygen OR gain of hydrogen"
+            ],
+            "keywords": [
+                "define",
+                "terms",
+                "reduction",
+                "loss",
+                "oxygen",
+                "oxidation",
+                "gain"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "7b4bf5df-e28b-4a80-8223-8c0ac8daab7b",
+            "chapter_id": "jesc101",
+            "question_number": "Q11",
+            "question_text": "What is rancidity? How can it be prevented?",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "Rancidity is the oxidation of fats and oils in food causing unpleasant smell and taste. Prevention: adding antioxidants, flushing with nitrogen, refrigeration, airtight packaging.",
+            "expected_points": [
+                "Rancidity is the oxidation of fats and oils in food causing unpleasant smell and taste",
+                "Prevention: adding antioxidants, flushing with nitrogen, refrigeration, airtight packaging"
+            ],
+            "keywords": [
+                "prevented",
+                "rancidity"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "8acd3264-e841-45d5-aafa-ba546e563b6d",
+            "chapter_id": "jesc101",
+            "question_number": "Q12",
+            "question_text": "What is corrosion? Give one example of a metal that undergoes corrosion.",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "Corrosion is the slow destruction of metals by reaction with air, water or chemicals. Example: Rusting of iron (Fe2O3·xH2O).",
+            "expected_points": [
+                "Corrosion is the slow destruction of metals by reaction with air, water or chemicals",
+                "Example: Rusting of iron (Fe2O3·xH2O)"
+            ],
+            "keywords": [
+                "that",
+                "metal",
+                "undergoes",
+                "corrosion",
+                "example"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "83df2b05-5b52-46d1-988b-1e665e2952fe",
+            "chapter_id": "jesc101",
+            "question_number": "Q13",
+            "question_text": "Identify the type of reaction: 2Mg + O2 → 2MgO",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "Combination reaction and Oxidation reaction (as magnesium gains oxygen).",
+            "expected_points": [
+                "Combination reaction and Oxidation reaction (as magnesium gains oxygen)"
+            ],
+            "keywords": [
+                "type",
+                "2mgo",
+                "reaction"
+            ],
+            "pattern": "identification",
+            "answer_structure": [
+                "identify",
+                "reason"
+            ]
+        },
+        {
+            "question_id": "eb8de2f9-e7f1-4063-ae47-acdf1f835606",
+            "chapter_id": "jesc101",
+            "question_number": "Q14",
+            "question_text": "Name the reducing agent in the following reaction: CuO + H2 → Cu + H2O",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "H2 (hydrogen) is the reducing agent as it gets oxidised (gains oxygen / loses electrons).",
+            "expected_points": [
+                "H2 (hydrogen) is the reducing agent as it gets oxidised (gains oxygen / loses electrons)"
+            ],
+            "keywords": [
+                "reducing",
+                "agent",
+                "name",
+                "following",
+                "reaction"
+            ],
+            "pattern": "identification",
+            "answer_structure": [
+                "identify",
+                "reason"
+            ]
+        },
+        {
+            "question_id": "8c4ab8b7-9f5e-4666-8006-e16fb3d397e3",
+            "chapter_id": "jesc101",
+            "question_number": "Q15",
+            "question_text": "Write the balanced chemical equation for the reaction between iron and steam.",
+            "marks": 2,
+            "difficulty": "easy",
+            "sample_answer": "Iron reacts with steam to form iron oxide and hydrogen gas.",
+            "expected_points": [
+                "Iron reacts with steam to form iron oxide and hydrogen gas"
+            ],
+            "keywords": [
+                "between",
+                "steam",
+                "reaction",
+                "balanced",
+                "iron",
+                "chemical",
+                "equation"
+            ],
+            "pattern": "equation",
+            "answer_structure": [
+                "equation"
+            ]
+        },
+        {
+            "question_id": "cfc5b610-0c8f-4514-82d8-ff0e4764bdaf",
+            "chapter_id": "jesc101",
+            "question_number": "Q16",
+            "question_text": "Why is the addition of hydrogen called a reduction reaction? Give one example with a chemical equation.",
+            "marks": 2,
+            "difficulty": "easy",
+            "sample_answer": "Addition of hydrogen is reduction because hydrogen is gained by the substance, reducing it. Reduction means gain of hydrogen or loss of oxygen.",
+            "expected_points": [
+                "Addition of hydrogen is reduction because hydrogen is gained by the substance, reducing it",
+                "Reduction means gain of hydrogen or loss of oxygen"
+            ],
+            "keywords": [
+                "reduction",
+                "reaction",
+                "addition",
+                "chemical",
+                "called",
+                "equation",
+                "hydrogen",
+                "example"
+            ],
+            "pattern": "reasoning",
+            "answer_structure": [
+                "cause",
+                "effect"
+            ]
+        },
+        {
+            "question_id": "fc50f760-03a4-491d-8090-bee311c3db8e",
+            "chapter_id": "jesc101",
+            "question_number": "Q17",
+            "question_text": "What is a displacement reaction? Give one example. SECTION B — MEDIUM (2 Mark & 3 Mark)",
+            "marks": 1,
+            "difficulty": "easy",
+            "sample_answer": "A reaction in which a more reactive element displaces a less reactive element from its compound is called a displacement reaction.",
+            "expected_points": [
+                "A reaction in which a more reactive element displaces a less reactive element from its compound is called a displacement reaction"
+            ],
+            "keywords": [
+                "mark",
+                "reaction",
+                "medium",
+                "section",
+                "displacement",
+                "mark)",
+                "example"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "f6032e5e-6e9a-4231-adfb-7184fd5676ed",
+            "chapter_id": "jesc101",
+            "question_number": "Q18",
+            "question_text": "Balance the following chemical equation and identify the type of reaction: Fe2O3 + Al → Al2O3 + Fe",
+            "marks": 2,
+            "difficulty": "easy",
+            "sample_answer": "Balanced equation and type: Displacement reaction (also redox). Fe2O3 is reduced, Al is oxidised. This is the Thermite reaction.",
+            "expected_points": [
+                "Balanced equation and type: Displacement reaction (also redox)",
+                "Fe2O3 is reduced, Al is oxidised",
+                "This is the Thermite reaction"
+            ],
+            "keywords": [
+                "al2o3",
+                "type",
+                "following",
+                "reaction",
+                "balance",
+                "chemical",
+                "equation",
+                "fe2o3"
+            ],
+            "pattern": "general",
+            "answer_structure": [
+                "answer"
+            ]
+        },
+        {
+            "question_id": "ea7e5aab-5407-4c76-8d69-6af9ec567c40",
+            "chapter_id": "jesc101",
+            "question_number": "Q19",
+            "question_text": "What is a double displacement reaction? How does it differ from a displacement reaction? Give one example of each.",
+            "marks": 2,
+            "difficulty": "easy",
+            "sample_answer": "Double displacement: Both reactants exchange ions/radicals. Displacement: Only one element displaces another. 1 mark each for definition + example.",
+            "expected_points": [
+                "Double displacement: Both reactants exchange ions/radicals",
+                "Displacement: Only one element displaces another",
+                "1 mark each for definition + example"
+            ],
+            "keywords": [
+                "from",
+                "differ",
+                "each",
+                "double",
+                "reaction",
+                "displacement",
+                "example"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "da19557d-4463-4b4a-9ccb-163bbfb6bb30",
+            "chapter_id": "jesc101",
+            "question_number": "Q20",
+            "question_text": "Write the balanced chemical equation for the decomposition of lead nitrate on heating. What type of decomposition is this?",
+            "marks": 2,
+            "difficulty": "easy",
+            "sample_answer": "Lead nitrate decomposes on heating to give lead oxide, nitrogen dioxide, and oxygen. Type: Thermal decomposition.",
+            "expected_points": [
+                "Lead nitrate decomposes on heating to give lead oxide, nitrogen dioxide, and oxygen",
+                "Type: Thermal decomposition"
+            ],
+            "keywords": [
+                "decomposition",
+                "type",
+                "nitrate",
+                "this",
+                "balanced",
+                "chemical",
+                "lead",
+                "equation",
+                "heating"
+            ],
+            "pattern": "equation",
+            "answer_structure": [
+                "equation"
+            ]
+        },
+        {
+            "question_id": "da2c67b0-c8ea-4f2f-9366-e61169e4ec7e",
+            "chapter_id": "jesc101",
+            "question_number": "Q21",
+            "question_text": "What is a precipitation reaction? Explain with the help of an example. Write the balanced chemical equation.",
+            "marks": 3,
+            "difficulty": "medium",
+            "sample_answer": "A reaction in which an insoluble precipitate is formed when two solutions are mixed is a precipitation reaction. The precipitate is an insoluble salt.",
+            "expected_points": [
+                "A reaction in which an insoluble precipitate is formed when two solutions are mixed is a precipitation reaction",
+                "The precipitate is an insoluble salt"
+            ],
+            "keywords": [
+                "help",
+                "reaction",
+                "balanced",
+                "precipitation",
+                "chemical",
+                "equation",
+                "example"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "edd1534a-2009-4ad7-a9e3-c1313642b7c2",
+            "chapter_id": "jesc101",
+            "question_number": "Q22",
+            "question_text": "Explain thermite reaction with a balanced chemical equation. What type of reaction is it and why?",
+            "marks": 3,
+            "difficulty": "medium",
+            "sample_answer": "The thermite reaction is the reaction of iron oxide with aluminium. It is a displacement reaction and also highly exothermic, releasing enough heat to melt iron (used in welding).",
+            "expected_points": [
+                "The thermite reaction is the reaction of iron oxide with aluminium",
+                "It is a displacement reaction and also highly exothermic, releasing enough heat to melt iron (used in welding)"
+            ],
+            "keywords": [
+                "thermite",
+                "type",
+                "reaction",
+                "balanced",
+                "chemical",
+                "equation"
+            ],
+            "pattern": "explanation",
+            "answer_structure": [
+                "answer"
+            ]
+        },
+        {
+            "question_id": "12dae761-af03-4b8e-8053-62b2d825df9b",
+            "chapter_id": "jesc101",
+            "question_number": "Q23",
+            "question_text": "The colour of copper sulphate solution changes when iron nails are dipped into it. Expla with a balanced chemical equation.",
+            "marks": 2,
+            "difficulty": "easy",
+            "sample_answer": "Iron is more reactive than copper and displaces Cu from CuSO4. The blue colour of copper sulphate fades and reddish-brown copper is deposited on the iron nail.",
+            "expected_points": [
+                "Iron is more reactive than copper and displaces Cu from CuSO4",
+                "The blue colour of copper sulphate fades and reddish-brown copper is deposited on the iron nail"
+            ],
+            "keywords": [
+                "changes",
+                "copper",
+                "sulphate",
+                "colour",
+                "into",
+                "iron",
+                "expla",
+                "balanced",
+                "chemical",
+                "dipped",
+                "equation",
+                "solution",
+                "nails"
+            ],
+            "pattern": "equation",
+            "answer_structure": [
+                "equation"
+            ]
+        },
+        {
+            "question_id": "15077324-63b0-4d1c-8c21-9fae86aa9ac3",
+            "chapter_id": "jesc101",
+            "question_number": "Q24",
+            "question_text": "Identify the oxidising agent and reducing agent in the following reactions: (a) CuO + H2 → Cu + H2O (b) MnO2 + 4HCl → MnCl2 + 2H2O + Cl2",
+            "marks": 3,
+            "difficulty": "medium",
+            "sample_answer": "(a) CuO is oxidising agent (gives O to H2); H2 is reducing agent (takes O from CuO). (b) MnO2 is oxidising agent; HCl is reducing agent.",
+            "expected_points": [
+                "(a) CuO is oxidising agent (gives O to H2); H2 is reducing agent (takes O from CuO)",
+                "(b) MnO2 is oxidising agent; HCl is reducing agent"
+            ],
+            "keywords": [
+                "reducing",
+                "agent",
+                "4hcl",
+                "reactions",
+                "mncl2",
+                "following",
+                "mno2",
+                "2h2o",
+                "oxidising"
+            ],
+            "pattern": "identification",
+            "answer_structure": [
+                "identify",
+                "reason"
+            ]
+        },
+        {
+            "question_id": "230173fc-7e5f-4cce-ab63-fd88050b9e98",
+            "chapter_id": "jesc101",
+            "question_number": "Q25",
+            "question_text": "Why do we apply paint on iron articles? What kind of chemical change are we trying to prevent?",
+            "marks": 2,
+            "difficulty": "easy",
+            "sample_answer": "Paint forms a protective barrier preventing iron from reacting with moisture and oxygen in air, thereby preventing corrosion (rusting). The chemical change prevented is: Fe + O2 + H2O → Fe2O3·xH2O (rust)",
+            "expected_points": [
+                "Paint forms a protective barrier preventing iron from reacting with moisture and oxygen in air, thereby preventing corrosion (rusting)",
+                "The chemical change prevented is: Fe + O2 + H2O → Fe2O3·xH2O (rust)"
+            ],
+            "keywords": [
+                "trying",
+                "articles",
+                "paint",
+                "change",
+                "iron",
+                "apply",
+                "chemical",
+                "kind",
+                "prevent"
+            ],
+            "pattern": "reasoning",
+            "answer_structure": [
+                "cause",
+                "effect"
+            ]
+        },
+        {
+            "question_id": "825edbbe-c088-4ae8-b600-a85b25bb2102",
+            "chapter_id": "jesc101",
+            "question_number": "Q26",
+            "question_text": "What happens when silver chloride is kept in sunlight? Write the balanced equation and name the type of reaction.",
+            "marks": 3,
+            "difficulty": "medium",
+            "sample_answer": "Silver chloride decomposes in sunlight to form silver (grey) and chlorine gas. This is photolytic decomposition.",
+            "expected_points": [
+                "Silver chloride decomposes in sunlight to form silver (grey) and chlorine gas",
+                "This is photolytic decomposition"
+            ],
+            "keywords": [
+                "name",
+                "type",
+                "reaction",
+                "kept",
+                "sunlight",
+                "chloride",
+                "balanced",
+                "happens",
+                "equation",
+                "silver"
+            ],
+            "pattern": "equation",
+            "answer_structure": [
+                "equation"
+            ]
+        },
+        {
+            "question_id": "380f37ac-1726-4954-a4af-8bf2871e1781",
+            "chapter_id": "jesc101",
+            "question_number": "Q27",
+            "question_text": "Why are chips manufacturers usually flush bags of chips with gas like nitrogen? Explain in terms of oxidation.",
+            "marks": 2,
+            "difficulty": "easy",
+            "sample_answer": "Nitrogen is an inert gas. Flushing with N2 prevents chips from coming in contact with oxygen, which would oxidise the fats/oils in chips causing rancidity.",
+            "expected_points": [
+                "Nitrogen is an inert gas",
+                "Flushing with N2 prevents chips from coming in contact with oxygen, which would oxidise the fats/oils in chips causing rancidity"
+            ],
+            "keywords": [
+                "flush",
+                "terms",
+                "like",
+                "chips",
+                "usually",
+                "manufacturers",
+                "bags",
+                "oxidation",
+                "nitrogen"
+            ],
+            "pattern": "reasoning",
+            "answer_structure": [
+                "cause",
+                "effect"
+            ]
+        },
+        {
+            "question_id": "d6069002-44c5-4d96-a373-7c85327535a3",
+            "chapter_id": "jesc101",
+            "question_number": "Q28",
+            "question_text": "Write balanced chemical equations for the following: (a) Burning of natural gas (methane in air (b) Electrolysis of water (c) Reaction of zinc with dilute sulphuric acid",
+            "marks": 3,
+            "difficulty": "medium",
+            "sample_answer": "Three separate balanced equations.",
+            "expected_points": [
+                "Three separate balanced equations"
+            ],
+            "keywords": [
+                "acid",
+                "water",
+                "natural",
+                "following",
+                "electrolysis",
+                "reaction",
+                "dilute",
+                "sulphuric",
+                "burning",
+                "balanced",
+                "chemical",
+                "zinc",
+                "equations",
+                "(methane"
+            ],
+            "pattern": "equation",
+            "answer_structure": [
+                "equation"
+            ]
+        },
+        {
+            "question_id": "2af2dad6-aab0-44ed-ae09-479d172a9366",
+            "chapter_id": "jesc101",
+            "question_number": "Q29",
+            "question_text": "Define the law of conservation of mass. Verify it using the reaction between sodium sulphate and barium chloride solutions.",
+            "marks": 2,
+            "difficulty": "easy",
+            "sample_answer": "Law of Conservation of Mass: Mass can neither be created nor destroyed in a chemical reaction. Verification: Na2SO4 + BaCl2 → BaSO4 + 2NaCl. Total mass of reactants = Total mass of products.",
+            "expected_points": [
+                "Law of Conservation of Mass: Mass can neither be created nor destroyed in a chemical reaction",
+                "Verification: Na2SO4 + BaCl2 → BaSO4 + 2NaCl",
+                "Total mass of reactants = Total mass of products"
+            ],
+            "keywords": [
+                "between",
+                "define",
+                "conservation",
+                "sulphate",
+                "reaction",
+                "chloride",
+                "using",
+                "verify",
+                "solutions",
+                "barium",
+                "mass",
+                "sodium"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "4d7a02e1-dd64-44ee-8ae8-3c59f7fd53f9",
+            "chapter_id": "jesc101",
+            "question_number": "Q30",
+            "question_text": "What is observed when a few drops of dilute HCl are added to silver nitrate solution? Write the balanced equation.",
+            "marks": 2,
+            "difficulty": "easy",
+            "sample_answer": "A white curdy precipitate of AgCl is formed which is insoluble in HNO3. This is a double displacement (precipitation) reaction.",
+            "expected_points": [
+                "A white curdy precipitate of AgCl is formed which is insoluble in HNO3",
+                "This is a double displacement (precipitation) reaction"
+            ],
+            "keywords": [
+                "observed",
+                "drops",
+                "dilute",
+                "nitrate",
+                "balanced",
+                "added",
+                "equation",
+                "solution",
+                "silver"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "8e91db04-d15a-479a-a583-59796e418976",
+            "chapter_id": "jesc101",
+            "question_number": "Q31",
+            "question_text": "Explain with examples: (a) Thermal decomposition (b) Electrolytic decomposition (c) Photolytic decomposition SECTION C — HARD (3 Mark & 5 Mark)",
+            "marks": 3,
+            "difficulty": "medium",
+            "sample_answer": "(a) Thermal: Heat causes decomposition. (b) Electrolytic: Electric current causes decomposition. (c) Photolytic: Light causes decomposition. 1 mark each with correct example.",
+            "expected_points": [
+                "(a) Thermal: Heat causes decomposition",
+                "(b) Electrolytic: Electric current causes decomposition",
+                "(c) Photolytic: Light causes decomposition",
+                "1 mark each with correct example"
+            ],
+            "keywords": [
+                "thermal",
+                "examples",
+                "electrolytic",
+                "mark",
+                "decomposition",
+                "photolytic",
+                "section",
+                "hard",
+                "mark)"
+            ],
+            "pattern": "explanation",
+            "answer_structure": [
+                "answer"
+            ]
+        },
+        {
+            "question_id": "7c4ac015-556f-4dbd-8301-c1c8bb6da6f9",
+            "chapter_id": "jesc101",
+            "question_number": "Q32",
+            "question_text": "How do you distinguish between a physical change and a chemical change? Give two examples of each. Identify which of the following is a chemical change: melting of wax, sourin of milk, dissolving salt in water, rusting of iron.",
+            "marks": 3,
+            "difficulty": "medium",
+            "sample_answer": "Physical change: No new substance formed, reversible. Chemical change: New substance formed, usually irreversible. Physical: melting of wax, dissolving salt. Chemical: souring of milk, rusting of iron.",
+            "expected_points": [
+                "Physical change: No new substance formed, reversible",
+                "Chemical change: New substance formed, usually irreversible",
+                "Physical: melting of wax, dissolving salt",
+                "Chemical: souring of milk, rusting of iron"
+            ],
+            "keywords": [
+                "between",
+                "water",
+                "milk",
+                "examples",
+                "distinguish",
+                "dissolving",
+                "salt",
+                "rusting",
+                "following",
+                "physical",
+                "change",
+                "iron",
+                "chemical",
+                "melting",
+                "which",
+                "sourin",
+                "each"
+            ],
+            "pattern": "general",
+            "answer_structure": [
+                "answer"
+            ]
+        },
+        {
+            "question_id": "53222585-fa2b-4d93-8992-d630d9a3c762",
+            "chapter_id": "jesc101",
+            "question_number": "Q33",
+            "question_text": "What is redox reaction? Explain oxidation and reduction in terms of electron transfer with suitable examples. Identify the oxidising and reducing agents in the reaction: ZnO + C → Zn + CO",
+            "marks": 5,
+            "difficulty": "hard",
+            "sample_answer": "Redox: Simultaneous oxidation and reduction. Oxidation: loss of electrons. Reduction: gain of electrons. In ZnO + C → Zn + CO: C is oxidised (reducing agent), ZnO is reduced (oxidising agent).",
+            "expected_points": [
+                "Redox: Simultaneous oxidation and reduction",
+                "Oxidation: loss of electrons",
+                "Reduction: gain of electrons",
+                "In ZnO + C → Zn + CO: C is oxidised (reducing agent), ZnO is reduced (oxidising agent)"
+            ],
+            "keywords": [
+                "terms",
+                "reducing",
+                "agents",
+                "examples",
+                "reduction",
+                "reaction",
+                "oxidising",
+                "electron",
+                "redox",
+                "suitable",
+                "oxidation",
+                "transfer"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "3fe693a7-9efc-43a8-9cfa-8390343f0078",
+            "chapter_id": "jesc101",
+            "question_number": "Q34",
+            "question_text": "Write the steps you would use to balance a chemical equation. Balance the following equation step by step: Fe + H2O → Fe3O4 + H2 Also name the type of reaction and identify oxidising/reducing agents.",
+            "marks": 5,
+            "difficulty": "hard",
+            "sample_answer": "Steps: (1) Write word equation. (2) Write skeletal equation. (3) Balance by hit-and-trial. (4) Verify. Balanced: 3Fe + 4H2O → Fe3O4 + 4H2. Type: Redox. Fe is reducing agent, H2O is oxidising agent.",
+            "expected_points": [
+                "Steps: (1) Write word equation",
+                "(2) Write skeletal equation",
+                "(3) Balance by hit-and-trial",
+                "(4) Verify",
+                "Balanced: 3Fe + 4H2O → Fe3O4 + 4H2",
+                "Type: Redox",
+                "Fe is reducing agent, H2O is oxidising agent"
+            ],
+            "keywords": [
+                "agents",
+                "name",
+                "steps",
+                "also",
+                "type",
+                "following",
+                "reaction",
+                "balance",
+                "chemical",
+                "fe3o4",
+                "equation",
+                "step",
+                "oxidising/reducing",
+                "would"
+            ],
+            "pattern": "equation",
+            "answer_structure": [
+                "equation"
+            ]
+        },
+        {
+            "question_id": "f3d24d3a-84e9-4827-b633-5a732b62f609",
+            "chapter_id": "jesc101",
+            "question_number": "Q35",
+            "question_text": "Why should a magnesium ribbon be cleaned before burning in air? Write the balanced chemical equation for the combustion of magnesium in air. What type of oxides does magnesium form?",
+            "marks": 3,
+            "difficulty": "medium",
+            "sample_answer": "Magnesium ribbon is cleaned with sandpaper to remove the layer of magnesium oxide (MgO) from its surface, enabling it to burn properly. Magnesium forms a basic oxide (MgO).",
+            "expected_points": [
+                "Magnesium ribbon is cleaned with sandpaper to remove the layer of magnesium oxide (MgO) from its surface, enabling it to burn properly",
+                "Magnesium forms a basic oxide (MgO)"
+            ],
+            "keywords": [
+                "ribbon",
+                "should",
+                "magnesium",
+                "cleaned",
+                "type",
+                "form",
+                "burning",
+                "balanced",
+                "combustion",
+                "chemical",
+                "equation",
+                "before",
+                "oxides"
+            ],
+            "pattern": "reasoning",
+            "answer_structure": [
+                "cause",
+                "effect"
+            ]
+        },
+        {
+            "question_id": "a96545b2-9ede-401e-b2a9-507556e391f4",
+            "chapter_id": "jesc101",
+            "question_number": "Q36",
+            "question_text": "Describe any three methods of preventing corrosion of metals. Explain with chemical equations where applicable. Why is iron more prone to corrosion than gold?",
+            "marks": 5,
+            "difficulty": "hard",
+            "sample_answer": "Methods to prevent corrosion: (1) Painting/oiling – forms a barrier. (2) Galvanisation – coating with zinc. (3) Alloying – making stainless steel. Iron is prone because it readily reacts with O2 and moisture; gold is unreactive (low reactivity in activity series).",
+            "expected_points": [
+                "Methods to prevent corrosion: (1) Painting/oiling – forms a barrier",
+                "(2) Galvanisation – coating with zinc",
+                "(3) Alloying – making stainless steel",
+                "Iron is prone because it readily reacts with O2 and moisture; gold is unreactive (low reactivity in activity series)"
+            ],
+            "keywords": [
+                "where",
+                "preventing",
+                "gold",
+                "three",
+                "prone",
+                "than",
+                "metals",
+                "methods",
+                "iron",
+                "chemical",
+                "describe",
+                "corrosion",
+                "more",
+                "applicable",
+                "equations"
+            ],
+            "pattern": "general",
+            "answer_structure": [
+                "answer"
+            ]
+        },
+        {
+            "question_id": "4c934553-b0bf-4ee0-a592-0d9bee558ac6",
+            "chapter_id": "jesc101",
+            "question_number": "Q37",
+            "question_text": "State the activity series of metals. Using it, predict whether the following reactions will occur or not. Give reasons: (a) Fe + CuSO4 → FeSO4 + Cu (b) Cu + FeSO4 → CuSO4 + Fe",
+            "marks": 3,
+            "difficulty": "medium",
+            "sample_answer": "(a) Fe is above Cu in activity series → Fe will displace Cu → Reaction will occur. (b) Cu is below Fe → Cu cannot displace Fe → Reaction will NOT occur.",
+            "expected_points": [
+                "(a) Fe is above Cu in activity series → Fe will displace Cu → Reaction will occur",
+                "(b) Cu is below Fe → Cu cannot displace Fe → Reaction will NOT occur"
+            ],
+            "keywords": [
+                "activity",
+                "reactions",
+                "will",
+                "state",
+                "following",
+                "occur",
+                "reasons",
+                "using",
+                "predict",
+                "cuso4",
+                "whether",
+                "metals",
+                "feso4",
+                "series"
+            ],
+            "pattern": "general",
+            "answer_structure": [
+                "answer"
+            ]
+        },
+        {
+            "question_id": "dc6f0de1-71ff-4fa7-b0cb-daa6880683f6",
+            "chapter_id": "jesc101",
+            "question_number": "Q38",
+            "question_text": "Explain the following observations with balanced chemical equations: (a) A white precipitate is formed when sodium sulphate solution is mixed with barium chloride solution. (b Lime water turns milky when CO2 is passed through it, but clears up on excess CO2. (c) A silver article turns black when exposed to air for long.",
+            "marks": 5,
+            "difficulty": "hard",
+            "sample_answer": "(a) BaSO4 white precipitate – double displacement/precipitation. (b) CO2 + Ca(OH)2 → CaCO3 (milky) → CaCO3 + CO2 + H2O → Ca(HCO3)2 (clear). (c) Ag tarnishes due to Ag2S formation (corrosion).",
+            "expected_points": [
+                "(a) BaSO4 white precipitate – double displacement/precipitation",
+                "(b) CO2 + Ca(OH)2 → CaCO3 (milky) → CaCO3 + CO2 + H2O → Ca(HCO3)2 (clear)",
+                "(c) Ag tarnishes due to Ag2S formation (corrosion)"
+            ],
+            "keywords": [
+                "mixed",
+                "passed",
+                "lime",
+                "following",
+                "chemical",
+                "article",
+                "equations",
+                "clears",
+                "turns",
+                "formed",
+                "balanced",
+                "exposed",
+                "barium",
+                "through",
+                "chloride",
+                "observations",
+                "solution",
+                "black",
+                "white",
+                "silver",
+                "sulphate",
+                "precipitate",
+                "water",
+                "excess",
+                "milky",
+                "long",
+                "sodium"
+            ],
+            "pattern": "explanation",
+            "answer_structure": [
+                "answer"
+            ]
+        },
+        {
+            "question_id": "07acd9fe-1ed4-4048-bc50-4369bd5f397f",
+            "chapter_id": "jesc101",
+            "question_number": "Q39",
+            "question_text": "What is the role of a catalyst in a chemical reaction? Explain the decomposition of hydrogen peroxide in the presence of manganese dioxide with a balanced equation. How doe a catalyst affect the rate of reaction?",
+            "marks": 3,
+            "difficulty": "medium",
+            "sample_answer": "A catalyst increases the rate of a chemical reaction without being consumed. MnO2 acts as catalyst in the decomposition of H2O2: it lowers the activation energy, speeding up the reaction.",
+            "expected_points": [
+                "A catalyst increases the rate of a chemical reaction without being consumed",
+                "MnO2 acts as catalyst in the decomposition of H2O2: it lowers the activation energy, speeding up the reaction"
+            ],
+            "keywords": [
+                "rate",
+                "dioxide",
+                "catalyst",
+                "decomposition",
+                "affect",
+                "reaction",
+                "peroxide",
+                "manganese",
+                "chemical",
+                "balanced",
+                "presence",
+                "equation",
+                "role",
+                "hydrogen"
+            ],
+            "pattern": "definition",
+            "answer_structure": [
+                "definition"
+            ]
+        },
+        {
+            "question_id": "375b7815-ef8c-439a-a5ad-e5169a93ef24",
+            "chapter_id": "jesc101",
+            "question_number": "Q40",
+            "question_text": "Distinguish between combination, decomposition, and displacement reactions. Give one balanced equation for each. Also identify which of these reactions are exothermic and which are endothermic, with justification.",
+            "marks": 5,
+            "difficulty": "hard",
+            "sample_answer": "Combination: A+B→AB (exothermic). Decomposition: AB→A+B (endothermic). Displacement: A+BC→AC+B. Clear distinctions with 1 equation each and correct exo/endothermic classification.",
+            "expected_points": [
+                "Combination: A+B→AB (exothermic)",
+                "Decomposition: AB→A+B (endothermic)",
+                "Displacement: A+BC→AC+B",
+                "Clear distinctions with 1 equation each and correct exo/endothermic classification"
+            ],
+            "keywords": [
+                "between",
+                "exothermic",
+                "reactions",
+                "distinguish",
+                "also",
+                "decomposition",
+                "which",
+                "endothermic",
+                "these",
+                "balanced",
+                "justification",
+                "equation",
+                "displacement",
+                "each",
+                "combination"
+            ],
+            "pattern": "equation",
+            "answer_structure": [
+                "equation"
+            ]
+        },
+        {
+            "question_id": "c8a413f8-c25c-4817-ae8c-db7eeea8787a",
+            "chapter_id": "jesc101",
+            "question_number": "Q41",
+            "question_text": "A student mistakenly adds excess CO2 to lime water and notices the milky precipitate dissolves. Write balanced equations for both steps and explain what type of reactions are occurring. (Application)",
+            "marks": 3,
+            "difficulty": "medium",
+            "sample_answer": "Step 1: Ca(OH)2 + CO2 → CaCO3↓ + H2O (milky precipitate – combination/double displacement). Step 2: CaCO3 + H2O + CO2 → Ca(HCO3)2 (clear solution – combination). Both are combination reactions.",
+            "expected_points": [
+                "Step 1: Ca(OH)2 + CO2 → CaCO3↓ + H2O (milky precipitate – combination/double displacement)",
+                "Step 2: CaCO3 + H2O + CO2 → Ca(HCO3)2 (clear solution – combination)",
+                "Both are combination reactions"
+            ],
+            "keywords": [
+                "precipitate",
+                "water",
+                "adds",
+                "lime",
+                "mistakenly",
+                "excess",
+                "notices",
+                "milky",
+                "steps",
+                "type",
+                "reactions",
+                "student",
+                "occurring",
+                "balanced",
+                "dissolves",
+                "both",
+                "equations",
+                "(application)"
+            ],
+            "pattern": "equation",
+            "answer_structure": [
+                "equation"
+            ]
+        },
+        {
+            "question_id": "a13d2b74-e1a8-4805-b66a-916563ebb174",
+            "chapter_id": "jesc101",
+            "question_number": "Q42",
+            "question_text": "Analyse the following statement: 'All combustion reactions are combination reactions bu all combination reactions are not combustion reactions.' Justify with two examples each and relevant balanced equations. (HOT) All questions sourced from CBSE Previous Year Question Papers (2017–2022) · Chapter 1: Chemical Reactions and Equations · Class 10 Science",
+            "marks": 5,
+            "difficulty": "hard",
+            "sample_answer": "Combustion is always combination (fuel combines with O2). But combination need not involve combustion (e.g., CaO + H2O, no burning). Full marks for 2 combustion + 2 non-combustion combination examples with equations and justification.",
+            "expected_points": [
+                "Combustion is always combination (fuel combines with O2)",
+                "But combination need not involve combustion (e",
+                "g",
+                ", CaO + H2O, no burning)",
+                "Full marks for 2 combustion + 2 non-combustion combination examples with equations and justification"
+            ],
+            "keywords": [
+                "cbse",
+                "analyse",
+                "reactions",
+                "following",
+                "reactions'",
+                "chemical",
+                "equations",
+                "papers",
+                "(2017–2022)",
+                "science",
+                "(hot)",
+                "year",
+                "balanced",
+                "chapter",
+                "each",
+                "combustion",
+                "justify",
+                "questions",
+                "from",
+                "examples",
+                "sourced",
+                "class",
+                "previous",
+                "statement",
+                "'all",
+                "relevant",
+                "question",
+                "combination"
+            ],
+            "pattern": "equation",
+            "answer_structure": [
+                "equation"
+            ]
+        }
+    ]
+}

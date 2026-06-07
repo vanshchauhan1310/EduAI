@@ -1,0 +1,84 @@
+{
+    "chapter_id": "jesc101",
+    "patterns": {
+        "definition": {
+            "frequency": 16,
+            "marks": [
+                1,
+                2,
+                3,
+                5
+            ],
+            "answer_structures": [
+                [
+                    "definition"
+                ]
+            ]
+        },
+        "general": {
+            "frequency": 6,
+            "marks": [
+                1,
+                2,
+                3,
+                5
+            ],
+            "answer_structures": [
+                [
+                    "answer"
+                ]
+            ]
+        },
+        "identification": {
+            "frequency": 4,
+            "marks": [
+                1,
+                3
+            ],
+            "answer_structures": [
+                [
+                    "identify",
+                    "reason"
+                ]
+            ]
+        },
+        "equation": {
+            "frequency": 9,
+            "marks": [
+                2,
+                3,
+                5
+            ],
+            "answer_structures": [
+                [
+                    "equation"
+                ]
+            ]
+        },
+        "reasoning": {
+            "frequency": 4,
+            "marks": [
+                2,
+                3
+            ],
+            "answer_structures": [
+                [
+                    "cause",
+                    "effect"
+                ]
+            ]
+        },
+        "explanation": {
+            "frequency": 3,
+            "marks": [
+                3,
+                5
+            ],
+            "answer_structures": [
+                [
+                    "answer"
+                ]
+            ]
+        }
+    }
+}

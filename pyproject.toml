@@ -1,0 +1,22 @@
+[project]
+name = "eduai"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "backend>=0.2.4.1",
+    "fastapi>=0.136.3",
+    "fitz>=0.0.1.dev2",
+    "frontend>=0.0.3",
+    "imbalanced-learn>=0.14.1",
+    "joblib>=1.5.3",
+    "ollama>=0.6.2",
+    "pandas>=3.0.3",
+    "pandas-stubs~=3.0.3",
+    "preprocess>=2.0.0",
+    "pydantic>=2.13.4",
+    "pydantic-settings>=2.14.1",
+    "scikit-learn>=1.8.0",
+    "sentence-transformers>=5.5.1",
+    "sqlalchemy>=2.0.50",
+    "xgboost>=3.2.0",
+]

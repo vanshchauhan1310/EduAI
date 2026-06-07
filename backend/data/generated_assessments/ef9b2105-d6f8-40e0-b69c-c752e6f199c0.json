@@ -1,0 +1,22 @@
+{
+    "assessment_id": "ef9b2105-d6f8-40e0-b69c-c752e6f199c0",
+    "chapter_id": "jesc101",
+    "difficulty": "medium",
+    "total_questions": 1,
+    "total_marks": 5,
+    "questions": [
+        {
+            "question_id": "d696d929-4bf3-407f-ac59-9f86d474dd3a",
+            "question_text": "What is the principle behind the use of electrolysis in water purification?",
+            "sample_answer": "Electrolysis in water purification involves the passage of electric current through water to remove impurities and produce hydrogen gas.",
+            "expected_points": [
+                "Mechanism of electrolysis",
+                "Removal of impurities",
+                "Production of hydrogen gas"
+            ],
+            "pattern": "equation",
+            "difficulty": "medium",
+            "marks": 5
+        }
+    ]
+}
