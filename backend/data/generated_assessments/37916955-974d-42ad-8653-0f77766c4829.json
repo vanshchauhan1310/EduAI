@@ -1,0 +1,34 @@
+{
+    "assessment_id": "37916955-974d-42ad-8653-0f77766c4829",
+    "chapter_id": "jesc101",
+    "difficulty": "medium",
+    "total_questions": 2,
+    "total_marks": 4,
+    "questions": [
+        {
+            "question_id": "dcf4549d-10f5-44b9-be57-dc6acdfbfedf",
+            "question_text": "What are the two types of chemical reactions that involve the transfer of electrons from one substance to another?",
+            "sample_answer": "Oxidation-reduction (redox) reactions and single displacement reactions.",
+            "expected_points": [
+                "Redox reactions",
+                "Single displacement reactions"
+            ],
+            "pattern": "identification",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "question_id": "28df0695-6b56-4735-8498-5d916e3f5a17",
+            "question_text": "What is the difference between oxidation and reduction?",
+            "sample_answer": "Oxidation is the loss of electrons, while reduction is the gain of electrons.",
+            "expected_points": [
+                "Definition of oxidation",
+                "Definition of reduction",
+                "Difference between oxidation and reduction"
+            ],
+            "pattern": "reasoning",
+            "difficulty": "medium",
+            "marks": 3
+        }
+    ]
+}

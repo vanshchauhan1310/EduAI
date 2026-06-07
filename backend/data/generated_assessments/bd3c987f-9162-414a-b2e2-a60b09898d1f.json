@@ -1,0 +1,35 @@
+{
+    "assessment_id": "bd3c987f-9162-414a-b2e2-a60b09898d1f",
+    "chapter_id": "jesc101",
+    "difficulty": "medium",
+    "total_questions": 2,
+    "total_marks": 4,
+    "questions": [
+        {
+            "question_id": "f789d5bd-76d3-438e-948d-e42a96cfe6eb",
+            "question_text": "What is the role of oxygen in rusting of metals?",
+            "sample_answer": "Oxygen in the air reacts with metal to form oxides, which are rusty and weak, leading to corrosion.",
+            "expected_points": [
+                "Role of oxygen",
+                "Formation of oxide",
+                "Corrosion"
+            ],
+            "pattern": "definition",
+            "difficulty": "medium",
+            "marks": 2
+        },
+        {
+            "question_id": "df820f09-a0ab-4720-874c-d6fe75999e16",
+            "question_text": "What is the difference between a combination reaction and a decomposition reaction in terms of the number of reactants and products?",
+            "sample_answer": "A combination reaction involves two or more reactants forming one product, whereas a decomposition reaction involves one reactant breaking down into two or more products.",
+            "expected_points": [
+                "Difference between combination and decomposition",
+                "Number of reactants",
+                "Number of products"
+            ],
+            "pattern": "general",
+            "difficulty": "medium",
+            "marks": 2
+        }
+    ]
+}

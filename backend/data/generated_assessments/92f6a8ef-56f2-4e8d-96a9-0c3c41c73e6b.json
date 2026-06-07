@@ -1,0 +1,33 @@
+{
+    "assessment_id": "92f6a8ef-56f2-4e8d-96a9-0c3c41c73e6b",
+    "chapter_id": "jesc101",
+    "difficulty": "easy",
+    "total_questions": 2,
+    "total_marks": 4,
+    "questions": [
+        {
+            "question_id": "641c6c3c-3bb9-42e8-9c22-0dfd84fa84b9",
+            "question_text": "What is the difference between a decomposition reaction and a combination reaction?",
+            "sample_answer": "A decomposition reaction is one in which a single compound breaks down into two or more simpler substances, whereas a combination reaction involves the joining of two or more substances to form a new compound.",
+            "expected_points": [
+                "Decomposition vs Combination",
+                "Difference between decomposition and combination reactions"
+            ],
+            "pattern": "general",
+            "difficulty": "easy",
+            "marks": 3
+        },
+        {
+            "question_id": "071f368d-a08b-46ca-a508-2aa89e8dfac1",
+            "question_text": "What happens to the ions of a metal in a double displacement reaction?",
+            "sample_answer": "They change their positions.",
+            "expected_points": [
+                "Change in position",
+                "Ions involved"
+            ],
+            "pattern": "identification",
+            "difficulty": "easy",
+            "marks": 1
+        }
+    ]
+}

@@ -20,188 +20,196 @@ from sklearn.metrics import (
 
 BASE_DIR = Path(__file__).resolve().parents[3]
 
-TRAIN_FILE = BASE_DIR / "data" / "train_students.csv"
-TEST_FILE = BASE_DIR / "data" / "test_students.csv"
 
-train_df = pd.read_csv(TRAIN_FILE)
-test_df = pd.read_csv(TEST_FILE)
+def train():
 
-TARGET = "dropout_flag"
+    print("Training Started")
 
-X_train = train_df.drop(
-    columns=["student_id", TARGET]
-)
+    TRAIN_FILE = BASE_DIR / "data" / "train_students.csv"
+    TEST_FILE = BASE_DIR / "data" / "test_students.csv"
 
-y_train = train_df[TARGET]
+    train_df = pd.read_csv(TRAIN_FILE)
+    test_df = pd.read_csv(TEST_FILE)
 
-X_test = test_df.drop(
-    columns=["student_id", TARGET]
-)
+    TARGET = "dropout_flag"
 
-y_test = test_df[TARGET]
+    X_train = train_df.drop(
+        columns=["student_id", TARGET]
+    )
 
-categorical_cols = X_train.select_dtypes(
-    include=["object", "string"]
-).columns.tolist()
+    y_train = train_df[TARGET]
 
-preprocessor = ColumnTransformer(
-    transformers=[
-        (
-            "cat",
-            OneHotEncoder(
-                handle_unknown="ignore"
-            ),
-            categorical_cols
-        )
-    ],
-    remainder="passthrough"
-)
+    X_test = test_df.drop(
+        columns=["student_id", TARGET]
+    )
 
-dropouts = y_train.sum()
-non_dropouts = len(y_train) - dropouts
+    y_test = test_df[TARGET]
 
-scale_pos_weight = non_dropouts / dropouts
+    categorical_cols = X_train.select_dtypes(
+        include=["object", "string"]
+    ).columns.tolist()
 
-print(f"Dropouts: {dropouts}")
-print(f"Non Dropouts: {non_dropouts}")
-print(f"Scale Pos Weight: {scale_pos_weight:.2f}")
+    preprocessor = ColumnTransformer(
+        transformers=[
+            (
+                "cat",
+                OneHotEncoder(
+                    handle_unknown="ignore"
+                ),
+                categorical_cols
+            )
+        ],
+        remainder="passthrough"
+    )
 
-model = XGBClassifier(
-    n_estimators=700,
-    max_depth=5,
-    learning_rate=0.03,
-    subsample=0.8,
-    colsample_bytree=0.8,
-    scale_pos_weight=scale_pos_weight,
-    eval_metric="logloss",
-    random_state=42
-)
+    dropouts = y_train.sum()
+    non_dropouts = len(y_train) - dropouts
 
-pipeline = Pipeline([
-    ("preprocessor", preprocessor),
-    ("model", model)
-])
+    scale_pos_weight = non_dropouts / dropouts
 
-pipeline.fit(X_train, y_train)
+    print(f"Dropouts: {dropouts}")
+    print(f"Non Dropouts: {non_dropouts}")
+    print(f"Scale Pos Weight: {scale_pos_weight:.2f}")
 
-probs = pipeline.predict_proba(X_test)[:, 1]
+    model = XGBClassifier(
+        n_estimators=700,
+        max_depth=5,
+        learning_rate=0.03,
+        subsample=0.8,
+        colsample_bytree=0.8,
+        scale_pos_weight=scale_pos_weight,
+        eval_metric="logloss",
+        random_state=42
+    )
 
-auc = roc_auc_score(y_test, probs)
+    pipeline = Pipeline([
+        ("preprocessor", preprocessor),
+        ("model", model)
+    ])
 
-print("\n" + "=" * 50)
-print(f"ROC AUC: {auc:.4f}")
-print("=" * 50)
+    pipeline.fit(X_train, y_train)
 
-DEPLOYMENT_THRESHOLD = 0.40
+    probs = pipeline.predict_proba(X_test)[:, 1]
 
-preds = (
-    probs >= DEPLOYMENT_THRESHOLD
-).astype(int)
+    auc = roc_auc_score(y_test, probs)
 
-accuracy = accuracy_score(
-    y_test,
-    preds
-)
+    print("\n" + "=" * 50)
+    print(f"ROC AUC: {auc:.4f}")
+    print("=" * 50)
 
-precision = precision_score(
-    y_test,
-    preds
-)
+    DEPLOYMENT_THRESHOLD = 0.40
 
-recall = recall_score(
-    y_test,
-    preds
-)
+    preds = (
+        probs >= DEPLOYMENT_THRESHOLD
+    ).astype(int)
 
-f1 = f1_score(
-    y_test,
-    preds
-)
-
-print("\nDeployment Threshold:", DEPLOYMENT_THRESHOLD)
-
-print(f"Accuracy : {accuracy:.4f}")
-print(f"Precision: {precision:.4f}")
-print(f"Recall   : {recall:.4f}")
-print(f"F1 Score : {f1:.4f}")
-
-print("\nConfusion Matrix")
-
-print(
-    confusion_matrix(
+    accuracy = accuracy_score(
         y_test,
         preds
     )
-)
 
-feature_names = pipeline.named_steps[
-    "preprocessor"
-].get_feature_names_out()
+    precision = precision_score(
+        y_test,
+        preds
+    )
 
-importances = pipeline.named_steps[
-    "model"
-].feature_importances_
+    recall = recall_score(
+        y_test,
+        preds
+    )
 
-importance_df = pd.DataFrame({
-    "Feature": feature_names,
-    "Importance": importances
-})
+    f1 = f1_score(
+        y_test,
+        preds
+    )
 
-importance_df = importance_df.sort_values(
-    by="Importance",
-    ascending=False
-)
+    print("\nDeployment Threshold:", DEPLOYMENT_THRESHOLD)
 
-print("\nTop 15 Features\n")
-print(
-    importance_df.head(15)
-)
+    print(f"Accuracy : {accuracy:.4f}")
+    print(f"Precision: {precision:.4f}")
+    print(f"Recall   : {recall:.4f}")
+    print(f"F1 Score : {f1:.4f}")
 
-importance_df.to_csv(
-    BASE_DIR /
-    "app" /
-    "ai" /
-    "dropout" /
-    "feature_importance.csv",
-    index=False
-)
+    print("\nConfusion Matrix")
 
-joblib.dump(
-    pipeline,
-    BASE_DIR /
-    "app" /
-    "ai" /
-    "dropout" /
-    "model.pkl"
-)
+    print(
+        confusion_matrix(
+            y_test,
+            preds
+        )
+    )
 
-joblib.dump(
-    DEPLOYMENT_THRESHOLD,
-    BASE_DIR /
-    "app" /
-    "ai" /
-    "dropout" /
-    "threshold.pkl"
-)
+    feature_names = pipeline.named_steps[
+        "preprocessor"
+    ].get_feature_names_out()
 
-joblib.dump(
-    list(X_train.columns),
-    BASE_DIR /
-    "app" /
-    "ai" /
-    "dropout" /
-    "feature_columns.pkl"
-)
+    importances = pipeline.named_steps[
+        "model"
+    ].feature_importances_
 
-print("\nModel Saved Successfully")
+    importance_df = pd.DataFrame({
+        "Feature": feature_names,
+        "Importance": importances
+    })
 
-def train():
-    # move all your training code here
-    print("Training Started")
+    importance_df = importance_df.sort_values(
+        by="Importance",
+        ascending=False
+    )
 
-    # training code...
+    print("\nTop 15 Features\n")
+    print(
+        importance_df.head(15)
+    )
 
+    importance_df.to_csv(
+        BASE_DIR /
+        "app" /
+        "ai" /
+        "dropout" /
+        "feature_importance.csv",
+        index=False
+    )
+
+    joblib.dump(
+        pipeline,
+        BASE_DIR /
+        "app" /
+        "ai" /
+        "dropout" /
+        "model.pkl"
+    )
+
+    joblib.dump(
+        DEPLOYMENT_THRESHOLD,
+        BASE_DIR /
+        "app" /
+        "ai" /
+        "dropout" /
+        "threshold.pkl"
+    )
+
+    joblib.dump(
+        list(X_train.columns),
+        BASE_DIR /
+        "app" /
+        "ai" /
+        "dropout" /
+        "feature_columns.pkl"
+    )
+
+    print("\nModel Saved Successfully")
     print("Training Complete")
+
+    return {
+        "message": "Training Complete",
+        "roc_auc": float(auc),
+        "accuracy": float(accuracy),
+        "precision": float(precision),
+        "recall": float(recall),
+        "f1_score": float(f1)
+    }
+
 
 if __name__ == "__main__":
     train()
