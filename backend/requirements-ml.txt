@@ -1,0 +1,16 @@
+# ─── Optional ML / Data Science packages ─────────────────────
+# These require a C++ compiler on Windows.
+#
+# WINDOWS: Install via conda (recommended, avoids compilation):
+#   conda install scikit-learn numpy pandas joblib
+#
+# LINUX / macOS: install normally — pre-built wheels are available:
+#   pip install -r requirements-ml.txt
+#
+# WINDOWS (pip only): install pre-built binary wheels only:
+#   pip install scikit-learn numpy pandas joblib --only-binary :all:
+
+scikit-learn>=1.5.0
+numpy>=1.26.0
+pandas>=2.2.0
+joblib>=1.4.0

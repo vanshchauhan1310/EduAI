@@ -27,7 +27,6 @@
       "favicon": "./src/assets/favicon.png"
     },
     "plugins": [
-      "expo-router",
       ["expo-notifications", { "icon": "./src/assets/notification-icon.png", "color": "#1d4ed8" }],
       ["expo-location", { "locationWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location for attendance geo-verification." }],
       ["expo-camera", { "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera." }]

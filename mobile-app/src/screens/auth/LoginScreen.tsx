@@ -24,14 +24,15 @@ export default function LoginScreen() {
   const [showPassword, setShowPassword] = useState(false);
   const [touched, setTouched] = useState({ email: false, password: false });
 
-  const emailError = touched.email && !email.includes('@') ? 'Enter a valid email' : '';
+  const normalizedEmail = email.trim().toLowerCase();
+  const emailError = touched.email && !normalizedEmail.includes('@') ? 'Enter a valid email' : '';
   const passwordError = touched.password && password.length < 6 ? 'Minimum 6 characters' : '';
-  const canSubmit = email.includes('@') && password.length >= 6;
+  const canSubmit = normalizedEmail.includes('@') && password.length >= 6;
 
   const handleLogin = () => {
     setTouched({ email: true, password: true });
     if (!canSubmit) return;
-    login({ email, password });
+    login({ email: normalizedEmail, password });
   };
 
   return (
@@ -109,7 +110,9 @@ export default function LoginScreen() {
             <View style={styles.apiError}>
               <Ionicons name="alert-circle" size={16} color={Colors.danger} />
               <Text style={styles.apiErrorText}>
-                {(error as { response?: { data?: { detail?: string } } })?.response?.data?.detail ?? 'Login failed. Please try again.'}
+                {(error as { response?: { data?: { detail?: string } }; message?: string })?.response?.data?.detail
+                  ?? (error as { message?: string })?.message
+                  ?? 'Login failed. Please try again.'}
               </Text>
             </View>
           )}

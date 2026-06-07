@@ -1,66 +1,74 @@
-# ─── Web Framework ───────────────────────────────────────────
-fastapi==0.111.0
-uvicorn[standard]==0.29.0
-python-multipart==0.0.9
+# ================================================================
+# Admin Copilot — Requirements
+# Python 3.13 + Windows x64 (Anaconda base — all pre-built wheels)
+# Install: pip install -r requirements.txt --prefer-binary
+# ================================================================
 
-# ─── Database ────────────────────────────────────────────────
-sqlalchemy[asyncio]==2.0.30
-asyncpg==0.29.0
-alembic==1.13.1
-psycopg2-binary==2.9.9
+# ─── Web Framework ───────────────────────────────────────────
+fastapi
+uvicorn[standard]
+python-multipart
+
+# ─── Database (MySQL local dev) ──────────────────────────────
+sqlalchemy[asyncio]
+aiomysql                 # async MySQL driver  (local dev)
+pymysql                  # sync MySQL driver   (alembic migrations)
+alembic
+
+# NOTE — Production (Supabase): also install:
+# asyncpg
+# psycopg2-binary
 
 # ─── Authentication & Security ───────────────────────────────
-python-jose[cryptography]==3.3.0
-passlib[bcrypt]==1.7.4
-cryptography==42.0.7
+python-jose[cryptography]
+passlib[bcrypt]
+cryptography
 
 # ─── Data Validation ─────────────────────────────────────────
-pydantic==2.7.1
-pydantic-settings==2.2.1
-email-validator==2.1.1
+pydantic
+pydantic-settings
+email-validator
 
-# ─── HTTP Client ─────────────────────────────────────────────
-httpx==0.27.0
-aiohttp==3.9.5
+# ─── AI Provider ──────────────────────────────────────────────
+openai                        # OpenAI-compatible SDK for NVIDIA NIM
+ollama                        # Legacy/local LLM option
 
-# ─── Caching ─────────────────────────────────────────────────
-redis[asyncio]==5.0.4
-hiredis==2.3.2
-
-# ─── Background Tasks ────────────────────────────────────────
-celery==5.4.0
-flower==2.0.1
-
-# ─── AI / ML ─────────────────────────────────────────────────
-openai==1.30.1
-scikit-learn==1.5.0
-numpy==1.26.4
-pandas==2.2.2
-joblib==1.4.2
-
-# ─── Notifications ───────────────────────────────────────────
-firebase-admin==6.5.0
-twilio==9.1.0
-
-# ─── File Storage ────────────────────────────────────────────
-boto3==1.34.113
-Pillow==10.3.0
+# ─── Document Processing ─────────────────────────────────────
+PyMuPDF                  # PDF text extraction
+reportlab                # PDF generation
+python-docx              # DOCX generation
+Pillow                   # required by reportlab
 
 # ─── Utilities ───────────────────────────────────────────────
-python-dotenv==1.0.1
-python-dateutil==2.9.0
-pytz==2024.1
-shortuuid==1.0.13
+python-dotenv
+shortuuid
 
-# ─── Logging & Monitoring ─────────────────────────────────────
-sentry-sdk[fastapi]==2.3.1
-structlog==24.1.0
-loguru==0.7.2
 
-# ─── Testing ─────────────────────────────────────────────────
-pytest==8.2.1
-pytest-asyncio==0.23.7
-pytest-cov==5.0.0
-httpx==0.27.0
-factory-boy==3.3.0
-faker==25.2.0
+# ─── ML Requirement ───────────────────────────────────────────────
+annotated-types==0.7.0
+anyio==4.13.0
+certifi==2026.5.20
+colorama==0.4.6
+distro==1.9.0
+h11==0.16.0
+httpcore==1.0.9
+httpx==0.28.1
+idna==3.17
+jiter==0.15.0
+numpy==2.4.6
+openai==2.38.0
+pydantic==2.13.4
+pydantic-settings==2.14.1
+pydantic_core==2.46.4
+python-dotenv==1.2.2
+scipy==1.17.1
+sniffio==1.3.1
+tqdm==4.67.3
+typing-inspection==0.4.2
+typing_extensions==4.15.0
+xgboost==3.2.0
+joblib
+pandas
+sklearn
+openpyxl
+

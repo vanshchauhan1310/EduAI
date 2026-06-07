@@ -1,34 +1,53 @@
-'''from contextlib import asynccontextmanager
+"""
+EduAI Governance Platform — FastAPI Application Entry Point.
+
+Production architecture:
+    MySQL → FastAPI → Dropout Prediction Model → dropout_predictions table → Dashboards
+"""
+
+import logging
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import JSONResponse
-import sentry_sdk
-from sentry_sdk.integrations.fastapi import FastApiIntegration
 
 from app.core.config import settings
 from app.api.router import api_router
 from app.database.session import engine, Base
 
+# ─── Logging Configuration ────────────────────────────────────
+logging.basicConfig(
+    level=getattr(logging, settings.LOG_LEVEL.upper(), logging.INFO),
+    format="%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+logger = logging.getLogger(__name__)
 
+
+# ─── Lifespan (Startup / Shutdown) ────────────────────────────
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    """Application lifespan — runs on startup and shutdown."""
     # Startup
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
+    logger.info("Starting EduAI Governance Platform v%s", settings.APP_VERSION)
+    logger.info("Environment: %s", settings.APP_ENV)
+
+    # Create tables (dev only — use Alembic migrations in production)
+    if settings.APP_ENV in ("development", "dev"):
+        async with engine.begin() as conn:
+            await conn.run_sync(Base.metadata.create_all)
+        logger.info("Database tables created/verified")
+
     yield
+
     # Shutdown
+    logger.info("Shutting down EduAI Governance Platform")
     await engine.dispose()
 
 
-if settings.SENTRY_DSN:
-    sentry_sdk.init(
-        dsn=settings.SENTRY_DSN,
-        integrations=[FastApiIntegration()],
-        traces_sample_rate=0.1,
-        environment=settings.APP_ENV,
-    )
-
+# ─── FastAPI App ──────────────────────────────────────────────
 app = FastAPI(
     title=settings.APP_NAME,
     description="AI-Powered Education Governance Platform API",
@@ -38,6 +57,7 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# ─── Middleware ────────────────────────────────────────────────
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.ALLOWED_ORIGINS,
@@ -47,6 +67,7 @@ app.add_middleware(
 )
 app.add_middleware(GZipMiddleware, minimum_size=1000)
 
+# ─── Routes ───────────────────────────────────────────────────
 app.include_router(api_router, prefix="/api/v1")
 
 
@@ -62,6 +83,11 @@ from app.api.v1.dropout import (
 from app.api.v1.dropout_batch_predict import (
     router as predict_router
 )
+    return JSONResponse({
+        "status": "healthy",
+        "version": settings.APP_VERSION,
+        "environment": settings.APP_ENV,
+    })
 
 from app.api.v1.ai_assessment import (
     router as ai_assessment_router
@@ -87,3 +113,11 @@ app.include_router(
     ai_assessment_router,
     prefix="/api/v1"
 )
+@app.get("/", tags=["Root"])
+async def root():
+    return {
+        "application": settings.APP_NAME,
+        "version": settings.APP_VERSION,
+        "docs": "/docs",
+        "health": "/health",
+    }

@@ -38,6 +38,7 @@ def require_roles(*roles: UserRole):
 
 require_deo = require_roles(UserRole.DEO)
 require_meo = require_roles(UserRole.DEO, UserRole.MEO)
+require_exact_meo = require_roles(UserRole.MEO)
 require_hm = require_roles(UserRole.DEO, UserRole.MEO, UserRole.HM)
 require_teacher = require_roles(UserRole.DEO, UserRole.MEO, UserRole.HM, UserRole.TEACHER)
 require_any = require_roles(*list(UserRole))

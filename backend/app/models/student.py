@@ -68,7 +68,6 @@ class Student(Base):
 
     school: Mapped["School"] = relationship("School", back_populates="students")
     user: Mapped["User"] = relationship("User", back_populates="student_profile")
-    attendance_records: Mapped[list["Attendance"]] = relationship("Attendance", back_populates="student")
     assessment_results: Mapped[list["AssessmentResult"]] = relationship("AssessmentResult", back_populates="student")
 
     @property

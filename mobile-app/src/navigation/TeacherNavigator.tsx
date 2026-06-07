@@ -5,6 +5,7 @@ import AttendanceScreen from '../screens/teacher/AttendanceScreen';
 import AssignmentsScreen from '../screens/teacher/AssignmentsScreen';
 import GradingScreen from '../screens/teacher/GradingScreen';
 import AIAssistantScreen from '../screens/teacher/AIAssistantScreen';
+import ProfileScreen from '../screens/common/ProfileScreen';
 import { Colors } from '../theme';
 
 const Tab = createBottomTabNavigator();
@@ -23,6 +24,7 @@ export function TeacherNavigator() {
             Assignments:  focused ? 'book' : 'book-outline',
             Grading:      focused ? 'ribbon' : 'ribbon-outline',
             'AI Assist':  focused ? 'sparkles' : 'sparkles-outline',
+            Profile:      focused ? 'person-circle' : 'person-circle-outline',
           };
           return <Ionicons name={icons[route.name] ?? 'apps'} size={size} color={color} />;
         },
@@ -32,6 +34,7 @@ export function TeacherNavigator() {
       <Tab.Screen name="Assignments" component={AssignmentsScreen} />
       <Tab.Screen name="Grading" component={GradingScreen} />
       <Tab.Screen name="AI Assist" component={AIAssistantScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 }
