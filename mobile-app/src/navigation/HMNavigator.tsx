@@ -7,6 +7,7 @@ import StudentMonitor from '../screens/hm/StudentMonitor';
 import HMProfileScreen from '../screens/hm/HMProfileScreen';
 import HMModuleScreen from '../screens/hm/HMModuleScreen';
 import HMNotificationsScreen from '../screens/hm/HMNotificationsScreen';
+import DropoutPredictionScreen from '../screens/hm/DropoutPredictionScreen';
 import { CopilotNavigator } from './CopilotNavigator';
 import { Colors } from '../theme';
 
@@ -18,7 +19,7 @@ function HMDashboardStack() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="HMDashboardHome" component={SchoolDashboard} />
       <Stack.Screen name="AttendanceIntelligence" component={HMModuleScreen} />
-      <Stack.Screen name="DropoutPrediction" component={HMModuleScreen} />
+      <Stack.Screen name="DropoutPrediction" component={DropoutPredictionScreen} />
       <Stack.Screen name="TeacherPerformance" component={HMModuleScreen} />
       <Stack.Screen name="StudentLearning" component={HMModuleScreen} />
       <Stack.Screen name="SchoolHealthModule" component={HMModuleScreen} />

@@ -2,9 +2,10 @@
 Admin Copilot API routes.
 All endpoints require authentication; HM, MEO, and DEO roles are allowed.
 """
-from fastapi import APIRouter, Depends, File, UploadFile, Query
+from fastapi import APIRouter, Depends, File, UploadFile, Query, HTTPException
 from fastapi.responses import StreamingResponse
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select, desc
 from io import BytesIO
 
 from app.database.session import get_db
@@ -16,6 +17,7 @@ from app.schemas.copilot import (
     SchoolHealthAnalyzerRequest, SchoolHealthAnalyzerResponse,
     MEOAssistantRequest, MEOAssistantResponse,
     TranslateRequest, TranslateResponse,
+    DocumentTranslateResponse,
     CircularSummaryResponse,
     MEOReportGenerateRequest, MEOReportGenerateResponse,
     MEOReportHistoryItem, MEOTemplateInfo,
@@ -27,6 +29,7 @@ from app.services.school_health_analyzer_service import SchoolHealthAnalyzerServ
 from app.services.meo_assistant_service import MEOAssistantService
 from app.services.meo_report_service import MEOReportService
 from app.services.translation_service import TranslationService
+from app.models.copilot import DocumentTranslation
 
 router = APIRouter(prefix="/copilot", tags=["Admin Copilot"])
 
@@ -517,6 +520,188 @@ async def translation_history(
     current_user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
-    """Get translation history for the current user."""
+    """Get text and document translation history for the current user."""
     service = TranslationService(db)
-    return await service.get_history(current_user, limit)
+    text_history = await service.get_history(current_user, limit)
+
+    document_result = await db.execute(
+        select(DocumentTranslation)
+        .where(DocumentTranslation.user_id == current_user.id)
+        .order_by(desc(DocumentTranslation.created_at))
+        .limit(limit)
+    )
+    document_history = [
+        {
+            "id": item.id,
+            "type": "document",
+            "file_name": item.file_name,
+            "file_type": item.file_type,
+            "document_type": item.document_type,
+            "source_language": item.source_language,
+            "target_language": item.target_language,
+            "preview": item.translated_text[:80] + ("..." if len(item.translated_text) > 80 else ""),
+            "word_count": item.word_count,
+            "created_at": str(item.created_at),
+        }
+        for item in document_result.scalars().all()
+    ]
+
+    combined = [item.model_dump() for item in text_history] + document_history
+    combined.sort(key=lambda item: item["created_at"], reverse=True)
+    return combined[:limit]
+
+
+# ─── Document Translation ───────────────────────────────────────
+
+@router.post("/translate-document", response_model=DocumentTranslateResponse)
+async def translate_document(
+    file: UploadFile = File(..., description="PDF, DOCX, DOC, or TXT file to translate"),
+    source_language: str = Query("English", description="Source language: English or Telugu"),
+    target_language: str = Query("Telugu", description="Target language: English or Telugu"),
+    document_type: str | None = Query(None, description="Optional hint: Circular, Letter, Notice, Report"),
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """
+    Upload a document (PDF/DOCX/TXT) and translate it between Telugu and English.
+    
+    The system extracts text from the document, runs AI translation 
+    preserving formal government document style, and returns the result.
+    """
+    from app.services.document_translation_service import extract_text_from_file, translate_document_text
+    import os
+
+    # Extract text from uploaded document
+    extracted_text = await extract_text_from_file(file)
+    
+    # Get file extension
+    _, ext = os.path.splitext(file.filename or "document.txt")
+    
+    # Translate
+    result = await translate_document_text(
+        text=extracted_text,
+        source_language=source_language,
+        target_language=target_language,
+        document_type=document_type,
+    )
+
+    record = DocumentTranslation(
+        user_id=current_user.id,
+        file_name=file.filename or "document",
+        file_type=ext.lower().replace(".", ""),
+        document_type=document_type,
+        source_language=source_language,
+        target_language=target_language,
+        original_text=extracted_text,
+        translated_text=result["translated_text"],
+        original_length=result["original_length"],
+        translated_length=result["translated_length"],
+        word_count=result["word_count"],
+    )
+    db.add(record)
+    await db.flush()
+    await db.refresh(record)
+
+    return DocumentTranslateResponse(
+        id=record.id,
+        file_name=file.filename or "document",
+        file_type=ext.lower().replace(".", ""),
+        source_language=source_language,
+        target_language=target_language,
+        original_text=extracted_text,
+        translated_text=result["translated_text"],
+        original_length=result["original_length"],
+        translated_length=result["translated_length"],
+        word_count=result["word_count"],
+        document_type=document_type,
+        created_at=str(record.created_at),
+    )
+
+
+async def _get_document_translation(
+    translation_id: int,
+    current_user: User,
+    db: AsyncSession,
+) -> DocumentTranslation:
+    result = await db.execute(
+        select(DocumentTranslation).where(
+            DocumentTranslation.id == translation_id,
+            DocumentTranslation.user_id == current_user.id,
+        )
+    )
+    record = result.scalar_one_or_none()
+    if not record:
+        raise HTTPException(status_code=404, detail="Document translation not found")
+    return record
+
+
+@router.get("/document-translations/{translation_id}", response_model=DocumentTranslateResponse)
+async def get_document_translation(
+    translation_id: int,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Fetch a previously translated document."""
+    record = await _get_document_translation(translation_id, current_user, db)
+    return DocumentTranslateResponse(
+        id=record.id,
+        file_name=record.file_name,
+        file_type=record.file_type or "",
+        source_language=record.source_language,
+        target_language=record.target_language,
+        original_text=record.original_text,
+        translated_text=record.translated_text,
+        original_length=record.original_length or len(record.original_text),
+        translated_length=record.translated_length or len(record.translated_text),
+        word_count=record.word_count or len(record.original_text.split()),
+        document_type=record.document_type,
+        created_at=str(record.created_at),
+    )
+
+
+@router.get("/document-translations/{translation_id}/export/pdf")
+async def export_document_translation_pdf(
+    translation_id: int,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Export translated document text as PDF."""
+    from app.utils.pdf_generator import generate_translated_document_pdf
+
+    record = await _get_document_translation(translation_id, current_user, db)
+    pdf_bytes = generate_translated_document_pdf(
+        file_name=record.file_name,
+        translated_text=record.translated_text,
+        source_language=record.source_language,
+        target_language=record.target_language,
+        document_type=record.document_type,
+    )
+    return StreamingResponse(
+        BytesIO(pdf_bytes),
+        media_type="application/pdf",
+        headers={"Content-Disposition": f"attachment; filename=document_translation_{translation_id}.pdf"},
+    )
+
+
+@router.get("/document-translations/{translation_id}/export/docx")
+async def export_document_translation_docx(
+    translation_id: int,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Export translated document text as editable DOCX."""
+    from app.utils.docx_generator import generate_translated_document_docx
+
+    record = await _get_document_translation(translation_id, current_user, db)
+    docx_bytes = generate_translated_document_docx(
+        file_name=record.file_name,
+        translated_text=record.translated_text,
+        source_language=record.source_language,
+        target_language=record.target_language,
+        document_type=record.document_type,
+    )
+    return StreamingResponse(
+        BytesIO(docx_bytes),
+        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        headers={"Content-Disposition": f"attachment; filename=document_translation_{translation_id}.docx"},
+    )

@@ -56,6 +56,24 @@ class Translation(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
 
+class DocumentTranslation(Base):
+    __tablename__ = "document_translations"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    user_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"), nullable=False, index=True)
+    file_name: Mapped[str] = mapped_column(String(500), nullable=False)
+    file_type: Mapped[str | None] = mapped_column(String(50))
+    document_type: Mapped[str | None] = mapped_column(String(100))
+    source_language: Mapped[str] = mapped_column(String(50), nullable=False)
+    target_language: Mapped[str] = mapped_column(String(50), nullable=False)
+    original_text: Mapped[str] = mapped_column(Text, nullable=False)
+    translated_text: Mapped[str] = mapped_column(Text, nullable=False)
+    original_length: Mapped[int | None] = mapped_column(Integer)
+    translated_length: Mapped[int | None] = mapped_column(Integer)
+    word_count: Mapped[int | None] = mapped_column(Integer)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+
 class GeneratedSchoolHealthAnalysis(Base):
     __tablename__ = "generated_school_health_analyses"
 

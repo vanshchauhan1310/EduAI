@@ -156,9 +156,9 @@ class MEOAssistantResponse(BaseModel):
 # ─── Translation ──────────────────────────────────────────────────
 
 class TranslateRequest(BaseModel):
-    source_language: str = Field(..., description="Telugu | English")
-    target_language: str = Field(..., description="Telugu | English")
-    text: str = Field(..., min_length=1, max_length=10000)
+    source_language: str = Field(..., description="Telugu or English")
+    target_language: str = Field(..., description="Telugu or English")
+    text: str = Field(..., description="Text to translate", max_length=10000)
 
 
 class TranslateResponse(BaseModel):
@@ -175,6 +175,37 @@ class TranslateResponse(BaseModel):
 
 class TranslationHistoryItem(BaseModel):
     id: int
+    type: str = "text"
+    source_language: str
+    target_language: str
+    preview: str
+    word_count: int | None
+    created_at: str
+
+
+# ─── Document Translation ─────────────────────────────────────────
+
+class DocumentTranslateResponse(BaseModel):
+    id: int | None = None
+    file_name: str
+    file_type: str
+    source_language: str
+    target_language: str
+    original_text: str
+    translated_text: str
+    original_length: int
+    translated_length: int
+    word_count: int
+    document_type: str | None = None
+    created_at: str | None = None
+
+
+class DocumentTranslationHistoryItem(BaseModel):
+    id: int
+    type: str = "document"
+    file_name: str
+    file_type: str | None = None
+    document_type: str | None = None
     source_language: str
     target_language: str
     preview: str

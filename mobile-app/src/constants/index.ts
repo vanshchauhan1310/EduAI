@@ -87,4 +87,8 @@ export const QUERY_KEYS = {
   AI_INSIGHTS: 'ai_insights',
   SCHOOL_HEALTH: 'school_health',
   DISTRICT_OVERVIEW: 'district_overview',
+  DROPOUT_HIGH_RISK: 'dropout-high-risk',
+  DROPOUT_SCHOOL: 'dropout-school',
+  DROPOUT_MANDAL: 'dropout-mandal',
+  DROPOUT_DISTRICT: 'dropout-district',
 } as const;

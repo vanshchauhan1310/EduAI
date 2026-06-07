@@ -11,6 +11,9 @@ from app.database.session import Base
 # Import all models so Alembic detects them
 from app.models import user, school, student, teacher, attendance, assessment, notification, ai_insight
 from app.models import copilot  # Admin Copilot tables
+from app.models import deo_copilot  # DEO Copilot tables
+from app.models import student_ml_input    # ML Input features table
+from app.models import student_prediction  # Prediction output table
 
 # Build the correct SYNC URL for Alembic from the async DATABASE_URL in settings
 def _make_sync_url(async_url: str) -> str:

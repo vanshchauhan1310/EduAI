@@ -69,6 +69,7 @@ class TranslationService:
         return [
             TranslationHistoryItem(
                 id=r.id,
+                type="text",
                 source_language=r.source_language,
                 target_language=r.target_language,
                 preview=r.source_text[:80] + ("…" if len(r.source_text) > 80 else ""),

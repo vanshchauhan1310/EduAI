@@ -5,7 +5,7 @@ import pandas as pd
 from pathlib import Path
 
 from fastapi.responses import FileResponse
-from fastapi.background import BackgroundTask
+from starlette.background import BackgroundTask
 
 from app.ai.dropout.predict import predict_dropout
 

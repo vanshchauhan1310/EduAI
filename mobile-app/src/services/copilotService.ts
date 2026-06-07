@@ -484,4 +484,50 @@ export const translationService = {
     const { data } = await api.get('/copilot/translations/history', { params: { limit } });
     return data;
   },
+
+  getDocumentTranslation: async (id: number) => {
+    const { data } = await api.get(`/copilot/document-translations/${id}`);
+    return data;
+  },
+
+  downloadDocumentTranslation: async (id: number, format: ExportFormat) =>
+    downloadExport(
+      `/copilot/document-translations/${id}/export/${format}`,
+      `document_translation_${id}.${format}`,
+      format === 'pdf' ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ),
+
+  shareDocumentTranslation: async (id: number, format: ExportFormat) =>
+    shareExport(
+      `/copilot/document-translations/${id}/export/${format}`,
+      `document_translation_${id}.${format}`,
+      format === 'pdf' ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      'GET',
+      `Share translated document ${id}`
+    ),
+
+  /** Upload a document (PDF/DOCX/TXT) and translate it between Telugu and English. */
+  translateDocument: async (
+    file: { uri: string; name: string; type: string },
+    sourceLanguage: string = 'English',
+    targetLanguage: string = 'Telugu',
+    documentType?: string,
+  ) => {
+    const formData = new FormData();
+    formData.append('file', {
+      uri: file.uri,
+      name: file.name,
+      type: file.type,
+    } as any);
+    // Use inline URL params to avoid axios interceptor issues
+    let url = `/copilot/translate-document?source_language=${encodeURIComponent(sourceLanguage)}&target_language=${encodeURIComponent(targetLanguage)}`;
+    if (documentType) {
+      url += `&document_type=${encodeURIComponent(documentType)}`;
+    }
+    const { data } = await api.post(url, formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+      timeout: 120000,
+    });
+    return data;
+  },
 };
