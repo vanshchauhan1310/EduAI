@@ -2,17 +2,16 @@
 
 from typing import List, Dict
 
-from sentence_transformers import SentenceTransformer
 from sentence_transformers.util import cos_sim
+
+from app.ai.exam_prep.embedding_model import get_embedding_model
 
 
 class RubricScorer:
 
     def __init__(self):
 
-        self.model = SentenceTransformer(
-            "sentence-transformers/all-MiniLM-L6-v2"
-        )
+        self.model = get_embedding_model()
 
         self.threshold = 0.55
 

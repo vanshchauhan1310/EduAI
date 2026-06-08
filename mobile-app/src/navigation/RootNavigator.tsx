@@ -10,20 +10,42 @@ import { TeacherNavigator } from './TeacherNavigator';
 import { StudentNavigator } from './StudentNavigator';
 import { ParentNavigator } from './ParentNavigator';
 
+function normalizeRole(role: string | undefined | null) {
+  if (!role) return null;
+  const normalized = role.toString().trim().toUpperCase();
+  console.log('🔍 Role normalization:', { input: role, normalized });
+  return normalized;
+}
+
 function RoleNavigator() {
   const user = useAuthStore((s) => s.user);
+  const role = normalizeRole(user?.role);
 
-  if (!user) return <AuthNavigator />;
+  console.log('🎯 RoleNavigator render:', { user: user?.email, rawRole: user?.role, normalizedRole: role });
 
-  switch (user.role) {
-    case 'DEO':     return <DEONavigator />;
-    case 'MEO':     return <MEONavigator />;
-    case 'HM':      return <HMNavigator />;
-    case 'TEACHER': return <TeacherNavigator />;
-    case 'STUDENT': return <StudentNavigator />;
-    case 'PARENT':  return <ParentNavigator />;
-    default:        return <AuthNavigator />;
+  if (!user) {
+    console.log('❌ No user - showing AuthNavigator');
+    return <AuthNavigator />;
   }
+
+  const navigatorMap: Record<string, React.ReactNode> = {
+    'DEO':     <DEONavigator />,
+    'MEO':     <MEONavigator />,
+    'HM':      <HMNavigator />,
+    'TEACHER': <TeacherNavigator />,
+    'STUDENT': <StudentNavigator />,
+    'PARENT':  <ParentNavigator />,
+  };
+
+  const selectedNavigator = navigatorMap[role ?? ''];
+  
+  if (!selectedNavigator) {
+    console.log('⚠️  Unknown role or no match:', { role, availableRoles: Object.keys(navigatorMap) });
+    return <AuthNavigator />;
+  }
+
+  console.log('✅ Using navigator for role:', role);
+  return selectedNavigator;
 }
 
 export function RootNavigator() {

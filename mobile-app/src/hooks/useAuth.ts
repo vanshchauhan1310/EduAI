@@ -7,11 +7,21 @@ export function useLogin() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: ({ email, password }: { email: string; password: string }) =>
-      authService.login(email, password),
+    mutationFn: ({ email, password }: { email: string; password: string }) => {
+      console.log('🔑 Attempting login for:', email);
+      return authService.login(email, password);
+    },
     onSuccess: async (tokens) => {
+      console.log('✅ Login successful! Received tokens:', {
+        email: tokens.user.email,
+        role: tokens.user.role,
+        tokenType: tokens.token_type,
+      });
       await setAuth(tokens);
       queryClient.clear();
+    },
+    onError: (error: any) => {
+      console.log('❌ Login error:', error?.response?.data || error?.message);
     },
   });
 }

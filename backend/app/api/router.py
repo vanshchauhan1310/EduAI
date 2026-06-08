@@ -10,6 +10,7 @@ from app.api.v1 import (
     ai,
     copilot,
     deo_copilot,
+    career,
 )
 
 from app.api.v1.dropout_batch_predict import (
@@ -30,6 +31,7 @@ api_router.include_router(auth.router)
 api_router.include_router(students.router)
 api_router.include_router(attendance.router)
 api_router.include_router(assessments.router)
+api_router.include_router(career.router)
 api_router.include_router(analytics.router)
 api_router.include_router(notifications.router)
 api_router.include_router(ai.router)

@@ -1,14 +1,13 @@
 # app/ai/exam_prep/semantic_scorer.py
 
-from sentence_transformers import SentenceTransformer
 from sentence_transformers.util import cos_sim
+
+from app.ai.exam_prep.embedding_model import get_embedding_model
 
 
 class SemanticScorer:
     def __init__(self):
-        self.model = SentenceTransformer(
-            "sentence-transformers/all-MiniLM-L6-v2"
-        )
+        self.model = get_embedding_model()
 
     def score(
         self,

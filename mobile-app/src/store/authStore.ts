@@ -15,6 +15,22 @@ interface AuthState {
   updateUser: (user: Partial<AuthUser>) => void;
 }
 
+function normalizeUserRole(role: string | undefined): AuthUser['role'] | null {
+  if (!role) return null;
+  const normalized = role.trim().toUpperCase();
+  if (['DEO', 'MEO', 'HM', 'TEACHER', 'STUDENT', 'PARENT'].includes(normalized)) {
+    return normalized as AuthUser['role'];
+  }
+  return null;
+}
+
+function normalizeAuthUser(user: AuthUser): AuthUser {
+  return {
+    ...user,
+    role: normalizeUserRole(user.role) ?? user.role,
+  };
+}
+
 export const useAuthStore = create<AuthState>((set, get) => ({
   user: null,
   accessToken: null,
@@ -23,11 +39,17 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   isLoading: true,
 
   setAuth: async (tokens: AuthTokens) => {
+    const normalizedUser = normalizeAuthUser(tokens.user);
+    console.log('🔐 authStore.setAuth:', { 
+      rawRole: tokens.user.role, 
+      normalizedRole: normalizedUser.role,
+      email: normalizedUser.email 
+    });
     await SecureStore.setItemAsync(TOKEN_KEY, tokens.access_token);
     await SecureStore.setItemAsync(REFRESH_TOKEN_KEY, tokens.refresh_token);
-    await SecureStore.setItemAsync(USER_KEY, JSON.stringify(tokens.user));
+    await SecureStore.setItemAsync(USER_KEY, JSON.stringify(normalizedUser));
     set({
-      user: tokens.user,
+      user: normalizedUser,
       accessToken: tokens.access_token,
       refreshToken: tokens.refresh_token,
       isAuthenticated: true,
@@ -48,8 +70,16 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       const userJson = await SecureStore.getItemAsync(USER_KEY);
 
       if (token && refresh && userJson) {
-        const user = JSON.parse(userJson) as AuthUser;
+        const rawUser = JSON.parse(userJson) as AuthUser;
+        const user = normalizeAuthUser(rawUser);
+        console.log('📂 authStore.loadStoredAuth:', { 
+          email: user.email, 
+          rawRole: rawUser.role, 
+          normalizedRole: user.role 
+        });
         set({ user, accessToken: token, refreshToken: refresh, isAuthenticated: true });
+      } else {
+        console.log('📂 authStore.loadStoredAuth: No stored auth found');
       }
     } catch {
       // Stored auth is invalid or SecureStore entries are corrupted.

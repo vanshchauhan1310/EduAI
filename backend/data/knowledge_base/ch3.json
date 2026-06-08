@@ -1,0 +1,88 @@
+{
+  "chapter": "Polynomials",
+  "subject": "Mathematics",
+  "class_grade": 9,
+  "topics": [
+    "Definition and Types of Polynomials",
+    "Degree of a Polynomial",
+    "Zeros of a Polynomial",
+    "Remainder Theorem",
+    "Factor Theorem",
+    "Factorisation of Polynomials",
+    "Algebraic Identities"
+  ],
+  "definitions": [
+    {
+      "term": "Polynomial",
+      "definition": "An algebraic expression consisting of variables and coefficients with non-negative integer exponents, e.g., p(x) = 3x² + 2x + 1."
+    },
+    {
+      "term": "Zero of a Polynomial",
+      "definition": "A value of x for which p(x) = 0. Also called roots of the polynomial."
+    },
+    {
+      "term": "Degree of Polynomial",
+      "definition": "The highest power of the variable in the polynomial."
+    },
+    {
+      "term": "Monomial",
+      "definition": "A polynomial with exactly one term."
+    },
+    {
+      "term": "Binomial",
+      "definition": "A polynomial with exactly two terms."
+    },
+    {
+      "term": "Trinomial",
+      "definition": "A polynomial with exactly three terms."
+    }
+  ],
+  "formulae": [
+    {
+      "name": "Remainder Theorem",
+      "formula": "When p(x) is divided by (x - a), the remainder = p(a)",
+      "used_for": "Finding remainder without long division"
+    },
+    {
+      "name": "Factor Theorem",
+      "formula": "(x - a) is a factor of p(x) if and only if p(a) = 0",
+      "used_for": "Checking whether a given expression is a factor of polynomial"
+    },
+    {
+      "name": "Identity 1",
+      "formula": "(a + b)² = a² + 2ab + b²",
+      "used_for": "Expanding square of sum"
+    },
+    {
+      "name": "Identity 2",
+      "formula": "(a - b)² = a² - 2ab + b²",
+      "used_for": "Expanding square of difference"
+    },
+    {
+      "name": "Identity 3",
+      "formula": "(a + b)(a - b) = a² - b²",
+      "used_for": "Difference of squares"
+    },
+    {
+      "name": "Identity 4",
+      "formula": "(a + b + c)² = a² + b² + c² + 2ab + 2bc + 2ca",
+      "used_for": "Square of a trinomial"
+    }
+  ],
+  "important_concepts": [
+    "A polynomial of degree n has at most n zeros",
+    "Every linear polynomial has exactly one zero",
+    "A non-zero constant polynomial has no zeros",
+    "Zero polynomial (0) has every real number as its zero",
+    "Sum of zeros of ax² + bx + c = -b/a",
+    "Product of zeros of ax² + bx + c = c/a"
+  ],
+  "common_mistakes": [
+    "Confusing degree of polynomial with number of terms",
+    "Applying remainder theorem incorrectly (substituting wrong value)",
+    "Sign errors in algebraic identities",
+    "Forgetting that √x is not a polynomial"
+  ],
+  "difficulty_level": "medium",
+  "estimated_study_minutes": 90
+}

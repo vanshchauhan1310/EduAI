@@ -50,36 +50,19 @@ class AssessmentService:
             / f"{chapter_id}.json"
         )
 
-        pyq_database_path = (
-            self.pyq_database_dir
-            / f"{chapter_id}_pyq.json"
-        )
-
-        pattern_library_path = (
-            self.pattern_library_dir
-            / f"{chapter_id}_patterns.json"
-        )
-
         if not knowledge_base_path.exists():
 
             raise FileNotFoundError(
-                f"Knowledge base not found: "
-                f"{knowledge_base_path}"
+                f"Knowledge base not found for chapter '{chapter_id}'. "
+                f"Expected file: {knowledge_base_path}"
             )
 
-        if not pyq_database_path.exists():
+        # These are optional — pass None if not present
+        pyq_database_path = self.pyq_database_dir / f"{chapter_id}_pyq.json"
+        pattern_library_path = self.pattern_library_dir / f"{chapter_id}_patterns.json"
 
-            raise FileNotFoundError(
-                f"PYQ database not found: "
-                f"{pyq_database_path}"
-            )
-
-        if not pattern_library_path.exists():
-
-            raise FileNotFoundError(
-                f"Pattern library not found: "
-                f"{pattern_library_path}"
-            )
+        pyq_path = pyq_database_path if pyq_database_path.exists() else None
+        pattern_path = pattern_library_path if pattern_library_path.exists() else None
 
         assessment = (
             self.generator.generate_assessment(
@@ -88,11 +71,9 @@ class AssessmentService:
                 knowledge_base_path=
                 knowledge_base_path,
 
-                pyq_database_path=
-                pyq_database_path,
+                pyq_database_path=pyq_path,
 
-                pattern_library_path=
-                pattern_library_path,
+                pattern_library_path=pattern_path,
 
                 difficulty=difficulty,
 
@@ -126,12 +107,28 @@ class AssessmentService:
                 f"not found"
             )
 
+        result = self.evaluate_answers(
+            questions=assessment["questions"],
+            answers=answers
+        )
+
+        return {
+            **result,
+            "assessment_id": assessment_id
+        }
+
+    def evaluate_answers(
+        self,
+        questions: List[Dict],
+        answers: List[Dict]
+    ) -> Dict:
+
         question_lookup = {
 
             question["question_id"]: question
 
             for question in
-            assessment["questions"]
+            questions
         }
 
         results = []
@@ -252,9 +249,6 @@ class AssessmentService:
             )
 
         return {
-
-            "assessment_id":
-            assessment_id,
 
             "total_questions":
             len(results),

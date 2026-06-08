@@ -30,3 +30,4 @@ from app.models.deo_copilot import (
     TeacherRationalization,
     DistrictCommunication,
 )
+from app.models.career import CareerRecommendation

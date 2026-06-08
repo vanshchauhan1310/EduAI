@@ -8,7 +8,7 @@ class ContextBuilder:
     def __init__(
         self,
         knowledge_base_path: Path,
-        pyq_database_path: Path
+        pyq_database_path: Path = None
     ):
 
         with open(
@@ -19,13 +19,14 @@ class ContextBuilder:
 
             self.knowledge_base = json.load(f)
 
-        with open(
-            pyq_database_path,
-            "r",
-            encoding="utf-8"
-        ) as f:
-
-            self.pyq_database = json.load(f)
+        self.pyq_database = {}
+        if pyq_database_path and Path(pyq_database_path).exists():
+            with open(
+                pyq_database_path,
+                "r",
+                encoding="utf-8"
+            ) as f:
+                self.pyq_database = json.load(f)
 
     def get_concept_context(
         self,
@@ -63,6 +64,10 @@ class ContextBuilder:
                     topic
                 )
 
+        # If no matches found, include all topics for context
+        if not context["topics"]:
+            context["topics"] = self.knowledge_base.get("topics", [])
+
         # Definitions
         for definition in self.knowledge_base.get(
             "definitions",
@@ -77,6 +82,10 @@ class ContextBuilder:
                 context["definitions"].append(
                     definition
                 )
+
+        # If no matches, include all definitions
+        if not context["definitions"]:
+            context["definitions"] = self.knowledge_base.get("definitions", [])
 
         # Important concepts
         for item in self.knowledge_base.get(
@@ -93,6 +102,9 @@ class ContextBuilder:
                     "important_concepts"
                 ].append(item)
 
+        if not context["important_concepts"]:
+            context["important_concepts"] = self.knowledge_base.get("important_concepts", [])
+
         # Common mistakes
         for item in self.knowledge_base.get(
             "common_mistakes",
@@ -108,7 +120,10 @@ class ContextBuilder:
                     "common_mistakes"
                 ].append(item)
 
-        # Related PYQs
+        if not context["common_mistakes"]:
+            context["common_mistakes"] = self.knowledge_base.get("common_mistakes", [])
+
+        # Related PYQs (optional)
         for question in self.pyq_database.get(
             "questions",
             []

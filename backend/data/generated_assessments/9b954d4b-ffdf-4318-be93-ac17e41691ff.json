@@ -1,0 +1,73 @@
+{
+    "assessment_id": "9b954d4b-ffdf-4318-be93-ac17e41691ff",
+    "chapter_id": "ch3",
+    "difficulty": "MEDIUM",
+    "total_questions": 5,
+    "total_marks": 11,
+    "questions": [
+        {
+            "question_id": "18010c0f-956b-44e6-9fbb-b9126502a966",
+            "question_text": "If the product of the zeros of the quadratic polynomial 3x² + 4x + 2 is 2/3, find the value of the constant term in the polynomial.",
+            "sample_answer": "The product of the zeros of ax² + bx + c = c/a. Given product of zeros = 2/3 and a = 3, we have c/3 = 2/3. So, c = 2.",
+            "expected_points": [
+                "Understanding of product of zeros of a quadratic polynomial",
+                "Using the formula for product of zeros",
+                "Calculating the constant term"
+            ],
+            "pattern": "list",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "57c1f3db-312e-4640-8eb6-83c2246f0248",
+            "question_text": "What can be said about the zeros of a non-zero constant polynomial?",
+            "sample_answer": "A non-zero constant polynomial has no zeros.",
+            "expected_points": [
+                "Definition of zero of a polynomial",
+                "Property of non-zero constant polynomial",
+                "No zeros for non-zero constant polynomial"
+            ],
+            "pattern": "define",
+            "difficulty": "MEDIUM",
+            "marks": 1
+        },
+        {
+            "question_id": "e33ea96b-8a72-4845-913d-bf8c97ceefb9",
+            "question_text": "What is the difference between a monomial and a binomial?",
+            "sample_answer": "A monomial is a polynomial with exactly one term, whereas a binomial is a polynomial with exactly two terms.",
+            "expected_points": [
+                "Definition of monomial",
+                "Definition of binomial",
+                "Difference between monomial and binomial"
+            ],
+            "pattern": "short_answer",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "6328b3af-0a8e-484f-975c-4d6442ae7536",
+            "question_text": "What is the degree of the polynomial 3x^4 + 2x^3 - 5x^2 + x - 1?",
+            "sample_answer": "The degree of the polynomial is 4.",
+            "expected_points": [
+                "Identification of the highest power of the variable",
+                "Understanding of the definition of degree of a polynomial"
+            ],
+            "pattern": "define",
+            "difficulty": "MEDIUM",
+            "marks": 1
+        },
+        {
+            "question_id": "bebfb52b-3ca4-4175-b8e3-f413369e4f9a",
+            "question_text": "If p(x) = x^2 - 6x + 8, find the sum and product of its zeros.",
+            "sample_answer": "The sum of zeros is -(-6)/1 = 6 and the product of zeros is 8/1 = 8.",
+            "expected_points": [
+                "Sum of zeros calculated as -b/a",
+                "Product of zeros calculated as c/a",
+                "Correct application of formulas for sum and product of zeros"
+            ],
+            "pattern": "list",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        }
+    ]
+}

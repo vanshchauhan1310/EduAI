@@ -44,6 +44,11 @@ class Assessment(Base):
     instructions: Mapped[str | None] = mapped_column(Text)
     is_published: Mapped[bool] = mapped_column(Boolean, default=False)
 
+    # JSON-encoded list of AI-generated questions (question_id, question_text,
+    # sample_answer, expected_points, pattern, difficulty, marks), keyed to this
+    # assessment's own integer id rather than a separate UUID store.
+    questions_json: Mapped[str | None] = mapped_column(Text)
+
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), onupdate=func.now(), server_default=func.now())
 

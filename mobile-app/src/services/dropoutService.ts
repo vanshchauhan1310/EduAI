@@ -28,6 +28,7 @@ export interface HighRiskStudent {
   dropout_probability: number;
   risk_level: string;
   recommendation: string;
+  recommendations: string[];
   predicted_at: string;
 }
 
@@ -49,6 +50,7 @@ export interface StudentPredictionDetail {
   dropout_probability: number;
   risk_level: string;
   recommendation: string;
+  recommendations: string[];
   predicted_at: string;
 }
 
@@ -73,6 +75,7 @@ export interface SchoolDropoutStudent {
   dropout_probability: number;
   risk_level: string;
   recommendation: string;
+  recommendations: string[];
 }
 
 export interface SchoolDropoutDetailResponse {
@@ -96,6 +99,7 @@ export interface ClassPredictionStudent {
   dropout_probability: number;
   risk_level: string;
   recommendation: string;
+  recommendations: string[];
 }
 
 export interface PredictByClassResponse {

@@ -88,6 +88,14 @@ export default function DropoutPredictionScreen() {
   const [predicting, setPredicting] = useState(false);
   const [classResults, setClassResults] = useState<PredictByClassResponse | null>(null);
 
+  const detailRecommendations = selectedStudent
+    ? selectedStudent.recommendations?.length > 0
+      ? selectedStudent.recommendations
+      : selectedStudent.recommendation
+        ? [selectedStudent.recommendation]
+        : []
+    : [];
+
   // Animated panel height for smooth transitions
   const panelHeight = useRef(new Animated.Value(350)).current;
   const resultsOpacity = useRef(new Animated.Value(0)).current;
@@ -388,13 +396,18 @@ export default function DropoutPredictionScreen() {
               </View>
 
               {/* Recommendation */}
-              {selectedStudent.recommendation && (
+              {detailRecommendations.length > 0 && (
                 <View style={styles.detailSection}>
                   <View style={styles.detailSectionHeader}>
                     <Ionicons name="bulb-outline" size={16} color="#d6a72f" />
-                    <Text style={styles.detailSectionTitle}>Recommended Action</Text>
+                    <Text style={styles.detailSectionTitle}>Recommended Actions</Text>
                   </View>
-                  <Text style={styles.detailRecommendation}>{selectedStudent.recommendation}</Text>
+                  {detailRecommendations.map((item, index) => (
+                    <View key={index} style={styles.recommendationRow}>
+                      <Text style={styles.recommendationBullet}>•</Text>
+                      <Text style={styles.detailRecommendation}>{item}</Text>
+                    </View>
+                  ))}
                 </View>
               )}
 
@@ -702,6 +715,8 @@ const styles = StyleSheet.create({
   detailLabel: { color: '#6b7fa3', fontSize: 13 },
   detailValue: { color: '#071a3a', fontSize: 13, fontWeight: '500' },
   detailRecommendation: { color: '#334155', fontSize: 14, lineHeight: 22 },
+  recommendationRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 8, marginBottom: 8 },
+  recommendationBullet: { color: '#d6a72f', fontSize: 18, lineHeight: 22, width: 16 },
 
   // Alert banner in detail
   detailAlert: {

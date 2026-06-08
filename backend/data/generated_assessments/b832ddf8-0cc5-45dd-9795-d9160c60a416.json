@@ -1,0 +1,76 @@
+{
+    "assessment_id": "b832ddf8-0cc5-45dd-9795-d9160c60a416",
+    "chapter_id": "ch1",
+    "difficulty": "MEDIUM",
+    "total_questions": 5,
+    "total_marks": 20,
+    "questions": [
+        {
+            "question_id": "99171449-19b8-47b3-a114-fd6834bff3f1",
+            "question_text": "What is the additive inverse of the rational number 3/7 and how does it relate to the concept of equivalent rational numbers?",
+            "sample_answer": "The additive inverse of 3/7 is -3/7, which means that when 3/7 and -3/7 are added together, the result is 0, demonstrating the concept of equivalent rational numbers where two rational numbers can have the same value but different signs.",
+            "expected_points": [
+                "Definition of additive inverse",
+                "Calculation of additive inverse of 3/7",
+                "Relation to equivalent rational numbers",
+                "Understanding of rational number operations"
+            ],
+            "pattern": "explain",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        },
+        {
+            "question_id": "4a77438e-95d4-4677-8e2e-23e4dc1f27fe",
+            "question_text": "What is the multiplicative inverse of the rational number 3/4?",
+            "sample_answer": "The multiplicative inverse of 3/4 is 4/3.",
+            "expected_points": [
+                "Definition of multiplicative inverse",
+                "Formula for multiplicative inverse of p/q",
+                "Calculation of multiplicative inverse of 3/4"
+            ],
+            "pattern": "short_answer",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "277c3836-f2ab-4430-bbc7-4e40bf66ef25",
+            "question_text": "Represent the rational number 3/4 on a number line and identify the equivalent rational number between 3/4 and 1",
+            "sample_answer": "To represent 3/4 on a number line, mark a point 3 units from 0 in the positive direction, divided into 4 equal parts. The equivalent rational number between 3/4 and 1 is 7/8 or 2/3 in standard form but for the given condition 3/4 itself can be written as 6/8, so 6/8 and 7/8 are the two rational numbers between 3/4 or 6/8 and 1 or 8/8, hence 7/8 is the required rational number",
+            "expected_points": [
+                "Representation of 3/4 on number line",
+                "Identification of equivalent rational number",
+                "Standard form of the equivalent rational number"
+            ],
+            "pattern": "define",
+            "difficulty": "MEDIUM",
+            "marks": 2
+        },
+        {
+            "question_id": "81b9e784-e3cb-4b74-9d2a-f2a55b0215de",
+            "question_text": "What is the additive inverse of the rational number 3/5 and explain its significance in rational number operations?",
+            "sample_answer": "The additive inverse of 3/5 is -3/5. This is significant because when 3/5 and -3/5 are added together, the result is 0, which is the additive identity.",
+            "expected_points": [
+                "Definition of additive inverse",
+                "Calculation of additive inverse for 3/5",
+                "Significance in rational number operations"
+            ],
+            "pattern": "compare",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        },
+        {
+            "question_id": "6c557377-4605-436c-9494-ccc1ae829d6a",
+            "question_text": "Compare the rational numbers 3/4 and 5/6 and determine which one is greater. Explain your reasoning and provide the equivalent rational numbers in standard form to support your answer.",
+            "sample_answer": "To compare 3/4 and 5/6, we need to find the LCM of 4 and 6, which is 12. Then, we convert both numbers to equivalent rational numbers with a denominator of 12: 3/4 = 9/12 and 5/6 = 10/12. Since 9/12 is less than 10/12, 3/4 is less than 5/6. The equivalent rational numbers in standard form are 3/4 and 5/6.",
+            "expected_points": [
+                "Finding LCM of denominators",
+                "Converting to equivalent rational numbers",
+                "Comparing the rational numbers",
+                "Providing equivalent rational numbers in standard form"
+            ],
+            "pattern": "long_answer",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        }
+    ]
+}

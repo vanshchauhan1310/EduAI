@@ -1,0 +1,59 @@
+{
+  "chapter": "Rational Numbers",
+  "subject": "Mathematics",
+  "class_grade": 7,
+  "topics": [
+    "Definition of Rational Numbers",
+    "Properties of Rational Numbers",
+    "Operations on Rational Numbers",
+    "Representation on Number Line",
+    "Comparison of Rational Numbers"
+  ],
+  "definitions": [
+    {
+      "term": "Rational Number",
+      "definition": "A number that can be expressed in the form p/q where p and q are integers and q is not equal to zero."
+    },
+    {
+      "term": "Equivalent Rational Numbers",
+      "definition": "Rational numbers that represent the same value, e.g., 1/2 and 2/4 are equivalent."
+    },
+    {
+      "term": "Standard Form",
+      "definition": "A rational number p/q is in standard form when q is positive and HCF of p and q is 1."
+    }
+  ],
+  "formulae": [
+    {
+      "name": "Addition of Rational Numbers",
+      "formula": "a/b + c/d = (ad + bc) / bd",
+      "used_for": "Adding two rational numbers with different denominators"
+    },
+    {
+      "name": "Multiplication of Rational Numbers",
+      "formula": "(a/b) × (c/d) = ac/bd",
+      "used_for": "Multiplying two rational numbers"
+    },
+    {
+      "name": "Division of Rational Numbers",
+      "formula": "(a/b) ÷ (c/d) = (a/b) × (d/c) = ad/bc",
+      "used_for": "Dividing one rational number by another"
+    }
+  ],
+  "important_concepts": [
+    "Every integer is a rational number",
+    "Rational numbers are closed under addition, subtraction, multiplication",
+    "Rational numbers are NOT closed under division (dividing by zero is undefined)",
+    "Between any two rational numbers, there exist infinite rational numbers",
+    "Additive inverse of p/q is -p/q",
+    "Multiplicative inverse (reciprocal) of p/q is q/p"
+  ],
+  "common_mistakes": [
+    "Forgetting to find LCM before adding rational numbers with different denominators",
+    "Not converting to standard form after operations",
+    "Confusing additive inverse with multiplicative inverse",
+    "Dividing numerator by numerator and denominator by denominator instead of multiplying by reciprocal"
+  ],
+  "difficulty_level": "medium",
+  "estimated_study_minutes": 60
+}

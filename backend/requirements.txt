@@ -32,7 +32,8 @@ email-validator
 # ─── AI Provider ──────────────────────────────────────────────
 openai                        # OpenAI-compatible SDK for NVIDIA NIM
 ollama                        # Legacy/local LLM option
-
+sentence-transformers         # Semantic embedding and scoring models
+requests                      # HTTP client used by AI and external service integrations
 # ─── Document Processing ─────────────────────────────────────
 PyMuPDF                  # PDF text extraction
 reportlab                # PDF generation

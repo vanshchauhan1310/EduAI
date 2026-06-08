@@ -1,0 +1,74 @@
+{
+    "assessment_id": "382fafb0-45b0-467e-9ec1-4e5d6aad3540",
+    "chapter_id": "ch1",
+    "difficulty": "MEDIUM",
+    "total_questions": 5,
+    "total_marks": 17,
+    "questions": [
+        {
+            "question_id": "3c8ef339-d620-4fac-ad38-4b1dd45a5646",
+            "question_text": "What is the additive inverse of the rational number 3/7 and how does it relate to the concept of equivalent rational numbers?",
+            "sample_answer": "The additive inverse of 3/7 is -3/7, which is a rational number that when added to 3/7 results in zero, and it can also be expressed in equivalent forms such as -6/14 or -9/21.",
+            "expected_points": [
+                "Definition of additive inverse",
+                "Calculation of additive inverse of 3/7",
+                "Relation to equivalent rational numbers"
+            ],
+            "pattern": "explain",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "e18e79be-921c-4e8b-b860-8a2484305b4a",
+            "question_text": "If a and b are two rational numbers, then what can be said about the operation a * b?",
+            "sample_answer": "The result of a * b is also a rational number because rational numbers are closed under multiplication.",
+            "expected_points": [
+                "Definition of rational numbers",
+                "Closure property of rational numbers under multiplication",
+                "Result of multiplication is a rational number"
+            ],
+            "pattern": "short_answer",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "440ee19a-89ce-4335-80ce-c99215e7fa18",
+            "question_text": "What is the multiplicative inverse of the rational number 3/4?",
+            "sample_answer": "The multiplicative inverse of 3/4 is 4/3.",
+            "expected_points": [
+                "Definition of multiplicative inverse",
+                "Formula for multiplicative inverse of p/q",
+                "Calculation of multiplicative inverse of 3/4"
+            ],
+            "pattern": "compare",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        },
+        {
+            "question_id": "71ffcae1-95e8-4f4d-aa1b-877fb78ffee9",
+            "question_text": "What is the additive inverse of the rational number 3/7 and why is it important to find the additive inverse in properties of rational numbers?",
+            "sample_answer": "The additive inverse of 3/7 is -3/7 because when you add 3/7 and -3/7, the result is 0, which is the identity element for addition. Finding the additive inverse is important because it allows us to understand that for every rational number, there exists another rational number such that their sum is zero.",
+            "expected_points": [
+                "Definition of additive inverse",
+                "Calculation of additive inverse of 3/7",
+                "Importance of additive inverse in properties of rational numbers"
+            ],
+            "pattern": "short_answer",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "ea2d76fe-1cab-43a4-8f51-f0cc0fc26a9b",
+            "question_text": "What is the additive inverse of the rational number 3/5?",
+            "sample_answer": "The additive inverse of 3/5 is -3/5.",
+            "expected_points": [
+                "Definition of additive inverse",
+                "Calculation of additive inverse of 3/5",
+                "Result as -3/5"
+            ],
+            "pattern": "list",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        }
+    ]
+}

@@ -91,4 +91,5 @@ export const QUERY_KEYS = {
   DROPOUT_SCHOOL: 'dropout-school',
   DROPOUT_MANDAL: 'dropout-mandal',
   DROPOUT_DISTRICT: 'dropout-district',
+  CAREER: 'career',
 } as const;

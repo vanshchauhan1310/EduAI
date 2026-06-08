@@ -60,6 +60,7 @@ class StudentPredictionBase(BaseModel):
     dropout_probability: float = Field(..., description="Probability score 0-100")
     risk_level: str = Field(..., description="Low / Medium / High / Critical")
     recommendation: str
+    recommendations: list[str] = Field(default_factory=list)
 
 
 class StudentPredictionResponse(StudentPredictionBase):

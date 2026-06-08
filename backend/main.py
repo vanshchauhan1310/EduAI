@@ -16,6 +16,7 @@ from fastapi.responses import JSONResponse
 from app.core.config import settings
 from app.api.router import api_router
 from app.database.session import engine, Base
+from app.ai.exam_prep.embedding_model import get_embedding_model
 
 # ─── Logging Configuration ────────────────────────────────────
 logging.basicConfig(
@@ -39,6 +40,12 @@ async def lifespan(app: FastAPI):
         async with engine.begin() as conn:
             await conn.run_sync(Base.metadata.create_all)
         logger.info("Database tables created/verified")
+
+    # Pre-load the shared embedding model so the first assessment
+    # generation/grading request doesn't pay the ~10s load cost.
+    logger.info("Pre-loading sentence embedding model...")
+    get_embedding_model()
+    logger.info("Embedding model ready")
 
     yield
 
@@ -73,51 +80,5 @@ app.include_router(api_router, prefix="/api/v1")
 
 @app.get("/health", tags=["Health"])
 async def health_check():
-    return JSONResponse({"status": "healthy", "version": settings.APP_VERSION})'''
-from fastapi import FastAPI
+    return JSONResponse({"status": "healthy", "version": settings.APP_VERSION})
 
-from app.api.v1.dropout import (
-    router as train_router
-)
-
-from app.api.v1.dropout_batch_predict import (
-    router as predict_router
-)
-    return JSONResponse({
-        "status": "healthy",
-        "version": settings.APP_VERSION,
-        "environment": settings.APP_ENV,
-    })
-
-from app.api.v1.ai_assessment import (
-    router as ai_assessment_router
-)
-
-app = FastAPI(
-    title="EduAI Backend"
-)
-
-app.include_router(
-    train_router,
-    prefix="/api/v1/dropout",
-    tags=["Dropout Training"]
-)
-
-app.include_router(
-    predict_router,
-    prefix="/api/v1/dropout",
-    tags=["Dropout Prediction"]
-)
-
-app.include_router(
-    ai_assessment_router,
-    prefix="/api/v1"
-)
-@app.get("/", tags=["Root"])
-async def root():
-    return {
-        "application": settings.APP_NAME,
-        "version": settings.APP_VERSION,
-        "docs": "/docs",
-        "health": "/health",
-    }

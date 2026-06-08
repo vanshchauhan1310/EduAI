@@ -1,0 +1,139 @@
+{
+    "assessment_id": "b19ad101-6b40-4d9c-b17a-3b2547e50d47",
+    "chapter_id": "ch1",
+    "difficulty": "MEDIUM",
+    "total_questions": 10,
+    "total_marks": 34,
+    "questions": [
+        {
+            "question_id": "187a5c45-ab79-449b-84c9-ed6d74c2cc73",
+            "question_text": "Prove that the rational numbers are closed under multiplication. Give an example to support your answer.",
+            "sample_answer": "Let a/b and c/d be any two rational numbers. Then, (a/b) * (c/d) = (a*c)/(b*d), which is also a rational number because a*c and b*d are integers and b*d is not equal to zero. For example, (1/2) * (3/4) = (1*3)/(2*4) = 3/8, which is a rational number.",
+            "expected_points": [
+                "Definition of closure under multiplication",
+                "Example to support closure under multiplication",
+                "Result of multiplication is a rational number"
+            ],
+            "pattern": "compare",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        },
+        {
+            "question_id": "ab960d00-8bf8-4d1e-9ec1-f36688c31e0b",
+            "question_text": "If a rational number p/q is in standard form, what can be said about the numerator p and denominator q in terms of their common factors?",
+            "sample_answer": "The numerator p and denominator q have no common factors other than 1, as the HCF of p and q is 1.",
+            "expected_points": [
+                "Definition of standard form",
+                "HCF of p and q is 1",
+                "No common factors other than 1"
+            ],
+            "pattern": "list",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "3779d851-4556-47b4-8174-a15c606a8d83",
+            "question_text": "What is the additive inverse of the rational number 3/7 and why is it important to find the additive inverse in rational number operations?",
+            "sample_answer": "The additive inverse of 3/7 is -3/7, which is important because it allows us to find the difference between two rational numbers by converting the subtraction into an addition operation.",
+            "expected_points": [
+                "Definition of additive inverse",
+                "Calculation of additive inverse of 3/7",
+                "Importance of additive inverse in rational number operations"
+            ],
+            "pattern": "explain",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "b41cedb8-ed5b-4c14-b504-7e0cc1ac6d6d",
+            "question_text": "Compare the rational numbers 3/4 and 5/6. Which one is larger and why?",
+            "sample_answer": "To compare 3/4 and 5/6, we need to find a common denominator. The least common multiple of 4 and 6 is 12. So, we convert both fractions to have a denominator of 12: 3/4 = 9/12 and 5/6 = 10/12. Since 9/12 is less than 10/12, 3/4 is less than 5/6.",
+            "expected_points": [
+                "Finding the least common multiple of denominators",
+                "Converting fractions to have the same denominator",
+                "Comparing the numerators to determine the larger fraction"
+            ],
+            "pattern": "explain",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        },
+        {
+            "question_id": "b4e27e54-a525-4841-bea1-91d238e68526",
+            "question_text": "Simplify the expression: (-3/5) + (2/15) + (-11/15)",
+            "sample_answer": "To simplify the expression, first find the LCM of the denominators, which is 15. Then convert each fraction to have a denominator of 15: (-3/5) = (-9/15), (2/15) remains the same, and (-11/15) remains the same. Now add the fractions: (-9/15) + (2/15) + (-11/15) = (-18/15). Simplify the result to standard form: (-18/15) = (-6/5).",
+            "expected_points": [
+                "Finding LCM of denominators",
+                "Converting fractions to have the same denominator",
+                "Adding the fractions",
+                "Simplifying the result to standard form"
+            ],
+            "pattern": "compare",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "459722ca-374e-4807-b1d9-3bd2723ca931",
+            "question_text": "What is the multiplicative inverse of the rational number 3/4?",
+            "sample_answer": "The multiplicative inverse of 3/4 is 4/3.",
+            "expected_points": [
+                "Definition of multiplicative inverse",
+                "Formula for multiplicative inverse of p/q",
+                "Calculation of multiplicative inverse of 3/4"
+            ],
+            "pattern": "explain",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "b732a15a-b220-4c11-a38d-2202fc8473d1",
+            "question_text": "Why is it not possible to divide a rational number by zero?",
+            "sample_answer": "It is not possible to divide a rational number by zero because division by zero is undefined and rational numbers are not closed under division by zero.",
+            "expected_points": [
+                "Division by zero is undefined",
+                "Rational numbers not closed under division by zero",
+                "Undefined result"
+            ],
+            "pattern": "compare",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "772c48aa-307b-475e-9847-08c1597d33cd",
+            "question_text": "Is the number 5 a rational number? Give reason to support your answer.",
+            "sample_answer": "Yes, 5 is a rational number because it can be expressed as 5/1, where 5 and 1 are integers and 1 is not equal to zero.",
+            "expected_points": [
+                "Definition of rational number",
+                "Expression of integer as rational number",
+                "Example of rational number"
+            ],
+            "pattern": "list",
+            "difficulty": "MEDIUM",
+            "marks": 2
+        },
+        {
+            "question_id": "c22893e9-b990-4072-acb4-a549847fab4c",
+            "question_text": "What is the additive inverse of the rational number 3/7?",
+            "sample_answer": "The additive inverse of 3/7 is -3/7.",
+            "expected_points": [
+                "Definition of additive inverse",
+                "Calculation of additive inverse of 3/7",
+                "Expression of answer in standard form"
+            ],
+            "pattern": "long_answer",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        },
+        {
+            "question_id": "5f73befc-57dc-44df-949b-f3de8a5b6ee2",
+            "question_text": "What is the additive inverse of the rational number 3/5?",
+            "sample_answer": "The additive inverse of 3/5 is -3/5.",
+            "expected_points": [
+                "Definition of additive inverse",
+                "Calculation of additive inverse of 3/5"
+            ],
+            "pattern": "define",
+            "difficulty": "MEDIUM",
+            "marks": 2
+        }
+    ]
+}

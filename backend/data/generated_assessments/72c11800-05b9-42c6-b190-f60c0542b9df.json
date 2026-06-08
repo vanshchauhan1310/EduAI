@@ -1,0 +1,74 @@
+{
+    "assessment_id": "72c11800-05b9-42c6-b190-f60c0542b9df",
+    "chapter_id": "ch1",
+    "difficulty": "MEDIUM",
+    "total_questions": 5,
+    "total_marks": 15,
+    "questions": [
+        {
+            "question_id": "3cf4282d-2622-438a-bb2b-9be1a73d702b",
+            "question_text": "Why is it not possible to divide a rational number by zero?",
+            "sample_answer": "It is not possible to divide a rational number by zero because division by zero is undefined and a rational number is defined as p/q where q is not equal to zero.",
+            "expected_points": [
+                "Definition of Rational Number",
+                "Division by zero is undefined",
+                "q cannot be zero in p/q"
+            ],
+            "pattern": "short_answer",
+            "difficulty": "MEDIUM",
+            "marks": 2
+        },
+        {
+            "question_id": "b946d7cc-fcdc-40d8-bcb3-d181bc7861c5",
+            "question_text": "Compare the rational numbers 3/4 and 2/3 and state which one is greater with a valid reason.",
+            "sample_answer": "To compare 3/4 and 2/3, we need to find a common denominator. The LCM of 4 and 3 is 12. So, 3/4 = 9/12 and 2/3 = 8/12. Since 9/12 is greater than 8/12, 3/4 is greater than 2/3.",
+            "expected_points": [
+                "Finding LCM of denominators",
+                "Converting to equivalent rational numbers with common denominator",
+                "Comparing the numerators to determine the greater rational number"
+            ],
+            "pattern": "short_answer",
+            "difficulty": "MEDIUM",
+            "marks": 2
+        },
+        {
+            "question_id": "4924cdc0-8724-46e4-9415-9d86d98417a4",
+            "question_text": "What is the additive inverse of the rational number 3/7 and how does it relate to the concept of equivalent rational numbers?",
+            "sample_answer": "The additive inverse of 3/7 is -3/7, which means that when 3/7 and -3/7 are added together, the result is 0, demonstrating the concept of equivalent rational numbers where 0 can be represented as 0/1 or 0/7.",
+            "expected_points": [
+                "Definition of additive inverse",
+                "Calculation of additive inverse of 3/7",
+                "Relation to equivalent rational numbers"
+            ],
+            "pattern": "compare",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "7c2a8005-2888-47a8-b0ba-485f02d1f199",
+            "question_text": "What is the multiplicative inverse of the rational number 3/4?",
+            "sample_answer": "The multiplicative inverse of 3/4 is 4/3.",
+            "expected_points": [
+                "Definition of multiplicative inverse",
+                "Formula for multiplicative inverse of p/q",
+                "Calculation of multiplicative inverse of 3/4"
+            ],
+            "pattern": "long_answer",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        },
+        {
+            "question_id": "d99cf7ea-802d-4d33-9e5c-00be7902db79",
+            "question_text": "What is the additive inverse of the rational number 3/7 and how does it relate to the concept of closure under addition?",
+            "sample_answer": "The additive inverse of 3/7 is -3/7, demonstrating that rational numbers are closed under addition, as the sum of 3/7 and -3/7 equals 0, which is also a rational number.",
+            "expected_points": [
+                "Definition of additive inverse",
+                "Calculation of additive inverse of 3/7",
+                "Explanation of closure under addition"
+            ],
+            "pattern": "compare",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "assessment_id": "01ea13fc-32db-43a9-89a3-2ad4645fb1fe",
+    "chapter_id": "ch1",
+    "difficulty": "MEDIUM",
+    "total_questions": 5,
+    "total_marks": 20,
+    "questions": [
+        {
+            "question_id": "3d243138-1ff9-4bd9-a172-887443cd3984",
+            "question_text": "What is the multiplicative inverse of the rational number 3/4?",
+            "sample_answer": "The multiplicative inverse of 3/4 is 4/3.",
+            "expected_points": [
+                "Definition of multiplicative inverse",
+                "Calculation of reciprocal"
+            ],
+            "pattern": "define",
+            "difficulty": "MEDIUM",
+            "marks": 2
+        },
+        {
+            "question_id": "150f9fb9-fbb5-47e1-a3e3-30d0f5bdc5a8",
+            "question_text": "Explain why every integer is a rational number with an example.",
+            "sample_answer": "Every integer is a rational number because it can be expressed in the form p/q where p is the integer and q is 1. For example, the integer 5 can be written as 5/1, which is a rational number.",
+            "expected_points": [
+                "Definition of rational number",
+                "Integer as a special case of rational number",
+                "Example of an integer as a rational number"
+            ],
+            "pattern": "compare",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        },
+        {
+            "question_id": "b677d2e6-add5-4fef-bd32-ca1517b06534",
+            "question_text": "If a and b are two rational numbers, then what can be said about the result of a + b, a - b and a * b?",
+            "sample_answer": "The result of a + b, a - b and a * b will always be a rational number because rational numbers are closed under addition, subtraction and multiplication.",
+            "expected_points": [
+                "Rational numbers are closed under addition",
+                "Rational numbers are closed under subtraction",
+                "Rational numbers are closed under multiplication"
+            ],
+            "pattern": "explain",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "26711111-cb6d-46f9-8ef4-73d702025a80",
+            "question_text": "Represent the rational numbers 3/5, -2/3 and 7/10 on a number line and arrange them in ascending order.",
+            "sample_answer": "To represent these rational numbers on a number line, first we find the equivalent rational numbers with a common denominator, which is the LCM of 5, 3 and 10, i.e., 30. So, 3/5 = 18/30, -2/3 = -20/30 and 7/10 = 21/30. Now, we can represent these numbers on the number line. The ascending order of these numbers is -2/3, 7/10, 3/5.",
+            "expected_points": [
+                "Finding the LCM of denominators",
+                "Converting rational numbers to equivalent form with common denominator",
+                "Representing the numbers on the number line",
+                "Arranging the numbers in ascending order"
+            ],
+            "pattern": "long_answer",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        },
+        {
+            "question_id": "a0b6ae1f-33bc-441a-9088-c92eb7721dc2",
+            "question_text": "What is the additive inverse of the rational number 3/7?",
+            "sample_answer": "The additive inverse of 3/7 is -3/7.",
+            "expected_points": [
+                "Definition of additive inverse",
+                "Application of additive inverse property to rational numbers",
+                "Correct calculation of additive inverse"
+            ],
+            "pattern": "long_answer",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        }
+    ]
+}

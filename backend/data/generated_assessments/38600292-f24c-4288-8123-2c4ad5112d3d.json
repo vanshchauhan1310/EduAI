@@ -1,0 +1,75 @@
+{
+    "assessment_id": "38600292-f24c-4288-8123-2c4ad5112d3d",
+    "chapter_id": "ch2",
+    "difficulty": "MEDIUM",
+    "total_questions": 5,
+    "total_marks": 16,
+    "questions": [
+        {
+            "question_id": "06029b1e-6bee-4c4f-80fe-1f8e17eb0285",
+            "question_text": "Solve the equation 2x + 5 = 11 using transposition method.",
+            "sample_answer": "Subtract 5 from both sides: 2x = 11 - 5, 2x = 6. Divide both sides by 2: x = 6/2, x = 3.",
+            "expected_points": [
+                "Subtract 5 from both sides",
+                "Divide both sides by 2",
+                "Value of x"
+            ],
+            "pattern": "define",
+            "difficulty": "MEDIUM",
+            "marks": 2
+        },
+        {
+            "question_id": "8358aa1a-b8ce-4b70-874e-e92081282ac2",
+            "question_text": "A bus travels from town A to town B at an average speed of 40 km/h and returns at an average speed of 60 km/h. What is the average speed of the bus for the entire trip?",
+            "sample_answer": "To find the average speed for the entire trip, we can use the formula: Average Speed = Total Distance / Total Time. Let's assume the distance from A to B is x km. The time taken to travel from A to B is x/40 hours, and the time taken to return is x/60 hours. The total time is x/40 + x/60 hours. The total distance is 2x km. So, the average speed is 2x / (x/40 + x/60). We can simplify this expression by finding a common denominator: 2x / ((3x + 2x) / 120) = 2x / (5x / 120) = 2x * 120 / 5x = 240 / 5 = 48 km/h.",
+            "expected_points": [
+                "Identifying the unknown (average speed)",
+                "Forming an equation using the formula for average speed",
+                "Solving the equation to find the average speed"
+            ],
+            "pattern": "short_answer",
+            "difficulty": "MEDIUM",
+            "marks": 2
+        },
+        {
+            "question_id": "9fc81c76-9c99-4261-9281-90cd6a9d9ff4",
+            "question_text": "Solve the equation 2x + 5 = 11 using the cross multiplication method and find the value of x.",
+            "sample_answer": "Subtract 5 from both sides: 2x = 11 - 5, 2x = 6. Then divide both sides by 2: x = 6/2, x = 3.",
+            "expected_points": [
+                "Subtract 5 from both sides",
+                "Divide both sides by 2",
+                "Value of x is 3"
+            ],
+            "pattern": "list",
+            "difficulty": "MEDIUM",
+            "marks": 2
+        },
+        {
+            "question_id": "a49b5119-2769-4603-9fdb-913e2bf54d14",
+            "question_text": "Solve the equation 2x + 5 = 11 and find the value of x.",
+            "sample_answer": "Subtract 5 from both sides: 2x = 11 - 5, 2x = 6. Divide both sides by 2: x = 6/2, x = 3.",
+            "expected_points": [
+                "Subtract 5 from both sides",
+                "Divide both sides by 2",
+                "Value of x is 3"
+            ],
+            "pattern": "long_answer",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        },
+        {
+            "question_id": "d0a31e26-ea79-4986-94b4-b044630f6284",
+            "question_text": "Solve for x: 2x + 5 = 11, and explain the steps involved in solving a linear equation.",
+            "sample_answer": "Subtract 5 from both sides: 2x = 11 - 5, 2x = 6. Then divide by 2: x = 6/2, x = 3. The steps involved are transposition and performing the same operation on both sides.",
+            "expected_points": [
+                "Subtract 5 from both sides",
+                "Divide by 2",
+                "Transposition",
+                "Performing the same operation on both sides"
+            ],
+            "pattern": "compare",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        }
+    ]
+}

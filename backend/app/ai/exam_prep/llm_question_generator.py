@@ -3,19 +3,37 @@ import requests
 
 from typing import Dict
 
+from app.core.config import settings
+
 
 class LLMQuestionGenerator:
+    """
+    Generates exam questions via the NVIDIA NIM API (OpenAI-compatible
+    chat completions). Requires NVIDIA_NIM_API_KEY to be set in .env —
+    get a free key at https://build.nvidia.com/
+    """
 
     def __init__(
         self,
-        model_name: str = "llama3.2:latest"
+        model_name: str | None = None
     ):
 
-        self.model_name = model_name
+        if not settings.NVIDIA_NIM_API_KEY:
+            raise RuntimeError(
+                "NVIDIA_NIM_API_KEY is not configured in backend/.env. "
+                "Get a free key at: https://build.nvidia.com/"
+            )
+
+        self.model_name = model_name or settings.NVIDIA_NIM_MODEL
 
         self.base_url = (
-            "http://localhost:11434/api/generate"
+            f"{settings.NVIDIA_NIM_BASE_URL.rstrip('/')}/chat/completions"
         )
+
+        self.headers = {
+            "Authorization": f"Bearer {settings.NVIDIA_NIM_API_KEY}",
+            "Content-Type": "application/json",
+        }
 
     def build_prompt(
         self,
@@ -177,12 +195,21 @@ Related PYQs:
 
         response = requests.post(
             self.base_url,
+            headers=self.headers,
             json={
                 "model":
                     self.model_name,
 
-                "prompt":
-                    prompt,
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ],
+
+                "temperature": 0.3,
+
+                "max_tokens": 1024,
 
                 "stream":
                     False
@@ -194,9 +221,9 @@ Related PYQs:
 
         raw = (
             response
-            .json()
+            .json()["choices"][0]["message"]
             .get(
-                "response",
+                "content",
                 ""
             )
         )

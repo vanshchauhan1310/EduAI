@@ -1,0 +1,78 @@
+{
+    "assessment_id": "af8437db-dd53-402e-a367-51d29f76bed4",
+    "chapter_id": "ch2",
+    "difficulty": "MEDIUM",
+    "total_questions": 5,
+    "total_marks": 18,
+    "questions": [
+        {
+            "question_id": "dddbce12-2bb6-4d2a-a126-f2db16e4f380",
+            "question_text": "Solve the equation 2x + 5 = x + 11 and find the value of x.",
+            "sample_answer": "Subtracting x from both sides, we get x + 5 = 11. Then, subtracting 5 from both sides, we get x = 6.",
+            "expected_points": [
+                "Transposition of terms",
+                "Subtraction of x from both sides",
+                "Subtraction of 5 from both sides",
+                "Final value of x"
+            ],
+            "pattern": "long_answer",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        },
+        {
+            "question_id": "50b217b1-ec00-4136-b0d4-532f1e695611",
+            "question_text": "Solve the equation 2x + 5 = 11 by multiplying both sides by the same non-zero number to isolate the variable.",
+            "sample_answer": "First, subtract 5 from both sides to get 2x = 11 - 5, which simplifies to 2x = 6. Then, divide both sides by 2 to get x = 6 / 2, so x = 3.",
+            "expected_points": [
+                "Subtract 5 from both sides",
+                "Divide both sides by 2",
+                "Value of x is 3"
+            ],
+            "pattern": "compare",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "8b4ea6be-8d03-4e3c-bece-d3ac18ee6f2d",
+            "question_text": "A bus travels from city A to city B at an average speed of 40 km/h and returns at an average speed of 60 km/h. If the total time taken for the round trip is 5 hours, find the distance between city A and city B.",
+            "sample_answer": "Let the distance between city A and city B be x km. Time taken from A to B = x/40, Time taken from B to A = x/60. Total time = x/40 + x/60 = 5. (3x + 2x)/120 = 5. 5x/120 = 5. 5x = 600. x = 120.",
+            "expected_points": [
+                "Identifying the unknown",
+                "Forming the equation",
+                "Solving the equation"
+            ],
+            "pattern": "list",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "7af06086-ebab-40ab-b6d6-da97cb5bce4e",
+            "question_text": "Solve the equation 2x + 5 = 11 by adding or subtracting the same number from both sides.",
+            "sample_answer": "Subtract 5 from both sides: 2x + 5 - 5 = 11 - 5, which gives 2x = 6. Then divide both sides by 2: 2x/2 = 6/2, resulting in x = 3.",
+            "expected_points": [
+                "Subtract 5 from both sides",
+                "Resulting equation 2x = 6",
+                "Divide both sides by 2",
+                "Solution x = 3"
+            ],
+            "pattern": "define",
+            "difficulty": "MEDIUM",
+            "marks": 2
+        },
+        {
+            "question_id": "4922ea3e-232f-4b9d-ae1f-139f8670dc5e",
+            "question_text": "A taxi charges a base fare of Rs 50 plus an additional fare of Rs 10 per km. If the total fare for a journey is Rs 200, how much distance was covered?",
+            "sample_answer": "Let the distance covered be x km. The total fare is the base fare plus the additional fare, so we can write the equation: 50 + 10x = 200. Subtracting 50 from both sides gives 10x = 150. Dividing both sides by 10 gives x = 15.",
+            "expected_points": [
+                "Let distance covered be x km",
+                "Form equation: 50 + 10x = 200",
+                "Subtract 50 from both sides: 10x = 150",
+                "Divide by 10: x = 15",
+                "Distance covered is 15 km"
+            ],
+            "pattern": "compare",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        }
+    ]
+}

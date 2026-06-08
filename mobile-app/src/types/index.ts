@@ -183,6 +183,57 @@ export interface AppNotification {
   created_at: string;
 }
 
+// ─── Career Recommender ───────────────────────────────────────
+export interface CareerSurveyQuestion {
+  question_id: string;
+  question_text: string;
+  options: string[];
+}
+
+export interface CareerSurveyResponse {
+  question_id: string;
+  answer: string;
+}
+
+export interface CareerStreamRecommendation {
+  stream: string;
+  match_percent: number;
+  why: string;
+}
+
+export interface CareerPath {
+  title: string;
+  sector: string;
+  description: string;
+}
+
+export interface CareerSkillCourse {
+  name: string;
+  provider: string;
+  duration: string;
+}
+
+export interface CareerScholarship {
+  name: string;
+  eligibility: string;
+  how_to_apply: string;
+}
+
+export interface CareerRecommendation {
+  summary: string;
+  recommended_streams: CareerStreamRecommendation[];
+  career_paths: CareerPath[];
+  skill_courses: CareerSkillCourse[];
+  scholarships: CareerScholarship[];
+}
+
+export interface CareerRecommendationStatus {
+  survey_completed: boolean;
+  has_recommendation: boolean;
+  generated_at: string | null;
+  recommendation: CareerRecommendation | null;
+}
+
 // ─── Pagination ───────────────────────────────────────────────
 export interface PaginatedResponse<T> {
   items: T[];

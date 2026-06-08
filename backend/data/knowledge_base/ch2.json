@@ -1,0 +1,53 @@
+{
+  "chapter": "Linear Equations in One Variable",
+  "subject": "Mathematics",
+  "class_grade": 7,
+  "topics": [
+    "Introduction to Linear Equations",
+    "Solving Linear Equations",
+    "Applications of Linear Equations",
+    "Equations Reducible to Linear Form",
+    "Cross Multiplication Method"
+  ],
+  "definitions": [
+    {
+      "term": "Linear Equation",
+      "definition": "An equation in which the highest power of the variable is 1. It is of the form ax + b = c, where a ≠ 0."
+    },
+    {
+      "term": "Solution of an Equation",
+      "definition": "The value of the variable that satisfies the equation (makes both sides equal)."
+    },
+    {
+      "term": "Transposition",
+      "definition": "Moving a term from one side of the equation to another, changing its sign."
+    }
+  ],
+  "formulae": [
+    {
+      "name": "General Linear Equation",
+      "formula": "ax + b = c → x = (c - b) / a",
+      "used_for": "Finding the value of unknown variable"
+    },
+    {
+      "name": "Cross Multiplication",
+      "formula": "a/b = c/d → ad = bc",
+      "used_for": "Solving equations in ratio form"
+    }
+  ],
+  "important_concepts": [
+    "A linear equation has exactly one solution",
+    "Both sides of an equation can be multiplied or divided by the same non-zero number",
+    "The same number can be added or subtracted from both sides",
+    "Word problems: identify the unknown, form equation, solve",
+    "Equations with variables on both sides: bring all variables to one side"
+  ],
+  "common_mistakes": [
+    "Changing sign incorrectly when transposing terms",
+    "Not performing the same operation on both sides",
+    "Error in setting up equations from word problems",
+    "Dividing by zero when coefficient becomes zero"
+  ],
+  "difficulty_level": "medium",
+  "estimated_study_minutes": 60
+}

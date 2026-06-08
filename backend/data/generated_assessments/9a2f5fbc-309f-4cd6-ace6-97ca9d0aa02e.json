@@ -1,0 +1,72 @@
+{
+    "assessment_id": "9a2f5fbc-309f-4cd6-ace6-97ca9d0aa02e",
+    "chapter_id": "ch1",
+    "difficulty": "MEDIUM",
+    "total_questions": 5,
+    "total_marks": 14,
+    "questions": [
+        {
+            "question_id": "834c0432-678e-4392-9723-3abfc3674520",
+            "question_text": "What is the additive inverse of the rational number 3/5?",
+            "sample_answer": "The additive inverse of 3/5 is -3/5.",
+            "expected_points": [
+                "Definition of additive inverse",
+                "Correct calculation of additive inverse",
+                "Expression in standard form"
+            ],
+            "pattern": "short_answer",
+            "difficulty": "MEDIUM",
+            "marks": 3
+        },
+        {
+            "question_id": "3c9b4b0e-fe16-40a0-a95b-cbb14af164bb",
+            "question_text": "What is the multiplicative inverse of the rational number 3/4?",
+            "sample_answer": "The multiplicative inverse of 3/4 is 4/3.",
+            "expected_points": [
+                "Definition of multiplicative inverse",
+                "Reciprocal of p/q is q/p",
+                "Correct calculation of multiplicative inverse"
+            ],
+            "pattern": "define",
+            "difficulty": "MEDIUM",
+            "marks": 2
+        },
+        {
+            "question_id": "ee590178-de18-4bd9-95ac-513d46d64480",
+            "question_text": "What is the additive inverse of the rational number 3/5?",
+            "sample_answer": "The additive inverse of 3/5 is -3/5.",
+            "expected_points": [
+                "Definition of additive inverse",
+                "Calculation of additive inverse of 3/5"
+            ],
+            "pattern": "short_answer",
+            "difficulty": "MEDIUM",
+            "marks": 2
+        },
+        {
+            "question_id": "4c36d240-e5f6-47be-b940-e1d7cb05349f",
+            "question_text": "Represent the rational number 3/4 on a number line and write its additive inverse.",
+            "sample_answer": "To represent 3/4 on a number line, mark a point to the right of 0 at a distance of 3 units from 0 when the segment between 0 and 1 is divided into 4 equal parts. The additive inverse of 3/4 is -3/4.",
+            "expected_points": [
+                "Representation of 3/4 on number line",
+                "Additive inverse of 3/4 as -3/4"
+            ],
+            "pattern": "define",
+            "difficulty": "MEDIUM",
+            "marks": 2
+        },
+        {
+            "question_id": "505fe6c1-1504-4370-9a6f-e64d27775c47",
+            "question_text": "What is the additive inverse of the rational number 3/5 and explain its significance in rational number operations?",
+            "sample_answer": "The additive inverse of 3/5 is -3/5. It is significant because when you add a rational number to its additive inverse, the result is zero, which is the additive identity.",
+            "expected_points": [
+                "Definition of additive inverse",
+                "Calculation of additive inverse of 3/5",
+                "Significance of additive inverse in rational number operations"
+            ],
+            "pattern": "explain",
+            "difficulty": "MEDIUM",
+            "marks": 5
+        }
+    ]
+}

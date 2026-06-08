@@ -33,6 +33,7 @@ from app.models.student_prediction import StudentPrediction
 from app.repositories.dropout_prediction_repository import (
     DropoutPredictionRepository,
 )
+from app.ai.dropout.recommendation_engine import get_recommendation as get_deep_recommendations
 from app.ml.dropout.feature_builder import build_feature_row, build_features_batch
 from app.ml.dropout.predictor import (
     predict_single,
@@ -326,19 +327,25 @@ class DropoutPredictionService:
         # 4. Save predictions to student_predictions table
         now = datetime.utcnow()
         prediction_records: list[StudentPrediction] = []
+        saved_recommendations: list[tuple[str, list[str]]] = []
 
         for i, (_, row) in enumerate(predictions_df.iterrows()):
             student_id = students_with_features[i]["student_id"]
+            student_features = students_with_features[i]
+            recommendations = get_deep_recommendations(student_features, str(row["risk_level"]))
+            recommendation_text = " | ".join(recommendations) if recommendations else str(row["recommendation"])
+
             pred = StudentPrediction(
                 student_id=student_id,
                 dropout_probability=float(row["dropout_probability"]),
                 risk_level=str(row["risk_level"]),
-                recommendation=str(row["recommendation"]),
+                recommendation=recommendation_text,
                 model_version="xgboost_v1.0",
                 predicted_at=now,
                 batch_id=batch_id,
             )
             prediction_records.append(pred)
+            saved_recommendations.append((recommendation_text, recommendations))
 
         await self.repo.bulk_create_predictions(prediction_records)
 
@@ -346,6 +353,8 @@ class DropoutPredictionService:
         student_results = []
         for i, s in enumerate(students_with_features):
             pred_row = predictions_df.iloc[i]
+            recommendation_text, recommendations = saved_recommendations[i]
+
             student_results.append({
                 "student_id": s["student_id"],
                 "student_name": s["student_name"],
@@ -358,7 +367,8 @@ class DropoutPredictionService:
                 "avg_marks": s["avg_marks"],
                 "dropout_probability": float(pred_row["dropout_probability"]),
                 "risk_level": str(pred_row["risk_level"]),
-                "recommendation": str(pred_row["recommendation"]),
+                "recommendation": recommendation_text,
+                "recommendations": recommendations,
             })
 
         # Risk counts
