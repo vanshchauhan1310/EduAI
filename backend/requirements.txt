@@ -5,19 +5,16 @@
 # ================================================================
 
 # ─── Web Framework ───────────────────────────────────────────
-fastapi
-uvicorn[standard]
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.34
+gunicorn>=23.0           # production ASGI server for Render
 python-multipart
 
-# ─── Database (MySQL local dev) ──────────────────────────────
-sqlalchemy[asyncio]
-aiomysql                 # async MySQL driver  (local dev)
-pymysql                  # sync MySQL driver   (alembic migrations)
-alembic
-
-# NOTE — Production (Supabase): also install:
-# asyncpg
-# psycopg2-binary
+# ─── Database ────────────────────────────────────────────────
+sqlalchemy[asyncio]>=2.0,<3.0
+alembic>=1.14
+asyncpg>=0.30            # async PostgreSQL driver (Supabase)
+psycopg2-binary          # sync PostgreSQL driver  (alembic offline mode)
 
 # ─── Authentication & Security ───────────────────────────────
 python-jose[cryptography]
@@ -33,12 +30,15 @@ email-validator
 openai                        # OpenAI-compatible SDK for NVIDIA NIM
 ollama                        # Legacy/local LLM option
 sentence-transformers         # Semantic embedding and scoring models
+huggingface_hub               # AI Tutor — HuggingFace Inference chat-completion client
 requests                      # HTTP client used by AI and external service integrations
 # ─── Document Processing ─────────────────────────────────────
 PyMuPDF                  # PDF text extraction
 reportlab                # PDF generation
 python-docx              # DOCX generation
 Pillow                   # required by reportlab
+rapidocr-onnxruntime     # AI Tutor — optional OCR for scanned/symbol-font PDFs (lazily imported;
+                         # missing only breaks OCR-flagged knowledge-base ingests, not normal ones)
 
 # ─── Utilities ───────────────────────────────────────────────
 python-dotenv

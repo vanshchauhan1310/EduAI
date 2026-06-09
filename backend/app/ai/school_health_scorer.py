@@ -4,7 +4,7 @@ using 12 parameters across: infrastructure, academics, attendance, staffing.
 """
 from datetime import date, timedelta
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, func, and_
+from sqlalchemy import select, func, and_, case
 
 from app.models.school import School
 from app.models.student import Student, RiskLevel
@@ -45,7 +45,7 @@ class SchoolHealthScorer:
             select(
                 func.count(Attendance.id).label("total"),
                 func.sum(
-                    func.IF(Attendance.status == AttendanceStatus.PRESENT, 1, 0)
+                    case((Attendance.status == AttendanceStatus.PRESENT, 1), else_=0)
                 ).label("present"),
             ).where(
                 and_(

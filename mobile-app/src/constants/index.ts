@@ -92,4 +92,40 @@ export const QUERY_KEYS = {
   DROPOUT_MANDAL: 'dropout-mandal',
   DROPOUT_DISTRICT: 'dropout-district',
   CAREER: 'career',
+  TUTOR: 'tutor',
 } as const;
+
+// ─── AI Tutor curriculum (Subject → Chapter → Concepts) ──────
+// Mirrors prototype/curriculum.py — CBSE Class 10 PCM, English + Telugu medium.
+export const TUTOR_CURRICULUM: Record<string, { icon: string; chapters: Record<string, string[]> }> = {
+  Physics: {
+    icon: 'flash',
+    chapters: {
+      'Electricity': ['Electric Current & Circuit', "Ohm's Law", 'Resistance & Resistivity', 'Electric Power'],
+      'Light — Reflection & Refraction': ['Reflection by Mirrors', 'Refraction of Light', 'Refraction by Lenses', 'Power of a Lens'],
+    },
+  },
+  Chemistry: {
+    icon: 'flask',
+    chapters: {
+      'Chemical Reactions & Equations': ['Types of Chemical Reactions', 'Balancing Equations', 'Oxidation & Reduction'],
+      'Acids, Bases & Salts': ['Properties of Acids & Bases', 'pH Scale', 'Salts & Their Uses'],
+    },
+  },
+  Mathematics: {
+    icon: 'calculator',
+    chapters: {
+      'Real Numbers': ["Euclid's Division Lemma", 'Fundamental Theorem of Arithmetic', 'Irrational Numbers'],
+      'Polynomials': ['Zeroes of a Polynomial', 'Division Algorithm', 'Relationship between Zeroes & Coefficients'],
+      'Pair of Linear Equations': ['Graphical Method', 'Substitution Method', 'Elimination Method'],
+    },
+  },
+};
+
+export const TUTOR_LANGUAGES: { value: 'english' | 'telugu' | 'both'; label: string }[] = [
+  { value: 'english', label: 'English' },
+  { value: 'telugu', label: 'తెలుగు' },
+  { value: 'both', label: 'Both' },
+];
+
+export const PASS_THRESHOLD = 70;

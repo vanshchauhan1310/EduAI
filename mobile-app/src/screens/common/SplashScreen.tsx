@@ -1,15 +1,14 @@
-import React, { useEffect } from 'react';
-import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import React from 'react';
+import { View, Text, Image, ActivityIndicator, StyleSheet } from 'react-native';
 import { Colors, Typography, Spacing } from '../../theme';
 
 export default function SplashScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.logoCircle}>
-        <Ionicons name="school" size={56} color={Colors.white} />
+        <Image source={require('../../assets/logo.png')} style={styles.logo} resizeMode="contain" />
       </View>
-      <Text style={styles.appName}>EduAI Platform</Text>
+      <Text style={styles.appName}>EduAI</Text>
       <Text style={styles.tagline}>AI-Powered Education Governance</Text>
       <ActivityIndicator size="large" color="rgba(255,255,255,0.7)" style={styles.spinner} />
     </View>
@@ -19,19 +18,24 @@ export default function SplashScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.primary[700],
+    backgroundColor: Colors.primary[600],
     justifyContent: 'center',
     alignItems: 'center',
     padding: Spacing['2xl'],
   },
   logoCircle: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    backgroundColor: 'rgba(255,255,255,0.2)',
+    width: 108,
+    height: 108,
+    borderRadius: 54,
+    backgroundColor: 'rgba(255,255,255,0.92)',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: Spacing.lg,
+    overflow: 'hidden',
+  },
+  logo: {
+    width: '100%',
+    height: '100%',
   },
   appName: {
     fontSize: Typography.sizes['3xl'],

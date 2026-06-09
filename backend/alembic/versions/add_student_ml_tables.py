@@ -12,8 +12,6 @@ Dropout Prediction 2-Table Architecture:
 from typing import Sequence, Union
 from alembic import op
 import sqlalchemy as sa
-from sqlalchemy.dialects import mysql
-
 revision: str = "add_student_ml_tables"
 down_revision: Union[str, None] = "add_deo_copilot_columns"
 branch_labels: Union[str, Sequence[str], None] = None
@@ -50,7 +48,6 @@ def upgrade() -> None:
         sa.Column("updated_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=False),
         sa.ForeignKeyConstraint(["student_id"], ["students.id"], ondelete="CASCADE"),
         sa.PrimaryKeyConstraint("id"),
-        mysql_charset="utf8mb4",
     )
     op.create_index("ix_ml_input_student", "student_ml_input", ["student_id"], unique=False)
 
@@ -67,7 +64,6 @@ def upgrade() -> None:
         sa.Column("batch_id", sa.String(100), nullable=True),
         sa.ForeignKeyConstraint(["student_id"], ["students.id"], ondelete="CASCADE"),
         sa.PrimaryKeyConstraint("id"),
-        mysql_charset="utf8mb4",
     )
     op.create_index("ix_student_predictions_student_risk", "student_predictions", ["student_id", "risk_level"], unique=False)
     op.create_index("ix_student_predictions_predicted_at", "student_predictions", ["predicted_at"], unique=False)

@@ -85,7 +85,7 @@ async def _run_predictions_background(
     summary="Run dropout predictions for active students",
     description=(
         "Triggers the full ML prediction pipeline in the background. "
-        "Reads student data from MySQL, builds features, runs the XGBoost model, "
+        "Reads student data from Supabase, builds features, runs the XGBoost model, "
         "and saves results to dropout_predictions table."
     ),
     tags=["Dropout Prediction"],

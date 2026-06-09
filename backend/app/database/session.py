@@ -9,26 +9,15 @@ class Base(DeclarativeBase):
 
 
 def _build_engine():
-    url = settings.DATABASE_URL
-    is_mysql = url.startswith("mysql")
-
-    if is_mysql:
-        # MySQL (local dev with aiomysql)
-        return create_async_engine(
-            url,
-            echo=settings.DEBUG,
-            pool_recycle=3600,   # prevent MySQL "gone away" error on idle connections
-            pool_pre_ping=True,
-        )
-    else:
-        # PostgreSQL (Supabase production with asyncpg)
-        return create_async_engine(
-            url,
-            echo=settings.DEBUG,
-            pool_size=settings.DATABASE_POOL_SIZE,
-            max_overflow=settings.DATABASE_MAX_OVERFLOW,
-            pool_pre_ping=True,
-        )
+    return create_async_engine(
+        settings.DATABASE_URL,
+        echo=settings.DEBUG,
+        pool_size=settings.DATABASE_POOL_SIZE,
+        max_overflow=settings.DATABASE_MAX_OVERFLOW,
+        pool_pre_ping=True,
+        pool_recycle=1800,   # recycle connections every 30 min to avoid Supabase idle-timeout drops
+        pool_timeout=30,     # raise after 30 s waiting for a connection from the pool
+    )
 
 
 engine = _build_engine()

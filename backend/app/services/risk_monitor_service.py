@@ -2,7 +2,7 @@
 from datetime import date, timedelta
 from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, func, and_
+from sqlalchemy import select, func, and_, case
 
 from app.models.deo_copilot import RiskAlert, RiskScan
 from app.models.school import District, School
@@ -47,7 +47,7 @@ class RiskMonitorService:
             .where(School.district_id == district_id, School.is_active == True, Attendance.date >= thirty_ago, Attendance.reference_type == AttendanceReferenceType.STUDENT)
             .group_by(School.id, School.name)
             .having(
-                func.sum(func.IF(Attendance.status.in_([AttendanceStatus.PRESENT, AttendanceStatus.LATE]), 1, 0)) / func.count(Attendance.id) * 100 < 75
+                func.sum(case((Attendance.status.in_([AttendanceStatus.PRESENT, AttendanceStatus.LATE]), 1), else_=0)) / func.count(Attendance.id) * 100 < 75
             )
             .limit(20)
         )

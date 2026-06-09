@@ -1,3 +1,5 @@
+import { Ionicons } from '@expo/vector-icons';
+
 // ─── User & Auth ─────────────────────────────────────────────
 export type UserRole = 'DEO' | 'MEO' | 'HM' | 'TEACHER' | 'STUDENT' | 'PARENT';
 
@@ -232,6 +234,166 @@ export interface CareerRecommendationStatus {
   has_recommendation: boolean;
   generated_at: string | null;
   recommendation: CareerRecommendation | null;
+}
+
+// ─── AI Tutor (adaptive learning) ────────────────────────────
+export type TutorLanguage = 'english' | 'telugu' | 'both';
+export type MasteryLevel = 'Beginner' | 'Intermediate' | 'Advanced';
+export type QuizType = 'MCQ' | 'MSQ' | 'Short Answer' | 'Long Answer';
+export type QuizDifficulty = 'Easy' | 'Medium' | 'Hard';
+
+export interface TutorConcept {
+  subject: string;
+  chapter: string;
+  concept: string;
+  icon: keyof typeof Ionicons.glyphMap;
+}
+
+export interface ConceptMastery {
+  subject: string;
+  chapter: string;
+  concept: string;
+  mastery: number;          // 0-100
+  level: MasteryLevel;
+  updated_at: string | null;
+}
+
+export interface StudentAnalysis {
+  level: MasteryLevel;
+  strong_concepts: string[];
+  weak_concepts: string[];
+  misconceptions: string[];
+}
+
+export interface LearningPathItem {
+  concept: string;
+  priority: number;
+  reason: string;
+  estimated_time: string;
+  activity: string;
+}
+
+export interface TutorLesson {
+  concept: string;
+  english_explanation: string;
+  telugu_explanation: string;
+  real_life_examples: string[];
+  worked_examples: string[];
+  common_mistakes: string[];
+  revision_notes: string[];
+}
+
+export interface TutorQuizItem {
+  question: string;
+  type: QuizType;
+  difficulty: QuizDifficulty;
+  concept_tested: string;
+  options: string[];
+  answer: string;
+  explanation: string;
+}
+
+export interface TutorRecommendations {
+  next_concepts: string[];
+  estimated_mastery_score: number;
+  next_lesson: string;
+}
+
+export interface RagSource {
+  kind: 'pdf' | 'note';
+  concept: string;
+  text: string;
+  score: number;
+  source?: string;
+}
+
+// A relevant educational diagram/photo for a concept (e.g. "Ohm's Law"),
+// sourced from Wikimedia Commons — shown alongside the explanation so
+// students can "see it visually" before reading the details.
+export interface ConceptImage {
+  title: string;
+  thumbnail_url: string;
+  full_url: string;
+  attribution: string;
+  source_url: string;
+}
+
+export interface TutorGenerateResponse {
+  student_analysis: StudentAnalysis;
+  learning_path: LearningPathItem[];
+  lesson: TutorLesson;
+  quiz: TutorQuizItem[];
+  recommendations: TutorRecommendations;
+  rag_sources: RagSource[];
+  mastery: number;
+  images: ConceptImage[];
+}
+
+export interface QuizGradeResult {
+  index: number;
+  question: string;
+  type: QuizType;
+  is_correct: boolean | null;   // null = ungraded (Short/Long answer, reviewed qualitatively)
+  correct_answer: string;
+  explanation: string;
+}
+
+export interface QuizGradeResponse {
+  correct: number;
+  scored: number;
+  percentage: number;
+  results: QuizGradeResult[];
+  passed: boolean;
+  message: string;
+  next_concept: string | null;
+  review_topics: string[];
+  old_mastery: number;
+  new_mastery: number;
+}
+
+export interface ChatSource {
+  kind: 'pdf' | 'note';
+  concept: string;
+  text: string;
+  score: number;
+}
+
+export interface SuggestedVideo {
+  title: string;
+  channel: string;
+  url: string;
+}
+
+export interface ChatMessage {
+  id: string;
+  role: 'user' | 'assistant';
+  text: string;
+  detected_topic?: string;
+  sources?: ChatSource[];
+  images?: ConceptImage[];
+  videos?: SuggestedVideo[];
+}
+
+export interface KnowledgeBaseSource {
+  id: string;
+  source: string;
+  subject: string;
+  chapter: string;
+  chunks: number;
+  uploaded_at: string;
+}
+
+export interface IngestProgress {
+  done: number;
+  total: number;
+}
+
+export interface IngestResult {
+  success: boolean;
+  source: string;
+  pages: number;
+  chunks: number;
+  error?: string;
 }
 
 // ─── Pagination ───────────────────────────────────────────────

@@ -1,21 +1,30 @@
+// Brand palette — Government of Telangana examinations theme:
+//   Sky Blue   #008DDF — navigation bars, headers, primary buttons, logo text
+//   Deep Navy  #01337B — main brand text, darkest primary shade
+//   Dark Amber #D36100 / Light Coral #EE6B00 — secondary accents, section headings
+//   Leaf Green #5CB811 — action buttons / success states
+//   Cyan Blue  #0055AA — links / informational accents
+//   Cream      #FEFBF0 — page background canvas
 export const Colors = {
   primary: {
-    50:  '#eff6ff',
-    100: '#dbeafe',
-    400: '#60a5fa',
-    500: '#3b82f6',
-    600: '#2563eb',
-    700: '#1d4ed8',
-    900: '#1e3a8a',
+    50:  '#ebf6fc',
+    100: '#d1eaf9',
+    200: '#9ed4f3',
+    400: '#38a6e6',
+    500: '#1496e2',
+    600: '#008DDF',
+    700: '#006eae',
+    800: '#004e8c',
+    900: '#01337B',
   },
   secondary: {
-    500: '#8b5cf6',
-    600: '#7c3aed',
+    500: '#EE6B00',
+    600: '#D36100',
   },
-  success: '#22c55e',
+  success: '#5CB811',
   warning: '#f59e0b',
   danger:  '#ef4444',
-  info:    '#3b82f6',
+  info:    '#0055AA',
 
   neutral: {
     50:  '#f9fafb',
@@ -33,7 +42,7 @@ export const Colors = {
   white: '#ffffff',
   black: '#000000',
 
-  background: '#f0f4f8',
+  background: '#FEFBF0',
   surface: '#ffffff',
   border: '#e5e7eb',
   text: {

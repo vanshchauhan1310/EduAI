@@ -6,7 +6,7 @@ import StudentDashboardScreen from '../screens/student/StudentDashboardScreen';
 import AssignmentsScreen from '../screens/student/AssignmentsScreen';
 import AttendanceScreen from '../screens/student/AttendanceScreen';
 import PerformanceScreen from '../screens/student/PerformanceScreen';
-import AIAssistantScreen from '../screens/student/AIAssistantScreen';
+import { TutorNavigator } from './TutorNavigator';
 import ProfileScreen from '../screens/common/ProfileScreen';
 import StudentAssessmentScreen from '../screens/student/StudentAssessmentScreen';
 import StudentAssessmentFeedbackScreen from '../screens/student/StudentAssessmentFeedbackScreen';
@@ -75,7 +75,7 @@ export function StudentNavigator() {
       <Tab.Screen name="Performance" component={PerformanceScreen} options={{ tabBarButton: () => null }} />
       <Tab.Screen name="Career" component={CareerStackScreen} options={{ tabBarButton: () => null }} />
       <Tab.Screen name="Assessments" component={AssessmentsStackScreen} />
-      <Tab.Screen name="AI Tutor" component={AIAssistantScreen} />
+      <Tab.Screen name="AI Tutor" component={TutorNavigator} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );

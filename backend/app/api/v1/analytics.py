@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, func, and_
+from sqlalchemy import select, func, and_, case
 from datetime import date, timedelta
 
 from app.database.session import get_db
@@ -43,7 +43,7 @@ async def district_overview(
     attendance_data = await db.execute(
         select(
             func.count(Attendance.id).label("total"),
-    func.sum(func.IF(Attendance.status == AttendanceStatus.PRESENT, 1, 0)).label("present"),
+    func.sum(case((Attendance.status == AttendanceStatus.PRESENT, 1), else_=0)).label("present"),
         ).join(School, Attendance.school_id == School.id).where(
             and_(
                 School.district_id == district_id,

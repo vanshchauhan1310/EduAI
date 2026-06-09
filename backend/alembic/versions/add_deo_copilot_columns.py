@@ -11,7 +11,7 @@ import sqlalchemy as sa
 
 
 revision: str = 'add_deo_copilot_columns'
-down_revision: Union[str, None] = '981229740f43'
+down_revision: Union[str, None] = 'add_missing_tables'
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
 

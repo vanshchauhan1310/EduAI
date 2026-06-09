@@ -1,5 +1,6 @@
+import json as _json
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from pydantic import field_validator
+from pydantic import field_validator, model_validator
 from typing import List
 
 
@@ -20,13 +21,16 @@ class Settings(BaseSettings):
     # Server
     BACKEND_HOST: str = "0.0.0.0"
     BACKEND_PORT: int = 8000
+    # Set in env as comma-separated: ALLOWED_ORIGINS=https://a.com,https://b.com
     ALLOWED_ORIGINS: List[str] = ["http://localhost:19000", "http://localhost:3000"]
 
-    # Database — set DATABASE_URL in your .env file
-    # Format: postgresql+asyncpg://user:password@localhost:5432/dbname
+    # Database — set DATABASE_URL in your .env file (Supabase session-mode pooler recommended)
+    # Format: postgresql+asyncpg://user:password@host:5432/dbname
     DATABASE_URL: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/eduai_db"
-    DATABASE_POOL_SIZE: int = 10
-    DATABASE_MAX_OVERFLOW: int = 20
+    # Keep total connections ≤ Supabase free-tier limit (15).
+    # With 1 gunicorn worker: pool_size + max_overflow = 10 < 15 ✓
+    DATABASE_POOL_SIZE: int = 5
+    DATABASE_MAX_OVERFLOW: int = 5
 
     # JWT — override JWT_SECRET_KEY in .env for production
     JWT_SECRET_KEY: str = "dev-secret-key-change-in-production-do-not-use-in-prod"
@@ -52,6 +56,16 @@ class Settings(BaseSettings):
     # Ollama (legacy/local Admin Copilot option)
     OLLAMA_BASE_URL: str = "http://localhost:11434"
     OLLAMA_MODEL: str = "llama3.2"          # run: ollama pull llama3.2
+
+    # HuggingFace Inference (AI Tutor — preferred LLM provider when set;
+    # falls back to NVIDIA NIM otherwise). Get a free token at https://huggingface.co/settings/tokens
+    HF_API_TOKEN: str = ""
+    HF_MODEL: str = "Qwen/Qwen2.5-7B-Instruct"
+
+    # Google Gemini (AI Tutor — concept image generation)
+    # Used to generate/retrieve educational concept images (e.g. Ohm's Law diagrams)
+    # when Wikimedia Commons doesn't return relevant results.
+    GEMINI_API_KEY: str = ""
 
     # Firebase (optional — not required for copilot)
     FIREBASE_PROJECT_ID: str = ""
@@ -81,6 +95,26 @@ class Settings(BaseSettings):
         if isinstance(value, str) and value.lower() in {"release", "production", "prod"}:
             return False
         return value
+
+    @field_validator("ALLOWED_ORIGINS", mode="before")
+    @classmethod
+    def _parse_origins(cls, v):
+        if isinstance(v, str):
+            stripped = v.strip()
+            if stripped.startswith("["):
+                return _json.loads(stripped)
+            return [o.strip() for o in stripped.split(",") if o.strip()]
+        return v
+
+    @model_validator(mode="after")
+    def _validate_production_secrets(self):
+        if self.APP_ENV in ("production", "prod"):
+            if "dev-secret-key" in self.JWT_SECRET_KEY:
+                raise ValueError(
+                    "JWT_SECRET_KEY is still the insecure default. "
+                    "Generate one with: python -c \"import secrets; print(secrets.token_hex(32))\""
+                )
+        return self
 
 
 settings = Settings()

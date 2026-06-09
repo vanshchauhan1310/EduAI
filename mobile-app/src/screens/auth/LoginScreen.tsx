@@ -48,9 +48,9 @@ export default function LoginScreen() {
         {/* Logo & Branding */}
         <View style={styles.brandBlock}>
           <View style={styles.logoCircle}>
-            <Ionicons name="school" size={44} color={Colors.white} />
+            <Image source={require('../../assets/logo.png')} style={styles.logo} resizeMode="contain" />
           </View>
-          <Text style={styles.appName}>EduAI Platform</Text>
+          <Text style={styles.appName}>EduAI</Text>
           <Text style={styles.tagline}>AI-Powered Education Governance</Text>
         </View>
 
@@ -157,13 +157,18 @@ const styles = StyleSheet.create({
     marginBottom: Spacing['2xl'],
   },
   logoCircle: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    backgroundColor: 'rgba(255,255,255,0.2)',
+    width: 88,
+    height: 88,
+    borderRadius: 44,
+    backgroundColor: 'rgba(255,255,255,0.92)',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: Spacing.md,
+    overflow: 'hidden',
+  },
+  logo: {
+    width: '100%',
+    height: '100%',
   },
   appName: {
     fontSize: Typography.sizes['3xl'],

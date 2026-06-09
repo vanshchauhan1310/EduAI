@@ -9,7 +9,7 @@
     "splash": {
       "image": "./src/assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#1d4ed8"
+      "backgroundColor": "#008DDF"
     },
     "ios": {
       "supportsTablet": true,
@@ -18,7 +18,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
-        "backgroundColor": "#1d4ed8"
+        "backgroundColor": "#008DDF"
       },
       "package": "com.eduai.governance",
       "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION", "CAMERA", "READ_EXTERNAL_STORAGE"]
@@ -27,7 +27,7 @@
       "favicon": "./src/assets/favicon.png"
     },
     "plugins": [
-      ["expo-notifications", { "icon": "./src/assets/notification-icon.png", "color": "#1d4ed8" }],
+      ["expo-notifications", { "icon": "./src/assets/notification-icon.png", "color": "#008DDF" }],
       ["expo-location", { "locationWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location for attendance geo-verification." }],
       ["expo-camera", { "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera." }]
     ],

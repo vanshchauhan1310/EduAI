@@ -1,0 +1,33 @@
+# ── Credentials / Secrets ─────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Python ────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+venv/
+env/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# ── ML Artefacts (large binaries — rebuilt on deploy) ─────────────
+*.pkl
+*.joblib
+*.h5
+*.onnx
+
+# ── Uploaded / generated data (not for version control) ───────────
+data/
+
+# ── IDE ───────────────────────────────────────────────────────────
+.vscode/
+.idea/
+
+# ── OS ────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db

@@ -2,7 +2,7 @@
 DropoutPredictionService — Orchestrates the full ML prediction pipeline.
 
 Pipeline:
-  MySQL (students + attendance + assessments)
+  Supabase (students + attendance + assessments)
       → Feature Builder
       → student_ml_input table (persist features)  ← NEW
       → ML Predictor (reads from student_ml_input)

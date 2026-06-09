@@ -15,16 +15,6 @@ from app.models import deo_copilot  # DEO Copilot tables
 from app.models import student_ml_input    # ML Input features table
 from app.models import student_prediction  # Prediction output table
 
-# Build the correct SYNC URL for Alembic from the async DATABASE_URL in settings
-def _make_sync_url(async_url: str) -> str:
-    """Convert async driver URL to sync driver URL for Alembic."""
-    return (
-        async_url
-        .replace("mysql+aiomysql://",       "mysql+pymysql://")
-        .replace("postgresql+asyncpg://",   "postgresql+psycopg2://")
-    )
-
-SYNC_URL  = _make_sync_url(settings.DATABASE_URL)
 ASYNC_URL = settings.DATABASE_URL
 
 config = context.config
@@ -37,7 +27,7 @@ target_metadata = Base.metadata
 
 def run_migrations_offline() -> None:
     context.configure(
-        url=SYNC_URL,
+        url=ASYNC_URL,
         target_metadata=target_metadata,
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},

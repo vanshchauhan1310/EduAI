@@ -31,3 +31,4 @@ from app.models.deo_copilot import (
     DistrictCommunication,
 )
 from app.models.career import CareerRecommendation
+from app.models.tutor import ConceptMastery, TutorKnowledgeChunk

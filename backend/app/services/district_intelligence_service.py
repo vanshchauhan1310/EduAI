@@ -2,7 +2,7 @@
 from datetime import date, timedelta
 from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, func, and_
+from sqlalchemy import select, func, and_, case
 
 from app.models.deo_copilot import DistrictBrief
 from app.models.school import District, Mandal, School
@@ -35,7 +35,7 @@ class DistrictIntelligenceService:
         tch = (await self.db.execute(select(func.count(Teacher.id)).where(Teacher.school_id.in_(sids), Teacher.is_active == True))).scalar_one() or 0 if sids else 0
         tm = (await self.db.execute(select(func.count(Mandal.id)).where(Mandal.district_id == district_id))).scalar_one() or 0
         thirty_ago = date.today() - timedelta(days=30)
-        att_r = await self.db.execute(select(func.count(Attendance.id), func.sum(func.IF(Attendance.status.in_([AttendanceStatus.PRESENT, AttendanceStatus.LATE]), 1, 0))).where(and_(Attendance.school_id.in_(sids) if sids else True, Attendance.date >= thirty_ago, Attendance.reference_type == AttendanceReferenceType.STUDENT)))
+        att_r = await self.db.execute(select(func.count(Attendance.id), func.sum(case((Attendance.status.in_([AttendanceStatus.PRESENT, AttendanceStatus.LATE]), 1), else_=0))).where(and_(Attendance.school_id.in_(sids) if sids else True, Attendance.date >= thirty_ago, Attendance.reference_type == AttendanceReferenceType.STUDENT)))
         att_row = att_r.one()
         avg_att = round((att_row[1] / att_row[0] * 100) if att_row[0] else 85.0, 1)
         vac = max(0, (tst // 30) - tch) if tch else ts * 2

@@ -1,0 +1,59 @@
+services:
+  - type: web
+    name: eduai-backend
+    runtime: python
+    region: oregon
+
+    # Render uses Python 3.11 by default — change to 3.13 if your wheels support it
+    # pythonVersion: "3.11.0"
+
+    buildCommand: "pip install -r requirements.txt --prefer-binary"
+
+    # Runs Alembic migrations then starts the server.
+    # -w 1  : single worker (safe for 512 MB RAM; upgrade plan → -w 2)
+    # --timeout 120 : allows up to 120 s for LLM generation requests
+    startCommand: >
+      alembic upgrade head &&
+      gunicorn -w 1
+        -k uvicorn.workers.UvicornWorker
+        --bind 0.0.0.0:$PORT
+        --timeout 120
+        --keep-alive 5
+        --log-level info
+        main:app
+
+    healthCheckPath: /health
+
+    # ── Environment variables ──────────────────────────────────────
+    # Set the values marked `sync: false` in the Render dashboard.
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DEBUG
+        value: "false"
+      - key: LOG_LEVEL
+        value: "INFO"
+
+      # Database — paste your Supabase session-mode pooler URL
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_POOL_SIZE
+        value: "5"
+      - key: DATABASE_MAX_OVERFLOW
+        value: "5"
+
+      # Security — generate: python -c "import secrets; print(secrets.token_hex(32))"
+      - key: JWT_SECRET_KEY
+        sync: false
+
+      # CORS — comma-separated list, e.g. https://myapp.com,exp://192.168.1.x
+      - key: ALLOWED_ORIGINS
+        sync: false
+
+      # AI providers
+      - key: NVIDIA_NIM_API_KEY
+        sync: false
+      - key: HF_API_TOKEN
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false

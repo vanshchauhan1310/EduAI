@@ -1,8 +1,7 @@
 """
 EduAI Governance Platform — FastAPI Application Entry Point.
 
-Production architecture:
-    MySQL → FastAPI → Dropout Prediction Model → dropout_predictions table → Dashboards
+Production: gunicorn -w 1 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT --timeout 120 main:app
 """
 
 import logging
@@ -12,6 +11,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import JSONResponse
+from sqlalchemy import text
 
 from app.core.config import settings
 from app.api.router import api_router
@@ -26,30 +26,30 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+_is_production = settings.APP_ENV in ("production", "prod")
+
 
 # ─── Lifespan (Startup / Shutdown) ────────────────────────────
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Application lifespan — runs on startup and shutdown."""
-    # Startup
-    logger.info("Starting EduAI Governance Platform v%s", settings.APP_VERSION)
-    logger.info("Environment: %s", settings.APP_ENV)
+    logger.info("Starting EduAI Governance Platform v%s [%s]", settings.APP_VERSION, settings.APP_ENV)
 
-    # Create tables (dev only — use Alembic migrations in production)
-    if settings.APP_ENV in ("development", "dev"):
+    # Create tables only in dev — production uses `alembic upgrade head` (run by render.yaml startCommand)
+    if not _is_production:
         async with engine.begin() as conn:
             await conn.run_sync(Base.metadata.create_all)
-        logger.info("Database tables created/verified")
+        logger.info("Database tables created/verified (dev mode)")
 
-    # Pre-load the shared embedding model so the first assessment
-    # generation/grading request doesn't pay the ~10s load cost.
-    logger.info("Pre-loading sentence embedding model...")
-    get_embedding_model()
-    logger.info("Embedding model ready")
+    # Pre-load the shared embedding model. Failure degrades exam-prep features but doesn't block startup.
+    try:
+        logger.info("Pre-loading sentence embedding model...")
+        get_embedding_model()
+        logger.info("Embedding model ready")
+    except Exception as exc:
+        logger.error("Embedding model failed to load: %s — exam prep features unavailable", exc)
 
     yield
 
-    # Shutdown
     logger.info("Shutting down EduAI Governance Platform")
     await engine.dispose()
 
@@ -59,8 +59,9 @@ app = FastAPI(
     title=settings.APP_NAME,
     description="AI-Powered Education Governance Platform API",
     version=settings.APP_VERSION,
-    docs_url="/docs",
-    redoc_url="/redoc",
+    # Disable interactive docs in production (no public API exposure needed)
+    docs_url=None if _is_production else "/docs",
+    redoc_url=None if _is_production else "/redoc",
     lifespan=lifespan,
 )
 
@@ -80,5 +81,17 @@ app.include_router(api_router, prefix="/api/v1")
 
 @app.get("/health", tags=["Health"])
 async def health_check():
-    return JSONResponse({"status": "healthy", "version": settings.APP_VERSION})
+    """Render polls this endpoint to determine if the service is healthy."""
+    try:
+        async with engine.connect() as conn:
+            await conn.execute(text("SELECT 1"))
+        db_status = "connected"
+    except Exception as exc:
+        logger.error("Health check DB ping failed: %s", exc)
+        db_status = "error"
 
+    status = "healthy" if db_status == "connected" else "degraded"
+    return JSONResponse(
+        {"status": status, "version": settings.APP_VERSION, "environment": settings.APP_ENV},
+        status_code=200 if status == "healthy" else 503,
+    )
