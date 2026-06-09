@@ -2,7 +2,7 @@
 
 from typing import List, Dict
 
-from sentence_transformers.util import cos_sim
+from app.ai.exam_prep.embedding_model import cos_sim
 
 from app.ai.exam_prep.embedding_model import get_embedding_model
 

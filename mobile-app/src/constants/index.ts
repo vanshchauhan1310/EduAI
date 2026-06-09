@@ -1,6 +1,7 @@
 import { UserRole } from '../types';
 import Constants from 'expo-constants';
-import { Platform } from 'react-native';
+
+const PRODUCTION_API = 'https://eduai-backend-pq6w.onrender.com/api/v1';
 
 function getDevApiBaseUrl() {
   const configured = process.env.EXPO_PUBLIC_API_BASE_URL || Constants.expoConfig?.extra?.API_BASE_URL;
@@ -13,8 +14,7 @@ function getDevApiBaseUrl() {
   const host = hostUri?.split(':')[0];
   if (host) return `http://${host}:8000/api/v1`;
 
-  if (Platform.OS === 'android') return 'http://10.0.2.2:8000/api/v1';
-  return 'http://localhost:8000/api/v1';
+  return PRODUCTION_API;
 }
 
 export const API_BASE_URL = getDevApiBaseUrl();

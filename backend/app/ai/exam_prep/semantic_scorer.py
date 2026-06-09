@@ -1,6 +1,6 @@
 # app/ai/exam_prep/semantic_scorer.py
 
-from sentence_transformers.util import cos_sim
+from app.ai.exam_prep.embedding_model import cos_sim
 
 from app.ai.exam_prep.embedding_model import get_embedding_model
 

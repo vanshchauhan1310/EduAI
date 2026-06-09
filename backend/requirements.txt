@@ -29,7 +29,7 @@ email-validator
 # ─── AI Provider ──────────────────────────────────────────────
 openai                        # OpenAI-compatible SDK for NVIDIA NIM
 ollama                        # Legacy/local LLM option
-sentence-transformers         # Semantic embedding and scoring models
+fastembed                     # Semantic embeddings via ONNX (replaces sentence-transformers + PyTorch — saves ~300 MB RAM)
 huggingface_hub               # AI Tutor — HuggingFace Inference chat-completion client
 requests                      # HTTP client used by AI and external service integrations
 # ─── Document Processing ─────────────────────────────────────
