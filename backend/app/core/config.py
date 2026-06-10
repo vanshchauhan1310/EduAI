@@ -22,7 +22,7 @@ class Settings(BaseSettings):
     BACKEND_HOST: str = "0.0.0.0"
     BACKEND_PORT: int = 8000
     # Set in env as comma-separated: ALLOWED_ORIGINS=https://a.com,https://b.com
-    ALLOWED_ORIGINS: List[str] = ["http://localhost:19000", "http://localhost:3000"]
+    ALLOWED_ORIGINS: str = "http://localhost:19000,http://localhost:3000"
 
     # Database — set DATABASE_URL in your .env file (Supabase session-mode pooler recommended)
     # Format: postgresql+asyncpg://user:password@host:5432/dbname
@@ -96,15 +96,12 @@ class Settings(BaseSettings):
             return False
         return value
 
-    @field_validator("ALLOWED_ORIGINS", mode="before")
-    @classmethod
-    def _parse_origins(cls, v):
-        if isinstance(v, str):
-            stripped = v.strip()
-            if stripped.startswith("["):
-                return _json.loads(stripped)
-            return [o.strip() for o in stripped.split(",") if o.strip()]
-        return v
+    @property
+    def allowed_origins_list(self) -> List[str]:
+        stripped = self.ALLOWED_ORIGINS.strip()
+        if stripped.startswith("["):
+            return _json.loads(stripped)
+        return [o.strip() for o in stripped.split(",") if o.strip()]
 
     @model_validator(mode="after")
     def _validate_production_secrets(self):

@@ -1,7 +1,7 @@
 import { UserRole } from '../types';
 import Constants from 'expo-constants';
 
-const PRODUCTION_API = 'https://eduai-backend-pq6w.onrender.com/api/v1';
+const PRODUCTION_API = 'https://eduai-production-3a9f.up.railway.app/api/v1';
 
 function getDevApiBaseUrl() {
   const configured = process.env.EXPO_PUBLIC_API_BASE_URL || Constants.expoConfig?.extra?.API_BASE_URL;
